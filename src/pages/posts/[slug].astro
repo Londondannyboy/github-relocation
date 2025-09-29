@@ -62,14 +62,20 @@ const post = await sanityClient.fetch(
 );
 
 // Handle post not found early  
-if (!post || !post.title) {
-  console.warn(`Post not found or invalid for slug: ${slug}`);
+if (!post) {
+  console.warn(`Post not found for slug: ${slug}`);
   // Redirect to home page for invalid posts
   return Astro.redirect('/');
 }
 
-const pageTitle = post.metaTitle || post.title || 'Relocation Quest';
-const pageDescription = post.metaDescription || post.excerpt || 'International relocation guides';
+// Extra safety check
+if (!post.title) {
+  console.warn(`Post missing title for slug: ${slug}`);
+  return Astro.redirect('/');
+}
+
+const pageTitle = post?.metaTitle || post?.title || 'Relocation Quest';
+const pageDescription = post?.metaDescription || post?.excerpt || 'International relocation guides';
 
 // Extract MUX video ID if present
 function getMuxId(url) {
