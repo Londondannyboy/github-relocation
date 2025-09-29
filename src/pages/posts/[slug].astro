@@ -5,11 +5,13 @@ import { getBodyImageUrl, getFeaturedImageUrl } from '../../lib/imageUtils.js';
 
 export async function getStaticPaths() {
   const posts = await sanityClient.fetch(
-    `*[_type == "post"] { slug }`
+    `*[_type == "post" && slug.current != null] { slug }`
   );
-  return posts.map(post => ({
-    params: { slug: post.slug.current }
-  }));
+  return posts
+    .filter(post => post.slug?.current)
+    .map(post => ({
+      params: { slug: post.slug.current }
+    }));
 }
 
 const { slug } = Astro.params;
@@ -56,12 +58,17 @@ const post = await sanityClient.fetch(
   { slug }
 );
 
-if (!post) {
-  return Astro.redirect('/404');
+// Handle post not found early
+if (!post || !post.title) {
+  console.error(`Post not found or missing title for slug: ${slug}`);
+  return new Response(null, {
+    status: 404,
+    statusText: 'Not Found'
+  });
 }
 
-const pageTitle = post.metaTitle || post.title;
-const pageDescription = post.metaDescription || post.excerpt;
+const pageTitle = post.metaTitle || post.title || 'Relocation Quest';
+const pageDescription = post.metaDescription || post.excerpt || 'International relocation guides';
 
 // Extract MUX video ID if present
 function getMuxId(url) {
@@ -121,8 +128,8 @@ function renderContent(blocks) {
   }).join('');
 }
 
-const muxId = getMuxId(post.videoUrl);
-const content = renderContent(post.body);
+const muxId = getMuxId(post?.videoUrl);
+const content = renderContent(post?.body || []);
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
