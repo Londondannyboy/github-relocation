@@ -58,10 +58,11 @@ const post = await sanityClient.fetch(
   { slug }
 );
 
-// Handle post not found early
-if (!post || !post.title) {
-  console.error(`Post not found or missing title for slug: ${slug}`);
-  return new Response(null, {
+// Handle post not found early  
+if (!post) {
+  console.warn(`Post not found for slug: ${slug}`);
+  // Return a 404 response that won't break the build
+  return new Response('Not Found', {
     status: 404,
     statusText: 'Not Found'
   });

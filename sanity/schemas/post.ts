@@ -248,6 +248,14 @@ export default defineType({
       type: 'number',
       group: 'publishing',
       description: 'Total cost to generate this article (target: $0.01)'
+    }),
+    defineField({
+      name: 'readTime',
+      title: 'Reading Time (minutes)',
+      type: 'number',
+      group: 'publishing',
+      description: 'Estimated reading time in minutes (auto-calculated from word count)',
+      validation: Rule => Rule.min(1).integer()
     })
   ],
 

@@ -1,0 +1,317 @@
+{
+  "version": "1.0.0",
+  "description": "Video prompt templates for Relocation Quest",
+  "concepts": {
+    "goldenThread": {
+      "name": "Golden Thread Visual Signature",
+      "style": {
+        "primary_color": "#FFD700",
+        "secondary_color": "#1E3A8A",
+        "lighting": "golden_hour",
+        "camera_movement": "smooth_aerial",
+        "quality": "4K_professional"
+      },
+      "signature_elements": [
+        "golden particle stream",
+        "thread of light",
+        "connecting flow",
+        "weaving motion"
+      ],
+      "template": "{{location_type}} of {{location_name}} at golden hour, subtle golden particle stream flows through the frame like a thread of light, {{location_features}}, professional real estate video style, warm {{region_lighting}} lighting, 4K quality, smooth camera movement following the golden thread{{location_landmark}}"
+    },
+    
+    "portal": {
+      "name": "Portal Transitions",
+      "style": {
+        "portal_shape": "hexagonal",
+        "edge_pattern": "geometric_golden",
+        "transition": "push_through",
+        "lighting": "contrast_dark_to_light"
+      },
+      "signature_elements": [
+        "geometric portal frame",
+        "golden edge patterns",
+        "smooth transition",
+        "reveal effect"
+      ],
+      "template": "{{portal_shape}} portal {{action}} in center of frame, revealing {{location_name}} through the doorway, portal edges have intricate golden {{cultural_patterns}} patterns, {{location_atmosphere}} visible through portal, {{architecture_style}} architecture visible, smooth push through the portal, {{video_style}} video style"
+    },
+    
+    "dataVisualization": {
+      "name": "Data Visualization Journey",
+      "style": {
+        "color_palette": ["#1E40AF", "#FFD700", "#FFFFFF"],
+        "transition_type": "morph",
+        "data_style": "modern_infographic",
+        "final_style": "photorealistic"
+      },
+      "signature_elements": [
+        "floating data points",
+        "morphing transformation",
+        "numbers to buildings",
+        "infographic style"
+      ],
+      "template": "{{data_points}} floating in space, morphing smoothly into {{view_type}} of {{location_name}}, data transforms into {{location_features}}, professional infographic style transitioning to real footage, clean modern aesthetic, blue and gold color scheme{{landmark_formation}}"
+    },
+    
+    "firstPerson": {
+      "name": "First Person Explorer",
+      "style": {
+        "perspective": "POV",
+        "movement": "steady_gimbal",
+        "props": ["leather_briefcase", "golden_compass", "silver_watch"],
+        "lighting": "natural_afternoon"
+      },
+      "signature_elements": [
+        "consistent props",
+        "POV perspective",
+        "steady movement",
+        "personal journey"
+      ],
+      "template": "POV shot: hands holding {{document_type}} and {{secondary_item}}, {{movement_type}} through {{location_name}}, {{prop_interaction}}, same {{consistent_props}} visible in frame, steady gimbal movement, {{video_style}} style, warm {{time_of_day}} light"
+    }
+  },
+  
+  "locations": {
+    "cyprus": {
+      "paphos": {
+        "location_type": "Cinematic aerial view",
+        "location_name": "Paphos harbor",
+        "location_features": "weaving between the boats and ancient fort",
+        "region_lighting": "Mediterranean",
+        "location_landmark": ", golden thread traces the castle outline",
+        "portal_shape": "Ancient stone archway",
+        "cultural_patterns": "Greek key",
+        "location_atmosphere": "Mediterranean blue sky",
+        "architecture_style": "Venetian harbor",
+        "data_points": "Numbers and data (12.5% tax, 60 days, €300k)",
+        "view_type": "aerial view",
+        "landmark_formation": ", data particles form Paphos castle silhouette",
+        "document_type": "Cyprus residency permit",
+        "secondary_item": "golden compass",
+        "movement_type": "walking",
+        "prop_interaction": "compass points toward the castle",
+        "consistent_props": "leather briefcase and Mediterranean map",
+        "video_style": "professional travel vlog",
+        "time_of_day": "afternoon"
+      },
+      "limassol": {
+        "location_type": "Drone shot",
+        "location_name": "Limassol Marina",
+        "location_features": "luxury yachts and modern towers reflecting golden light",
+        "region_lighting": "Mediterranean coastal",
+        "location_landmark": ", thread forms outline of the marina",
+        "portal_shape": "Modern geometric frame",
+        "cultural_patterns": "contemporary Mediterranean",
+        "location_atmosphere": "Clear blue sky and sea",
+        "architecture_style": "modern waterfront",
+        "data_points": "Business metrics (12.5% corporate tax, EU access, 2 months)",
+        "view_type": "sweeping aerial perspective",
+        "landmark_formation": ", numbers shape the marina towers",
+        "document_type": "business incorporation papers",
+        "secondary_item": "smartphone with map",
+        "movement_type": "walking along marina",
+        "prop_interaction": "checking yacht prices on phone",
+        "consistent_props": "leather portfolio and sunglasses",
+        "video_style": "luxury lifestyle",
+        "time_of_day": "golden hour"
+      }
+    },
+    
+    "dubai": {
+      "downtown": {
+        "location_type": "Drone shot",
+        "location_name": "Dubai Downtown",
+        "location_features": "Burj Khalifa piercing the sky with fountains below",
+        "region_lighting": "desert sunset",
+        "location_landmark": ", golden thread spirals up Burj Khalifa",
+        "portal_shape": "Futuristic hexagonal",
+        "cultural_patterns": "Arabic geometric",
+        "location_atmosphere": "Dramatic sunset sky",
+        "architecture_style": "ultra-modern glass and steel",
+        "data_points": "Financial figures (0% tax, 100% ownership, AED 75,000)",
+        "view_type": "panoramic cityscape",
+        "landmark_formation": ", data forms DIFC gate",
+        "document_type": "UAE Golden Visa",
+        "secondary_item": "Dubai Metro card",
+        "movement_type": "entering DIFC",
+        "prop_interaction": "visa prominently displayed",
+        "consistent_props": "brown leather briefcase and silver watch",
+        "video_style": "corporate luxury",
+        "time_of_day": "evening"
+      },
+      "marina": {
+        "location_type": "Sweeping aerial",
+        "location_name": "Dubai Marina",
+        "location_features": "twisted towers and yacht-filled waterways",
+        "region_lighting": "warm desert",
+        "location_landmark": ", particles dance between skyscrapers",
+        "portal_shape": "Sleek modern arch",
+        "cultural_patterns": "contemporary Islamic",
+        "location_atmosphere": "Vibrant twilight ambiance",
+        "architecture_style": "futuristic residential",
+        "data_points": "Lifestyle stats (300 days sun, 5-star living, tax-free)",
+        "view_type": "dynamic marina tour",
+        "landmark_formation": ", statistics become Cayan Tower",
+        "document_type": "property ownership deed",
+        "secondary_item": "yacht club membership",
+        "movement_type": "yacht deck perspective",
+        "prop_interaction": "holding champagne glass",
+        "consistent_props": "designer briefcase and luxury watch",
+        "video_style": "premium lifestyle",
+        "time_of_day": "sunset"
+      }
+    },
+    
+    "malta": {
+      "valletta": {
+        "location_type": "Aerial view",
+        "location_name": "Valletta Grand Harbour",
+        "location_features": "historic fortifications and Three Cities",
+        "region_lighting": "Mediterranean golden",
+        "location_landmark": ", thread traces St. John's Cathedral dome",
+        "portal_shape": "Baroque stone archway",
+        "cultural_patterns": "Maltese cross",
+        "location_atmosphere": "Historic grandeur",
+        "architecture_style": "Baroque limestone",
+        "data_points": "EU passport data (€600k, 4 months, 183 days)",
+        "view_type": "grand harbour panorama",
+        "landmark_formation": ", numbers form the fortress walls",
+        "document_type": "Malta Golden Visa",
+        "secondary_item": "ancient harbour map",
+        "movement_type": "walking cobblestone streets",
+        "prop_interaction": "map showing Knights' route",
+        "consistent_props": "leather satchel and compass",
+        "video_style": "historical documentary",
+        "time_of_day": "late afternoon"
+      },
+      "sliema": {
+        "location_type": "Modern waterfront shot",
+        "location_name": "Sliema promenade",
+        "location_features": "contemporary towers and Mediterranean seafront",
+        "region_lighting": "bright coastal",
+        "location_landmark": ", golden flow along the waterfront",
+        "portal_shape": "Contemporary glass frame",
+        "cultural_patterns": "modern Mediterranean",
+        "location_atmosphere": "Vibrant seaside energy",
+        "architecture_style": "modern residential",
+        "data_points": "Investment figures (€700k property, 5% returns, EU benefits)",
+        "view_type": "waterfront sweep",
+        "landmark_formation": ", data shapes the Tower Road skyline",
+        "document_type": "property investment papers",
+        "secondary_item": "tablet with listings",
+        "movement_type": "strolling promenade",
+        "prop_interaction": "comparing properties on tablet",
+        "consistent_props": "business portfolio and sunglasses",
+        "video_style": "real estate showcase",
+        "time_of_day": "morning"
+      }
+    },
+    
+    "portugal": {
+      "lisbon": {
+        "location_type": "Hillside panorama",
+        "location_name": "Lisbon's Alfama district",
+        "location_features": "terracotta roofs cascading to the Tagus River",
+        "region_lighting": "Atlantic golden",
+        "location_landmark": ", thread weaves through tram tracks",
+        "portal_shape": "Manueline architectural arch",
+        "cultural_patterns": "Portuguese tiles (azulejos)",
+        "location_atmosphere": "Romantic old-world charm",
+        "architecture_style": "traditional Portuguese",
+        "data_points": "NHR benefits (20% flat tax, €500k Golden Visa, 10 years)",
+        "view_type": "hilltop vista",
+        "landmark_formation": ", numbers form São Jorge Castle",
+        "document_type": "Portuguese residence card",
+        "secondary_item": "Tram 28 ticket",
+        "movement_type": "riding historic tram",
+        "prop_interaction": "holding tram rail",
+        "consistent_props": "vintage leather bag and guidebook",
+        "video_style": "cultural exploration",
+        "time_of_day": "golden hour"
+      }
+    },
+    
+    "singapore": {
+      "marina_bay": {
+        "location_type": "Futuristic skyline shot",
+        "location_name": "Marina Bay",
+        "location_features": "Gardens by the Bay and financial district",
+        "region_lighting": "tropical sunset",
+        "location_landmark": ", particles form Marina Bay Sands",
+        "portal_shape": "Ultra-modern holographic",
+        "cultural_patterns": "tech-inspired geometric",
+        "location_atmosphere": "High-tech metropolis",
+        "architecture_style": "futuristic sustainable",
+        "data_points": "Tech hub stats (17% tax, startup grants, PR pathway)",
+        "view_type": "360-degree skyline",
+        "landmark_formation": ", data creates Supertree silhouettes",
+        "document_type": "Employment Pass",
+        "secondary_item": "MRT card",
+        "movement_type": "crossing Helix Bridge",
+        "prop_interaction": "scanning QR codes",
+        "consistent_props": "tech backpack and smartwatch",
+        "video_style": "tech innovation showcase",
+        "time_of_day": "blue hour"
+      }
+    }
+  },
+  
+  "variations": {
+    "seasonal": {
+      "summer": {
+        "lighting_modifier": "bright sunny",
+        "atmosphere": "vibrant and energetic",
+        "color_temperature": "warm"
+      },
+      "winter": {
+        "lighting_modifier": "soft diffused",
+        "atmosphere": "cozy and welcoming",
+        "color_temperature": "cool"
+      }
+    },
+    "purpose": {
+      "investment": {
+        "focus": "ROI and growth potential",
+        "style_modifier": "professional financial"
+      },
+      "lifestyle": {
+        "focus": "quality of life",
+        "style_modifier": "aspirational luxury"
+      },
+      "business": {
+        "focus": "opportunities and infrastructure",
+        "style_modifier": "corporate professional"
+      }
+    }
+  },
+  
+  "technical_specs": {
+    "duration": 5,
+    "aspect_ratio": "16:9",
+    "resolution": "1920x1080",
+    "frame_rate": 30,
+    "output_format": "mp4",
+    "compression": "h264"
+  },
+  
+  "generation_settings": {
+    "luma": {
+      "model": "dream-machine-v1",
+      "quality": "high",
+      "motion": "smooth",
+      "camera": "professional"
+    },
+    "runway": {
+      "model": "gen3-alpha",
+      "motion_amount": 5,
+      "camera_motion": "orbit_right"
+    },
+    "replicate": {
+      "model": "stability-ai/stable-video-diffusion",
+      "frames": 25,
+      "fps": 5,
+      "motion_bucket_id": 127
+    }
+  }
+}
