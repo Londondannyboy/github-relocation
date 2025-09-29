@@ -30,3 +30,4 @@ pnpm-debug.log*
 *-CREDENTIALS.md
 CREDENTIALS.md
 .vercel
+.env.local

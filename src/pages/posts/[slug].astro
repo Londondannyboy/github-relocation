@@ -1,0 +1,178 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { sanityClient } from '../../lib/sanity';
+
+export async function getStaticPaths() {
+  const posts = await sanityClient.fetch(`
+    *[_type == "post"] {
+      slug
+    }
+  `);
+
+  return posts.map(post => ({
+    params: { slug: post.slug.current }
+  }));
+}
+
+const { slug } = Astro.params;
+
+// Fetch the specific post
+const post = await sanityClient.fetch(`
+  *[_type == "post" && slug.current == $slug][0] {
+    _id,
+    title,
+    slug,
+    excerpt,
+    body,
+    publishedAt,
+    featuredImage {
+      asset-> {
+        url
+      },
+      alt,
+      credit
+    },
+    category-> {
+      title,
+      slug
+    },
+    tags[]-> {
+      title,
+      slug
+    },
+    metaTitle,
+    metaDescription,
+    focusKeyword,
+    searchVolume,
+    cpc,
+    contentTier,
+    generationCost
+  }
+`, { slug });
+
+if (!post) {
+  return Astro.redirect('/404');
+}
+
+// Simple portable text renderer
+function renderPortableText(blocks) {
+  if (!blocks) return '';
+  
+  return blocks.map(block => {
+    if (block._type === 'block') {
+      const style = block.style || 'normal';
+      const children = block.children?.map(child => {
+        if (child._type === 'span') {
+          let text = child.text;
+          if (child.marks?.includes('strong')) text = `<strong>${text}</strong>`;
+          if (child.marks?.includes('em')) text = `<em>${text}</em>`;
+          if (child.marks?.includes('code')) text = `<code>${text}</code>`;
+          return text;
+        }
+        return '';
+      }).join('');
+      
+      switch(style) {
+        case 'h2': return `<h2 class="text-3xl font-bold mt-8 mb-4">${children}</h2>`;
+        case 'h3': return `<h3 class="text-2xl font-bold mt-6 mb-3">${children}</h3>`;
+        case 'h4': return `<h4 class="text-xl font-bold mt-4 mb-2">${children}</h4>`;
+        case 'blockquote': return `<blockquote class="border-l-4 border-blue-500 pl-4 my-4 italic">${children}</blockquote>`;
+        default: return `<p class="mb-4">${children}</p>`;
+      }
+    } else if (block._type === 'image') {
+      return `<img src="${block.asset?.url || ''}" alt="${block.alt || ''}" class="w-full my-6 rounded-lg" />`;
+    }
+    return '';
+  }).join('');
+}
+
+const pageTitle = post.metaTitle || post.title;
+const pageDescription = post.metaDescription || post.excerpt;
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <article class="container mx-auto px-4 py-8 max-w-4xl">
+    <!-- Breadcrumbs -->
+    <nav class="text-sm mb-6">
+      <a href="/" class="text-blue-600 hover:underline">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/posts" class="text-blue-600 hover:underline">Posts</a>
+      <span class="mx-2">/</span>
+      <span class="text-gray-600">{post.title}</span>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="mb-8">
+      {post.category && (
+        <span class="text-blue-600 font-semibold uppercase text-sm">
+          {post.category.title}
+        </span>
+      )}
+      <h1 class="text-4xl md:text-5xl font-bold mt-2 mb-4">{post.title}</h1>
+      
+      <div class="flex items-center gap-4 text-gray-600">
+        <time datetime={post.publishedAt}>
+          {new Date(post.publishedAt).toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+          })}
+        </time>
+        {post.searchVolume && (
+          <>
+            <span>•</span>
+            <span>{post.searchVolume} searches/month</span>
+          </>
+        )}
+        {post.cpc && (
+          <>
+            <span>•</span>
+            <span>${post.cpc} CPC</span>
+          </>
+        )}
+      </div>
+    </header>
+
+    <!-- Featured Image -->
+    {post.featuredImage?.asset?.url && (
+      <figure class="mb-8">
+        <img 
+          src={post.featuredImage.asset.url} 
+          alt={post.featuredImage.alt || post.title}
+          class="w-full rounded-lg shadow-lg"
+        />
+        {post.featuredImage.credit && (
+          <figcaption class="text-sm text-gray-500 mt-2 text-center">
+            {post.featuredImage.credit}
+          </figcaption>
+        )}
+      </figure>
+    )}
+
+    <!-- Article Content -->
+    <div class="prose prose-lg max-w-none" set:html={renderPortableText(post.body)} />
+
+    <!-- Tags -->
+    {post.tags && post.tags.length > 0 && (
+      <div class="mt-8 pt-8 border-t">
+        <h3 class="font-semibold mb-3">Related Topics:</h3>
+        <div class="flex flex-wrap gap-2">
+          {post.tags.map(tag => (
+            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">
+              #{tag.title}
+            </span>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- Article Metadata (for development) -->
+    {post.generationCost && (
+      <div class="mt-8 p-4 bg-gray-50 rounded-lg text-sm text-gray-600">
+        <p>Content Tier: {post.contentTier}</p>
+        <p>Focus Keyword: {post.focusKeyword}</p>
+        <p>Generation Cost: ${post.generationCost}</p>
+      </div>
+    )}
+  </article>
+</Layout>
