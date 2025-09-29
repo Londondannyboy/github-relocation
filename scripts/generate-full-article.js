@@ -5,7 +5,7 @@ const sanityClient = createClient({
   projectId: '93ewsltm',
   dataset: 'production',
   apiVersion: '2024-01-01',
-  token: process.env.SANITY_API_TOKEN || 'sk0dETIcmwR8GzWsSZMYzPMJkzpICmWs25zuLwlmsCdn3wLM52pmavrUEoHQYJVOig5o1zIa15oXbkyHskCTUxbu12H0xhEStnN9y5nOc6gXkyBO6M7mc7LcSbSwbU4ChHWVvFBHtQNEyI2nK8Fye6JKmobiIysIzaGhqj97wuZ3fxfmOv4f',
+  token: process.env.SANITY_API_TOKEN || '[Configure in .env.local]',
   useCdn: false
 });
 

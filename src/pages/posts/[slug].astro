@@ -164,7 +164,9 @@ const content = renderContent(post.body);
           playback-id={muxId}
           metadata-video-title={post.title}
           accent-color="#10b981"
-          controls
+          autoplay
+          muted
+          loop
           class="w-full rounded-lg shadow-lg"
         ></mux-player>
         <script src="https://cdn.jsdelivr.net/npm/@mux/mux-player"></script>
