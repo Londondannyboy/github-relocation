@@ -5,10 +5,13 @@ import { getBodyImageUrl, getFeaturedImageUrl } from '../../lib/imageUtils.js';
 
 export async function getStaticPaths() {
   const posts = await sanityClient.fetch(
-    `*[_type == "post" && slug.current != null] { slug }`
+    `*[_type == "post" && slug.current != null && defined(title)] { 
+      slug,
+      title 
+    }`
   );
   return posts
-    .filter(post => post.slug?.current)
+    .filter(post => post.slug?.current && post.title)
     .map(post => ({
       params: { slug: post.slug.current }
     }));

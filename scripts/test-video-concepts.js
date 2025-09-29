@@ -157,7 +157,7 @@ const testResults = {
 async function generateLumaVideo(prompt, options = {}) {
   console.log('🎬 Generating with Luma Dream Machine...');
   
-  // Note: Luma API endpoint is illustrative - check actual docs
+  // Create generation request
   const response = await fetch('https://api.lumalabs.ai/dream-machine/v1/generations', {
     method: 'POST',
     headers: {
@@ -167,18 +167,26 @@ async function generateLumaVideo(prompt, options = {}) {
     body: JSON.stringify({
       prompt: prompt.prompt,
       aspect_ratio: prompt.aspectRatio || '16:9',
-      duration: prompt.duration || 5
+      loop: false,
+      keyframes: {
+        frame0: {
+          type: "generation",
+          prompt: prompt.prompt
+        }
+      }
     })
   });
   
   if (!response.ok) {
-    throw new Error(`Luma API error: ${response.status}`);
+    const error = await response.text();
+    throw new Error(`Luma API error: ${error}`);
   }
   
   const result = await response.json();
+  console.log(`⏳ Generation ID: ${result.id}`);
   
   // Poll for completion
-  return await pollForCompletion(result.id, 'luma');
+  return await pollLumaStatus(result.id);
 }
 
 /**
