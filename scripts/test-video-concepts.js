@@ -260,6 +260,44 @@ async function pollReplicateStatus(predictionId) {
 }
 
 /**
+ * Poll Luma for video completion
+ */
+async function pollLumaStatus(generationId) {
+  const maxAttempts = 120; // 10 minutes max
+  let attempts = 0;
+  
+  while (attempts < maxAttempts) {
+    const response = await fetch(`https://api.lumalabs.ai/dream-machine/v1/generations/${generationId}`, {
+      headers: {
+        'Authorization': `Bearer ${PLATFORMS.luma.apiKey}`
+      }
+    });
+    
+    if (!response.ok) {
+      throw new Error(`Failed to check status: ${response.status}`);
+    }
+    
+    const generation = await response.json();
+    
+    if (generation.state === 'completed') {
+      return {
+        url: generation.assets?.video || generation.video?.url,
+        status: 'completed',
+        id: generationId
+      };
+    } else if (generation.state === 'failed') {
+      throw new Error(`Video generation failed: ${generation.failure_reason || 'Unknown error'}`);
+    }
+    
+    console.log(`⏳ Status: ${generation.state}... (${attempts + 1}/${maxAttempts})`);
+    await sleep(5000); // Wait 5 seconds
+    attempts++;
+  }
+  
+  throw new Error('Video generation timed out');
+}
+
+/**
  * Generic polling function for video completion
  */
 async function pollForCompletion(generationId, platform) {

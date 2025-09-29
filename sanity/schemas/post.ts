@@ -18,8 +18,8 @@ export default defineType({
       title: 'Title',
       type: 'string',
       group: 'content',
-      validation: Rule => Rule.required().max(60).warning('Titles should be under 60 characters for SEO'),
-      description: 'The main title of the article (60 chars max for SEO)'
+      validation: Rule => Rule.required().max(70).error('Titles MUST be under 70 characters for SEO'),
+      description: 'The main title of the article (70 chars MAX for SEO - STRICTLY ENFORCED)'
     }),
     defineField({
       name: 'slug',
