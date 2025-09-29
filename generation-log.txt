@@ -800,3 +800,113 @@
 [2025-09-29T23:38:41.836Z] 
 🔍 Checking deployment...
 [2025-09-29T23:38:48.253Z]    ✓ Build successful
+[2025-09-29T23:38:48.964Z]    ✓ Pushed to GitHub
+[2025-09-29T23:38:48.965Z]    ⏳ Waiting for Vercel...
+[2025-09-29T23:40:19.228Z]    ✅ Deployment successful!
+[2025-09-29T23:40:19.230Z] ✅ Batch 5 deployed
+[2025-09-29T23:40:19.230Z] 
+⏳ Pausing before next batch...
+[2025-09-29T23:40:49.231Z] 
+============================================================
+[2025-09-29T23:40:49.233Z] 📦 BATCH 6 of 96
+[2025-09-29T23:40:49.234Z] ============================================================
+[2025-09-29T23:40:49.234Z] 
+📋 Topics for this batch:
+[2025-09-29T23:40:49.234Z]    - best antigua digital nomad visa
+[2025-09-29T23:40:49.234Z]    - usa digital nomad visa 2025
+[2025-09-29T23:40:49.234Z]    - spain digital nomad visa requirements
+[2025-09-29T23:40:49.234Z]    - france remote work visa cost
+[2025-09-29T23:40:49.234Z]    - austria remote work visa 2025
+[2025-09-29T23:40:49.235Z]    - latvia digital nomad visa 2025
+[2025-09-29T23:40:49.235Z]    - digital nomad visa peru
+[2025-09-29T23:40:49.235Z]    - ethiopia digital nomad visa cost
+[2025-09-29T23:40:49.235Z]    - digital nomad visa kenya
+[2025-09-29T23:40:49.235Z]    - lithuania digital nomad visa 2025
+[2025-09-29T23:40:49.235Z] 
+📝 Generating: Best Antigua Digital Nomad Visa Complete Guide
+[2025-09-29T23:40:49.235Z]    🔬 Researching...
+[2025-09-29T23:40:54.310Z]    ⚠️ Perplexity research skipped
+[2025-09-29T23:40:54.311Z]    🎨 Generating images...
+[2025-09-29T23:41:03.420Z]    ✍️ Creating content...
+[2025-09-29T23:41:03.422Z]    ✓ 2431 words, 10 links, 4 images
+[2025-09-29T23:41:04.630Z]    ✅ Published successfully: best-antigua-digital-nomad-visa-complete-guide
+[2025-09-29T23:41:07.632Z] 
+📝 Generating: Usa Digital Nomad Visa 2025 Complete Guide
+[2025-09-29T23:41:07.633Z]    🔬 Researching...
+[2025-09-29T23:41:12.571Z]    ⚠️ Perplexity research skipped
+[2025-09-29T23:41:12.572Z]    🎨 Generating images...
+[2025-09-29T23:41:21.372Z]    ✍️ Creating content...
+[2025-09-29T23:41:21.374Z]    ✓ 2359 words, 10 links, 4 images
+[2025-09-29T23:41:21.956Z]    ✅ Published successfully: usa-digital-nomad-visa-2025-complete-guide
+[2025-09-29T23:41:24.960Z] 
+📝 Generating: Spain Digital Nomad Visa Requirements Complete Guide
+[2025-09-29T23:41:24.960Z]    🔬 Researching...
+[2025-09-29T23:41:39.848Z]    ⚠️ Perplexity research skipped
+[2025-09-29T23:41:39.852Z]    🎨 Generating images...
+[2025-09-29T23:41:48.625Z]    ✍️ Creating content...
+[2025-09-29T23:41:48.627Z]    ✓ 2267 words, 10 links, 4 images
+[2025-09-29T23:41:49.830Z]    ✅ Published successfully: spain-digital-nomad-visa-requirements-complete-guide
+[2025-09-29T23:41:52.831Z] 
+📝 Generating: France Remote Work Visa Cost Complete Guide
+[2025-09-29T23:41:52.832Z]    🔬 Researching...
+[2025-09-29T23:41:58.504Z]    ⚠️ Perplexity research skipped
+[2025-09-29T23:41:58.505Z]    🎨 Generating images...
+[2025-09-29T23:42:06.562Z]    ✍️ Creating content...
+[2025-09-29T23:42:06.564Z]    ✓ 2427 words, 10 links, 4 images
+[2025-09-29T23:42:07.758Z]    ✅ Published successfully: france-remote-work-visa-cost-complete-guide
+[2025-09-29T23:42:10.759Z] 
+📝 Generating: Austria Remote Work Visa 2025 Complete Guide
+[2025-09-29T23:42:10.760Z]    🔬 Researching...
+[2025-09-29T23:42:15.670Z]    ⚠️ Perplexity research skipped
+[2025-09-29T23:42:15.671Z]    🎨 Generating images...
+[2025-09-29T23:42:24.766Z]    ✍️ Creating content...
+[2025-09-29T23:42:24.768Z]    ✓ 2262 words, 10 links, 4 images
+[2025-09-29T23:42:25.927Z]    ✅ Published successfully: austria-remote-work-visa-2025-complete-guide
+[2025-09-29T23:42:28.929Z] 
+📝 Generating: Latvia Digital Nomad Visa 2025 Complete Guide
+[2025-09-29T23:42:28.930Z]    🔬 Researching...
+[2025-09-29T23:42:36.002Z]    ⚠️ Perplexity research skipped
+[2025-09-29T23:42:36.003Z]    🎨 Generating images...
+[2025-09-29T23:42:44.215Z]    ✍️ Creating content...
+[2025-09-29T23:42:44.216Z]    ✓ 2204 words, 10 links, 4 images
+[2025-09-29T23:42:45.149Z]    ✅ Published successfully: latvia-digital-nomad-visa-2025-complete-guide
+[2025-09-29T23:42:48.151Z] 
+📝 Generating: Lithuania Digital Nomad Visa 2025 Complete Guide
+[2025-09-29T23:42:48.152Z]    🔬 Researching...
+[2025-09-29T23:42:52.696Z]    ⚠️ Perplexity research skipped
+[2025-09-29T23:42:52.697Z]    🎨 Generating images...
+[2025-09-29T23:43:01.557Z]    ✍️ Creating content...
+[2025-09-29T23:43:01.559Z]    ✓ 2274 words, 10 links, 4 images
+[2025-09-29T23:43:02.202Z]    ✅ Published successfully: lithuania-digital-nomad-visa-2025-complete-guide
+[2025-09-29T23:43:05.203Z] 
+📝 Generating: Digital Nomad Visa Kenya Complete Guide
+[2025-09-29T23:43:05.204Z]    🔬 Researching...
+[2025-09-29T23:43:12.073Z]    ⚠️ Perplexity research skipped
+[2025-09-29T23:43:12.078Z]    🎨 Generating images...
+[2025-09-29T23:43:19.607Z]    ✍️ Creating content...
+[2025-09-29T23:43:19.610Z]    ✓ 2304 words, 10 links, 4 images
+[2025-09-29T23:43:20.245Z]    ✅ Published successfully: digital-nomad-visa-kenya-complete-guide
+[2025-09-29T23:43:23.246Z] 
+📝 Generating: Ethiopia Digital Nomad Visa Cost Complete Guide
+[2025-09-29T23:43:23.247Z]    🔬 Researching...
+[2025-09-29T23:43:29.578Z]    ⚠️ Perplexity research skipped
+[2025-09-29T23:43:29.579Z]    🎨 Generating images...
+[2025-09-29T23:43:37.497Z]    ✍️ Creating content...
+[2025-09-29T23:43:37.500Z]    ✓ 2260 words, 10 links, 4 images
+[2025-09-29T23:43:38.297Z]    ✅ Published successfully: ethiopia-digital-nomad-visa-cost-complete-guide
+[2025-09-29T23:43:41.299Z] 
+📝 Generating: Digital Nomad Visa Peru Complete Guide
+[2025-09-29T23:43:41.300Z]    🔬 Researching...
+[2025-09-29T23:43:48.913Z]    ⚠️ Perplexity research skipped
+[2025-09-29T23:43:48.916Z]    🎨 Generating images...
+[2025-09-29T23:43:57.622Z]    ✍️ Creating content...
+[2025-09-29T23:43:57.623Z]    ✓ 2302 words, 10 links, 4 images
+[2025-09-29T23:43:58.350Z]    ✅ Published successfully: digital-nomad-visa-peru-complete-guide
+[2025-09-29T23:44:01.352Z] 
+📊 Batch 6 Results:
+[2025-09-29T23:44:01.352Z]    - Articles generated: 10/10
+[2025-09-29T23:44:01.352Z]    - Average word count: 2309
+[2025-09-29T23:44:01.353Z]    - Failed articles: 0
+[2025-09-29T23:44:01.353Z] 
+🔍 Checking deployment...
+[2025-09-29T23:44:07.547Z]    ✓ Build successful
