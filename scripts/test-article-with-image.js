@@ -40,15 +40,17 @@ async function generateTestArticle() {
     const imageUrl = Array.isArray(imageOutput) ? imageOutput[0] : imageOutput;
     console.log('✅ Image generated:', imageUrl);
 
-    // 2. Create test content
+    // 2. Create test content with proper _key values
     const blocks = [
       {
         _type: 'block',
+        _key: `block-${Date.now()}-1`,
         style: 'h2',
         children: [{ _type: 'span', text: 'Portugal Golden Visa Programme 2025' }]
       },
       {
         _type: 'block',
+        _key: `block-${Date.now()}-2`,
         style: 'normal',
         children: [{ 
           _type: 'span', 
@@ -57,11 +59,13 @@ async function generateTestArticle() {
       },
       {
         _type: 'block',
+        _key: `block-${Date.now()}-3`,
         style: 'h3',
         children: [{ _type: 'span', text: 'Investment Options for 2025' }]
       },
       {
         _type: 'block',
+        _key: `block-${Date.now()}-4`,
         style: 'normal',
         children: [{ 
           _type: 'span', 
@@ -70,11 +74,13 @@ async function generateTestArticle() {
       },
       {
         _type: 'block',
+        _key: `block-${Date.now()}-5`,
         style: 'h3',
         children: [{ _type: 'span', text: 'Residency Requirements' }]
       },
       {
         _type: 'block',
+        _key: `block-${Date.now()}-6`,
         style: 'normal',
         children: [{ 
           _type: 'span', 
@@ -83,11 +89,13 @@ async function generateTestArticle() {
       },
       {
         _type: 'block',
+        _key: `block-${Date.now()}-7`,
         style: 'h3',
         children: [{ _type: 'span', text: 'Path to Citizenship' }]
       },
       {
         _type: 'block',
+        _key: `block-${Date.now()}-8`,
         style: 'normal',
         children: [{ 
           _type: 'span', 
@@ -96,11 +104,13 @@ async function generateTestArticle() {
       },
       {
         _type: 'block',
+        _key: `block-${Date.now()}-9`,
         style: 'h2',
         children: [{ _type: 'span', text: 'Tax Benefits Under NHR Regime' }]
       },
       {
         _type: 'block',
+        _key: `block-${Date.now()}-10`,
         style: 'normal',
         children: [{ 
           _type: 'span', 
@@ -109,11 +119,13 @@ async function generateTestArticle() {
       },
       {
         _type: 'block',
+        _key: `block-${Date.now()}-11`,
         style: 'h2',
         children: [{ _type: 'span', text: 'Application Process' }]
       },
       {
         _type: 'block',
+        _key: `block-${Date.now()}-12`,
         style: 'normal',
         children: [{ 
           _type: 'span', 
@@ -122,11 +134,13 @@ async function generateTestArticle() {
       },
       {
         _type: 'block',
+        _key: `block-${Date.now()}-13`,
         style: 'h2',
         children: [{ _type: 'span', text: 'Conclusion' }]
       },
       {
         _type: 'block',
+        _key: `block-${Date.now()}-14`,
         style: 'normal',
         children: [{ 
           _type: 'span', 

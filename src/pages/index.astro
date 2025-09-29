@@ -1,102 +1,213 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { sanityClient } from '../lib/sanity';
+import { getFeaturedImageUrl } from '../lib/imageUtils.js';
 
-// Fetch recent posts
+// Fetch recent posts with proper categories field
 const recentPosts = await sanityClient.fetch(`
-  *[_type == "post"] | order(publishedAt desc) [0...3] {
+  *[_type == "post"] | order(publishedAt desc) [0...6] {
     _id,
     title,
     slug,
     excerpt,
-    category-> {
-      title
+    publishedAt,
+    featuredImage {
+      asset-> { url },
+      alt
+    },
+    categories[]-> {
+      title,
+      icon
+    },
+    searchVolume,
+    cpc
+  }
+`);
+
+// Fetch featured post
+const featuredPost = await sanityClient.fetch(`
+  *[_type == "post" && featured == true] | order(publishedAt desc) [0] {
+    _id,
+    title,
+    slug,
+    excerpt,
+    featuredImage {
+      asset-> { url },
+      alt
+    },
+    categories[]-> {
+      title,
+      icon
     }
   }
 `);
 ---
 
-<Layout title="Relocation Quest - Your Guide to Global Living">
-	<main class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-		<div class="container mx-auto px-4 py-16">
-			<h1 class="text-5xl font-bold text-center text-blue-900 mb-4">
-				Welcome to Relocation Quest
-			</h1>
-			<p class="text-xl text-center text-gray-700 mb-8">
-				Your comprehensive guide to international relocation, visas, and global living
-			</p>
-			
-			<div class="bg-white rounded-lg shadow-lg p-8 max-w-4xl mx-auto">
-				<h2 class="text-2xl font-semibold mb-4 text-gray-800">Fresh Start Configuration ✅</h2>
-				
-				<div class="grid md:grid-cols-2 gap-6">
-					<div class="space-y-3">
-						<h3 class="font-semibold text-lg text-blue-700">Technology Stack</h3>
-						<ul class="space-y-2 text-gray-600">
-							<li>✅ Astro + React + TypeScript</li>
-							<li>✅ Tailwind CSS</li>
-							<li>✅ Sanity CMS Integration</li>
-							<li>✅ Flux Pro Images (Ready)</li>
-							<li>✅ MUX Video (Optional)</li>
-						</ul>
-					</div>
-					
-					<div class="space-y-3">
-						<h3 class="font-semibold text-lg text-blue-700">Project Setup</h3>
-						<ul class="space-y-2 text-gray-600">
-							<li>✅ Proper favicon configured</li>
-							<li>✅ Schema.org metadata</li>
-							<li>✅ SEO-ready structure</li>
-							<li>✅ Post schema (not article)</li>
-							<li>✅ Vercel deployment ready</li>
-						</ul>
-					</div>
-				</div>
-				
-				<div class="mt-8 p-4 bg-green-50 rounded-lg border border-green-200">
-					<p class="text-green-800 font-medium">
-						🚀 Ready for content generation with smart caching and Flux Pro images!
-					</p>
-				</div>
-			</div>
-			
-			{recentPosts.length > 0 && (
-				<div class="mt-12 max-w-4xl mx-auto">
-					<h2 class="text-2xl font-semibold mb-6 text-center text-gray-800">Recent Articles</h2>
-					<div class="grid gap-6">
-						{recentPosts.map(post => (
-							<a href={`/posts/${post.slug.current}`} class="bg-white rounded-lg p-6 shadow hover:shadow-lg transition-shadow">
-								<div class="flex justify-between items-start">
-									<div>
-										<h3 class="text-xl font-semibold text-blue-700 mb-2">{post.title}</h3>
-										{post.excerpt && (
-											<p class="text-gray-600">{post.excerpt}</p>
-										)}
-									</div>
-									{post.category && (
-										<span class="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-full">
-											{post.category.title}
-										</span>
-									)}
-								</div>
-							</a>
-						))}
-					</div>
-				</div>
-			)}
-			
-			<div class="mt-8 text-center">
-				<a href="/posts" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-					View All Articles →
-				</a>
-			</div>
-			
-			<div class="mt-12 text-center">
-				<h3 class="text-lg text-gray-600 mb-2">Deployment Status</h3>
-				<p class="text-sm text-gray-500">
-					GitHub: github-relocation | Vercel: vercel-relocation | Production: relocation.quest
-				</p>
-			</div>
-		</div>
-	</main>
+<Layout title="Relocation Quest - International Relocation & Golden Visa Guides">
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-5xl font-bold text-blue-900 mb-6">
+            Your Guide to Global Living
+          </h1>
+          <p class="text-xl text-gray-700 mb-8">
+            Expert guidance on international relocation, golden visas, tax optimisation, and building your dream life abroad.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/posts" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+              Browse All Guides
+            </a>
+            <a href="/visas/" class="inline-block bg-white text-blue-600 border-2 border-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+              Visa Requirements
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Article -->
+    {featuredPost && (
+      <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold text-center mb-8">Featured Guide</h2>
+          <a href={`/posts/${featuredPost.slug.current}`} class="block max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+            <div class="md:flex">
+              {featuredPost.featuredImage?.asset?.url && (
+                <div class="md:w-1/2">
+                  <img 
+                    src={getFeaturedImageUrl(featuredPost.featuredImage.asset.url)} 
+                    alt={featuredPost.featuredImage.alt || featuredPost.title}
+                    class="w-full h-64 md:h-full object-cover"
+                  />
+                </div>
+              )}
+              <div class="p-8 md:w-1/2">
+                {featuredPost.categories && featuredPost.categories.length > 0 && (
+                  <div class="flex gap-2 mb-4">
+                    {featuredPost.categories.map(cat => (
+                      <span class="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-full">
+                        {cat.icon} {cat.title}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <h3 class="text-2xl font-bold text-gray-800 mb-3">{featuredPost.title}</h3>
+                {featuredPost.excerpt && (
+                  <p class="text-gray-600 mb-4">{featuredPost.excerpt}</p>
+                )}
+                <span class="text-blue-600 font-semibold hover:text-blue-700">
+                  Read Full Guide →
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+    )}
+
+    <!-- Recent Articles -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8">Latest Relocation Guides</h2>
+        
+        {recentPosts.length > 0 ? (
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {recentPosts.map(post => (
+              <article class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow overflow-hidden">
+                {post.featuredImage?.asset?.url && (
+                  <a href={`/posts/${post.slug.current}`}>
+                    <img 
+                      src={getFeaturedImageUrl(post.featuredImage.asset.url)} 
+                      alt={post.featuredImage.alt || post.title}
+                      class="w-full h-48 object-cover"
+                    />
+                  </a>
+                )}
+                <div class="p-6">
+                  {post.categories && post.categories.length > 0 && (
+                    <div class="flex gap-2 mb-3 flex-wrap">
+                      {post.categories.slice(0, 2).map(cat => (
+                        <span class="text-xs text-blue-600 font-semibold">
+                          {cat.title}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  <h3 class="text-xl font-bold mb-2">
+                    <a href={`/posts/${post.slug.current}`} class="text-gray-800 hover:text-blue-600">
+                      {post.title}
+                    </a>
+                  </h3>
+                  {post.excerpt && (
+                    <p class="text-gray-600 text-sm mb-4 line-clamp-3">{post.excerpt}</p>
+                  )}
+                  <div class="flex justify-between items-center text-sm text-gray-500">
+                    <time datetime={post.publishedAt}>
+                      {new Date(post.publishedAt).toLocaleDateString('en-GB')}
+                    </time>
+                    {post.searchVolume && (
+                      <span>{post.searchVolume.toLocaleString()} searches/mo</span>
+                    )}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <div class="text-center py-12">
+            <p class="text-gray-600 mb-4">No articles published yet.</p>
+            <p class="text-gray-500">Check back soon for expert guides on international relocation!</p>
+          </div>
+        )}
+        
+        {recentPosts.length > 0 && (
+          <div class="mt-12 text-center">
+            <a href="/posts" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+              View All Articles →
+            </a>
+          </div>
+        )}
+      </div>
+    </section>
+
+    <!-- Content Categories -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8">Explore by Topic</h2>
+        <div class="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          <a href="/visas/" class="block p-6 bg-blue-50 rounded-lg text-center hover:bg-blue-100 transition-colors">
+            <span class="text-3xl mb-3 block">📄</span>
+            <h3 class="font-semibold text-blue-900">Visa Guides</h3>
+            <p class="text-sm text-gray-600 mt-2">Golden & Digital Nomad Visas</p>
+          </a>
+          <a href="/taxes/" class="block p-6 bg-green-50 rounded-lg text-center hover:bg-green-100 transition-colors">
+            <span class="text-3xl mb-3 block">💰</span>
+            <h3 class="font-semibold text-green-900">Tax Planning</h3>
+            <p class="text-sm text-gray-600 mt-2">Exit Tax & Optimisation</p>
+          </a>
+          <a href="/countries/" class="block p-6 bg-purple-50 rounded-lg text-center hover:bg-purple-100 transition-colors">
+            <span class="text-3xl mb-3 block">🌍</span>
+            <h3 class="font-semibold text-purple-900">Countries</h3>
+            <p class="text-sm text-gray-600 mt-2">Destination Guides</p>
+          </a>
+          <a href="/posts" class="block p-6 bg-orange-50 rounded-lg text-center hover:bg-orange-100 transition-colors">
+            <span class="text-3xl mb-3 block">📚</span>
+            <h3 class="font-semibold text-orange-900">All Guides</h3>
+            <p class="text-sm text-gray-600 mt-2">Complete Resource Library</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>
+
+<style>
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
