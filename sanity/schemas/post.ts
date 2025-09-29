@@ -137,10 +137,18 @@ export default defineType({
     }),
     defineField({
       name: 'videoUrl',
-      title: 'Optional Video URL',
-      type: 'url',
+      title: 'MUX Video Playback ID',
+      type: 'string',
       group: 'media',
-      description: 'MUX video URL if available (optional enhancement)'
+      description: 'MUX Playback ID (e.g., ywv6R4Ht6P0089VKJN1KynQ00VCT401uxSqxrlqg1ML01eU) - optional',
+      validation: Rule => Rule.custom(value => {
+        if (!value) return true; // Optional field
+        // MUX playback IDs are typically 20-50 alphanumeric characters
+        if (!/^[a-zA-Z0-9]{20,50}$/.test(value)) {
+          return 'Please enter a valid MUX Playback ID (alphanumeric, 20-50 characters)'
+        }
+        return true;
+      })
     }),
 
     // SEO Fields

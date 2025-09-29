@@ -145,13 +145,13 @@ const content = renderContent(post.body);
             day: 'numeric'
           })}
         </time>
-        {post.searchVolume && (
+        {import.meta.env.DEV && post.searchVolume && (
           <>
             <span>•</span>
             <span>{post.searchVolume} searches/month</span>
           </>
         )}
-        {post.cpc && (
+        {import.meta.env.DEV && post.cpc && (
           <>
             <span>•</span>
             <span>${post.cpc} CPC</span>
@@ -207,8 +207,8 @@ const content = renderContent(post.body);
       </div>
     )}
 
-    <!-- Dev Info -->
-    {post.generationCost && (
+    <!-- Dev Info - Only show in development -->
+    {import.meta.env.DEV && post.generationCost && (
       <div class="mt-8 p-4 bg-gray-50 rounded-lg text-sm text-gray-600">
         <p>Content Tier: {post.contentTier}</p>
         <p>Focus Keyword: {post.focusKeyword}</p>
