@@ -3,12 +3,9 @@ import Layout from '../../layouts/Layout.astro';
 import { sanityClient } from '../../lib/sanity';
 
 export async function getStaticPaths() {
-  const posts = await sanityClient.fetch(`
-    *[_type == "post"] {
-      slug
-    }
-  `);
-
+  const posts = await sanityClient.fetch(
+    `*[_type == "post"] { slug }`
+  );
   return posts.map(post => ({
     params: { slug: post.slug.current }
   }));
@@ -16,30 +13,17 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params;
 
-// Fetch the specific post
-const post = await sanityClient.fetch(`
-  *[_type == "post" && slug.current == $slug][0] {
+// Fetch complete post data
+const post = await sanityClient.fetch(
+  `*[_type == "post" && slug.current == $slug][0] {
     _id,
     title,
     slug,
     excerpt,
-    body[] {
-      ...,
-      _type == 'image' => {
-        ...,
-        asset-> {
-          url,
-          metadata {
-            dimensions
-          }
-        }
-      }
-    },
+    body,
     publishedAt,
     featuredImage {
-      asset-> {
-        url
-      },
+      asset-> { url },
       alt,
       credit
     },
@@ -59,87 +43,75 @@ const post = await sanityClient.fetch(`
     cpc,
     contentTier,
     generationCost
-  }
-`, { slug });
+  }`,
+  { slug }
+);
 
 if (!post) {
   return Astro.redirect('/404');
 }
 
-// Enhanced portable text renderer with links and proper image handling
-function renderPortableText(blocks) {
+const pageTitle = post.metaTitle || post.title;
+const pageDescription = post.metaDescription || post.excerpt;
+
+// Extract MUX video ID if present
+function getMuxId(url) {
+  if (!url) return null;
+  const match = url.match(/([a-zA-Z0-9]{20,})/);
+  return match ? match[1] : null;
+}
+
+// Render portable text content
+function renderContent(blocks) {
   if (!blocks) return '';
   
   return blocks.map(block => {
     if (block._type === 'block') {
       const style = block.style || 'normal';
-      
-      // Process children with mark definitions (for links)
       const children = block.children?.map(child => {
         if (child._type === 'span') {
           let text = child.text || '';
           
-          // Handle marks (bold, italic, code, links)
-          if (child.marks && child.marks.length > 0) {
-            child.marks.forEach(mark => {
-              if (mark === 'strong') {
-                text = `<strong>${text}</strong>`;
-              } else if (mark === 'em') {
-                text = `<em>${text}</em>`;
-              } else if (mark === 'code') {
-                text = `<code class="bg-gray-100 px-1 py-0.5 rounded">${text}</code>`;
-              } else {
-                // Handle links via markDefs
-                const markDef = block.markDefs?.find(def => def._key === mark);
-                if (markDef && markDef._type === 'link') {
-                  const isExternal = markDef.href?.startsWith('http');
-                  const linkClass = isExternal 
-                    ? 'text-blue-600 hover:text-blue-800 underline' 
-                    : 'text-blue-600 hover:text-blue-800 underline';
-                  const target = isExternal ? ' target="_blank" rel="noopener noreferrer"' : '';
-                  text = `<a href="${markDef.href}" class="${linkClass}"${target}>${text}</a>`;
-                }
-              }
-            });
-          }
+          // Apply marks
+          if (child.marks?.includes('strong')) text = `<strong>${text}</strong>`;
+          if (child.marks?.includes('em')) text = `<em>${text}</em>`;
+          if (child.marks?.includes('code')) text = `<code class="bg-gray-100 px-1 rounded">${text}</code>`;
+          
+          // Handle links
+          child.marks?.forEach(mark => {
+            const markDef = block.markDefs?.find(def => def._key === mark);
+            if (markDef?._type === 'link') {
+              const external = markDef.href?.startsWith('http');
+              text = `<a href="${markDef.href}" class="text-blue-600 hover:text-blue-800 underline"${external ? ' target="_blank"' : ''}>${text}</a>`;
+            }
+          });
+          
           return text;
         }
         return '';
       }).join('');
       
-      switch(style) {
-        case 'h2': return `<h2 class="text-3xl font-bold mt-8 mb-4">${children}</h2>`;
-        case 'h3': return `<h3 class="text-2xl font-bold mt-6 mb-3">${children}</h3>`;
-        case 'h4': return `<h4 class="text-xl font-bold mt-4 mb-2">${children}</h4>`;
-        case 'blockquote': return `<blockquote class="border-l-4 border-blue-500 pl-4 my-4 italic">${children}</blockquote>`;
-        default: return `<p class="mb-4 leading-relaxed">${children}</p>`;
-      }
-    } else if (block._type === 'image') {
-      const imageUrl = block.asset?.url || '';
-      const alt = block.alt || '';
-      const caption = block.caption || '';
-      
-      return `
-        <figure class="my-8">
-          <img src="${imageUrl}" alt="${alt}" class="w-full rounded-lg shadow-lg" loading="lazy" />
-          ${caption ? `<figcaption class="text-sm text-gray-600 text-center mt-2">${caption}</figcaption>` : ''}
-        </figure>
-      `;
+      // Apply styles
+      if (style === 'h2') return `<h2 class="text-3xl font-bold mt-8 mb-4">${children}</h2>`;
+      if (style === 'h3') return `<h3 class="text-2xl font-bold mt-6 mb-3">${children}</h3>`;
+      if (style === 'h4') return `<h4 class="text-xl font-bold mt-4 mb-2">${children}</h4>`;
+      if (style === 'blockquote') return `<blockquote class="border-l-4 border-blue-500 pl-4 my-4 italic">${children}</blockquote>`;
+      return `<p class="mb-4 leading-relaxed">${children}</p>`;
     }
+    
+    // Handle images
+    if (block._type === 'image') {
+      const url = block.asset?.url || '';
+      const alt = block.alt || '';
+      return `<figure class="my-8"><img src="${url}" alt="${alt}" class="w-full rounded-lg shadow-lg" /></figure>`;
+    }
+    
     return '';
   }).join('');
 }
 
-// Extract MUX video ID from URL if it's a MUX video
-function getMuxVideoId(url) {
-  if (!url) return null;
-  // MUX playback IDs are typically alphanumeric strings
-  const match = url.match(/([a-zA-Z0-9]{20,})/);
-  return match ? match[1] : null;
-}
-
-const pageTitle = post.metaTitle || post.title;
-const pageDescription = post.metaDescription || post.excerpt;
+const muxId = getMuxId(post.videoUrl);
+const content = renderContent(post.body);
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
@@ -153,7 +125,7 @@ const pageDescription = post.metaDescription || post.excerpt;
       <span class="text-gray-600">{post.title}</span>
     </nav>
 
-    <!-- Article Header -->
+    <!-- Header -->
     <header class="mb-8">
       {post.category && (
         <span class="text-blue-600 font-semibold uppercase text-sm">
@@ -164,10 +136,10 @@ const pageDescription = post.metaDescription || post.excerpt;
       
       <div class="flex items-center gap-4 text-gray-600">
         <time datetime={post.publishedAt}>
-          {new Date(post.publishedAt).toLocaleDateString('en-US', { 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
+          {post.publishedAt && new Date(post.publishedAt).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
           })}
         </time>
         {post.searchVolume && (
@@ -185,13 +157,12 @@ const pageDescription = post.metaDescription || post.excerpt;
       </div>
     </header>
 
-    <!-- Featured Image or Video -->
-    {post.videoUrl && getMuxVideoId(post.videoUrl) ? (
+    <!-- Featured Media -->
+    {muxId ? (
       <div class="mb-8">
         <mux-player
-          playback-id={getMuxVideoId(post.videoUrl)}
+          playback-id={muxId}
           metadata-video-title={post.title}
-          metadata-viewer-user-id="user-id-007"
           accent-color="#10b981"
           controls
           class="w-full rounded-lg shadow-lg"
@@ -213,8 +184,8 @@ const pageDescription = post.metaDescription || post.excerpt;
       </figure>
     )}
 
-    <!-- Article Content -->
-    <div class="prose prose-lg max-w-none" set:html={renderPortableText(post.body)} />
+    <!-- Content -->
+    <div class="prose prose-lg max-w-none" set:html={content} />
 
     <!-- Tags -->
     {post.tags && post.tags.length > 0 && (
@@ -230,7 +201,7 @@ const pageDescription = post.metaDescription || post.excerpt;
       </div>
     )}
 
-    <!-- Article Metadata (for development) -->
+    <!-- Dev Info -->
     {post.generationCost && (
       <div class="mt-8 p-4 bg-gray-50 rounded-lg text-sm text-gray-600">
         <p>Content Tier: {post.contentTier}</p>
