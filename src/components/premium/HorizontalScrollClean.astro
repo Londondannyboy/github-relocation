@@ -1,0 +1,164 @@
+---
+interface Location {
+  id: string;
+  name: string;
+  subtitle: string;
+  image: string;
+}
+
+interface Props {
+  title: string;
+  locations: Location[];
+}
+
+const { title, locations } = Astro.props;
+---
+
+<section class="horizontal-scroll-clean relative bg-black overflow-hidden" style="height: calc(100vh * 5)">
+  <div class="sticky top-0 h-screen flex items-center">
+    <div class="scroll-container relative w-full h-full">
+      <!-- Title Overlay -->
+      <div class="absolute top-12 left-12 z-20">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mix-blend-difference">{title}</h2>
+      </div>
+
+      <!-- Image Panels -->
+      <div class="panels-wrapper flex h-full">
+        {locations.map((location, index) => (
+          <div 
+            class="panel flex-shrink-0 w-screen h-full relative group"
+            data-index={index}
+          >
+            <!-- Image -->
+            <div class="absolute inset-0">
+              <img 
+                src={location.image} 
+                alt={location.name}
+                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+              />
+              <!-- Subtle gradient overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+            </div>
+
+            <!-- Minimal Text Overlay -->
+            <div class="absolute bottom-12 left-12 z-10">
+              <h3 class="text-5xl md:text-7xl font-bold text-white mb-2">
+                {location.name}
+              </h3>
+              <p class="text-lg md:text-xl text-white/80 uppercase tracking-wider">
+                {location.subtitle}
+              </p>
+            </div>
+
+            <!-- Index Number -->
+            <div class="absolute top-1/2 right-12 -translate-y-1/2 z-10">
+              <span class="text-[10rem] md:text-[15rem] font-bold text-white/10">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="absolute bottom-0 left-0 right-0 h-1 bg-white/10">
+        <div class="progress-bar h-full bg-white transition-transform duration-100" style="transform: scaleX(0)"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .horizontal-scroll-clean {
+    position: relative;
+  }
+
+  .panels-wrapper {
+    will-change: transform;
+  }
+
+  .panel {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, transparent, rgba(0,0,0,0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 1;
+  }
+
+  .panel:hover::before {
+    opacity: 1;
+  }
+</style>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('.horizontal-scroll-clean');
+
+    sections.forEach(section => {
+      const panels = section.querySelectorAll('.panel');
+      const panelsWrapper = section.querySelector('.panels-wrapper');
+      const progressBar = section.querySelector('.progress-bar');
+      
+      if (!panelsWrapper || panels.length === 0) return;
+
+      const totalWidth = panels.length * window.innerWidth;
+
+      // Horizontal scroll animation
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: "bottom bottom",
+          pin: '.scroll-container',
+          scrub: 1,
+          onUpdate: (self) => {
+            // Update progress bar
+            gsap.set(progressBar, {
+              scaleX: self.progress
+            });
+          }
+        }
+      });
+
+      tl.to(panelsWrapper, {
+        x: -(totalWidth - window.innerWidth),
+        ease: "none"
+      });
+
+      // Parallax effect for images
+      panels.forEach((panel, index) => {
+        const img = panel.querySelector('img');
+        const text = panel.querySelector('h3');
+        
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            start: () => `top+=${index * window.innerHeight} top`,
+            end: () => `top+=${(index + 1) * window.innerHeight} top`,
+            scrub: 1,
+          }
+        })
+        .to(img, {
+          scale: 1.15,
+          x: -50
+        })
+        .to(text, {
+          x: 50,
+          opacity: 0.8
+        }, 0);
+      });
+    });
+  });
+</script>

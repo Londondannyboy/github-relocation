@@ -45,7 +45,8 @@ async function testLumaAPI() {
       body: JSON.stringify({
         prompt: testPrompt,
         aspect_ratio: '16:9',
-        loop: false
+        loop: false,
+        model: 'ray-2'  // Using ray-2 for video generation
       })
     });
     

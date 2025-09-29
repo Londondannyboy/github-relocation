@@ -1,0 +1,258 @@
+---
+const navItems = [
+  { label: "Neighborhoods", href: "#neighborhoods" },
+  { label: "Resources", href: "#resources" },
+  { label: "Articles", href: "#articles" },
+  { label: "About", href: "#about" },
+];
+---
+
+<nav class="navigation fixed top-0 left-0 right-0 z-50 mix-blend-difference">
+  <div class="nav-container px-6 md:px-12 py-6">
+    <div class="nav-wrapper flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="logo group">
+        <div class="logo-text text-2xl md:text-3xl font-bold text-white">
+          <span class="logo-main">LOCAL</span>
+          <span class="logo-dot text-blue-400">.</span>
+        </div>
+        <div class="logo-line h-0.5 w-0 bg-white group-hover:w-full transition-all duration-500"></div>
+      </a>
+
+      <!-- Desktop Menu -->
+      <div class="desktop-menu hidden md:flex items-center gap-8">
+        {navItems.map((item) => (
+          <a 
+            href={item.href} 
+            class="nav-link relative text-white font-medium text-sm uppercase tracking-wider group"
+          >
+            <span class="link-text">{item.label}</span>
+            <span class="link-underline"></span>
+          </a>
+        ))}
+        
+        <!-- CTA Button -->
+        <a 
+          href="#contact" 
+          class="nav-cta ml-4 px-6 py-3 border border-white/30 rounded-full text-white text-sm uppercase tracking-wider hover:bg-white hover:text-black transition-all duration-300"
+        >
+          Get Started
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="menu-toggle md:hidden relative w-8 h-8 flex items-center justify-center">
+        <span class="menu-icon relative">
+          <span class="menu-line top"></span>
+          <span class="menu-line middle"></span>
+          <span class="menu-line bottom"></span>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu fixed inset-0 bg-black transform translate-x-full transition-transform duration-500">
+    <div class="mobile-menu-content flex flex-col items-center justify-center h-full">
+      {navItems.map((item, index) => (
+        <a 
+          href={item.href}
+          class="mobile-link text-4xl font-bold text-white mb-6 opacity-0"
+          style={`animation-delay: ${index * 0.1}s`}
+        >
+          {item.label}
+        </a>
+      ))}
+      <a 
+        href="#contact" 
+        class="mobile-cta mt-8 px-8 py-4 border-2 border-white text-white text-lg uppercase tracking-wider opacity-0"
+        style="animation-delay: 0.4s"
+      >
+        Get Started
+      </a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .navigation {
+    backdrop-filter: blur(10px);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
+  }
+
+  .navigation.scrolled {
+    background: rgba(0,0,0,0.9);
+    backdrop-filter: blur(20px);
+  }
+
+  /* Logo animation */
+  .logo-text {
+    position: relative;
+    display: inline-block;
+  }
+
+  .logo-main {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  .logo:hover .logo-main {
+    transform: translateX(-2px);
+  }
+
+  .logo-dot {
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+
+  .logo:hover .logo-dot {
+    transform: scale(1.5);
+    color: #60a5fa;
+  }
+
+  /* Nav link animations */
+  .nav-link {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .link-text {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  .link-underline {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #60a5fa, #a78bfa);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+
+  .nav-link:hover .link-underline {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .nav-link:hover .link-text {
+    transform: translateY(-2px);
+  }
+
+  /* Mobile menu styles */
+  .menu-line {
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: white;
+    transition: all 0.3s ease;
+  }
+
+  .menu-line.top {
+    transform: translateY(-8px);
+  }
+
+  .menu-line.bottom {
+    transform: translateY(8px);
+  }
+
+  .menu-toggle.active .menu-line.top {
+    transform: translateY(0) rotate(45deg);
+  }
+
+  .menu-toggle.active .menu-line.middle {
+    opacity: 0;
+  }
+
+  .menu-toggle.active .menu-line.bottom {
+    transform: translateY(0) rotate(-45deg);
+  }
+
+  .mobile-menu.active {
+    transform: translateX(0);
+  }
+
+  .mobile-menu.active .mobile-link,
+  .mobile-menu.active .mobile-cta {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 1;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Magnetic effect */
+  @media (hover: hover) {
+    .nav-link {
+      transition: transform 0.2s ease;
+    }
+  }
+</style>
+
+<script>
+  import gsap from 'gsap';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const nav = document.querySelector('.navigation');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Scroll effect
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      
+      if (currentScroll > 100) {
+        nav?.classList.add('scrolled');
+      } else {
+        nav?.classList.remove('scrolled');
+      }
+
+      lastScroll = currentScroll;
+    });
+
+    // Mobile menu toggle
+    menuToggle?.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      mobileMenu?.classList.toggle('active');
+      document.body.style.overflow = mobileMenu?.classList.contains('active') ? 'hidden' : '';
+    });
+
+    // Magnetic hover effect for nav links
+    navLinks.forEach(link => {
+      link.addEventListener('mousemove', (e) => {
+        const rect = link.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        
+        gsap.to(link, {
+          x: x * 0.3,
+          y: y * 0.3,
+          duration: 0.3,
+          ease: 'power2.out'
+        });
+      });
+
+      link.addEventListener('mouseleave', () => {
+        gsap.to(link, {
+          x: 0,
+          y: 0,
+          duration: 0.3,
+          ease: 'power2.out'
+        });
+      });
+    });
+  });
+</script>

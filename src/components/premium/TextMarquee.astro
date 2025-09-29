@@ -1,0 +1,112 @@
+---
+interface Props {
+  texts: string[];
+  speed?: number;
+  gradient?: boolean;
+}
+
+const { texts, speed = 40, gradient = false } = Astro.props;
+---
+
+<div class="marquee-container overflow-hidden" data-speed={speed}>
+  <div class="marquee-wrapper flex">
+    <div class="marquee-content flex items-center gap-16 animate-marquee">
+      {texts.map((text) => (
+        <>
+          <span class="marquee-text text-6xl md:text-8xl font-bold uppercase whitespace-nowrap">
+            {text}
+          </span>
+          <span class="marquee-separator text-4xl">•</span>
+        </>
+      ))}
+    </div>
+    <div class="marquee-content flex items-center gap-16 animate-marquee" aria-hidden="true">
+      {texts.map((text) => (
+        <>
+          <span class="marquee-text text-6xl md:text-8xl font-bold uppercase whitespace-nowrap">
+            {text}
+          </span>
+          <span class="marquee-separator text-4xl">•</span>
+        </>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style define:vars={{ speed: `${speed}s` }}>
+  .marquee-container {
+    --gradient-mask: linear-gradient(
+      90deg,
+      transparent,
+      black 20%,
+      black 80%,
+      transparent
+    );
+    -webkit-mask-image: var(--gradient-mask);
+    mask-image: var(--gradient-mask);
+  }
+
+  .marquee-wrapper {
+    width: max-content;
+  }
+
+  .marquee-content {
+    animation: marquee var(--speed) linear infinite;
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .marquee-text {
+    background: linear-gradient(
+      90deg,
+      #3b82f6,
+      #8b5cf6,
+      #ec4899,
+      #3b82f6
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 3s linear infinite;
+  }
+
+  @keyframes gradient {
+    to {
+      background-position: 200% center;
+    }
+  }
+
+  .marquee-separator {
+    color: #8b5cf6;
+  }
+</style>
+
+<script>
+  import gsap from "gsap";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const marqueeContainers = document.querySelectorAll(".marquee-container");
+    
+    marqueeContainers.forEach((container) => {
+      const speed = parseInt(container.getAttribute("data-speed") || "40");
+      const wrapper = container.querySelector(".marquee-wrapper");
+      
+      // Pause on hover
+      container.addEventListener("mouseenter", () => {
+        gsap.to(wrapper, { animationPlayState: "paused", duration: 0 });
+      });
+      
+      container.addEventListener("mouseleave", () => {
+        gsap.to(wrapper, { animationPlayState: "running", duration: 0 });
+      });
+    });
+  });
+</script>

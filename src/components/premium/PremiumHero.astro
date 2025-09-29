@@ -1,0 +1,229 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  cta?: {
+    text: string;
+    href: string;
+  };
+  image?: string;
+  style?: "elementis" | "radga" | "minimal" | "luxury";
+}
+
+const { 
+  title, 
+  subtitle, 
+  cta, 
+  image = "/placeholder-hero.jpg",
+  style = "elementis" 
+} = Astro.props;
+---
+
+<section 
+  class:list={[
+    "hero relative overflow-hidden",
+    {
+      "hero-elementis": style === "elementis",
+      "hero-radga": style === "radga",
+      "hero-minimal": style === "minimal",
+      "hero-luxury": style === "luxury",
+    }
+  ]}
+>
+  <!-- Background Image with Parallax -->
+  {image && (
+    <div class="hero-background absolute inset-0 z-0" data-gsap="parallax" data-speed="0.3">
+      <img 
+        src={image} 
+        alt="" 
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-black/60"></div>
+    </div>
+  )}
+
+  <!-- Content Container -->
+  <div class="hero-content relative z-10 container min-h-screen flex items-center">
+    <div class="hero-text max-w-4xl">
+      <h1 
+        class="hero-title text-white mb-6"
+        data-gsap="fade-up"
+      >
+        {title}
+      </h1>
+      
+      {subtitle && (
+        <p 
+          class="hero-subtitle text-white/90 mb-8"
+          data-gsap="fade-up"
+          style="animation-delay: 0.2s"
+        >
+          {subtitle}
+        </p>
+      )}
+      
+      {cta && (
+        <a 
+          href={cta.href}
+          class="hero-cta inline-block"
+          data-gsap="fade-up"
+          style="animation-delay: 0.4s"
+        >
+          <span>{cta.text}</span>
+          <svg class="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      )}
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10" data-gsap="fade-in">
+    <div class="scroll-indicator">
+      <span class="block w-6 h-10 border-2 border-white/50 rounded-full relative">
+        <span class="block w-1 h-2 bg-white rounded-full absolute left-1/2 -translate-x-1/2 top-2 animate-bounce"></span>
+      </span>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Elementis Style - Minimalist Elegance */
+  .hero-elementis {
+    background: linear-gradient(to bottom right, #064e3b, #57534e);
+  }
+  
+  .hero-elementis .hero-title {
+    font-weight: 300;
+    letter-spacing: -0.025em;
+    font-size: var(--font-size-5xl);
+  }
+  
+  .hero-elementis .hero-subtitle {
+    font-weight: 300;
+    font-size: 1.125rem;
+  }
+  @media (min-width: 768px) {
+    .hero-elementis .hero-subtitle {
+      font-size: 1.25rem;
+    }
+  }
+  
+  .hero-elementis .hero-cta {
+    padding: 1rem 2rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 9999px;
+    transition: all 0.3s;
+  }
+  .hero-elementis .hero-cta:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Radga Style - Clean Professional */
+  .hero-radga {
+    background: linear-gradient(to bottom right, #f9fafb, #f3f4f6);
+  }
+  
+  .hero-radga .hero-title {
+    font-weight: 700;
+    color: #111827;
+    font-size: var(--font-size-4xl);
+  }
+  
+  .hero-radga .hero-subtitle {
+    color: #374151;
+    font-size: 1.125rem;
+  }
+  
+  .hero-radga .hero-cta {
+    padding: 1rem 2rem;
+    background-color: #111827;
+    color: white;
+    border-radius: 0.5rem;
+    transition: all 0.3s;
+  }
+  .hero-radga .hero-cta:hover {
+    background-color: #1f2937;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: translateY(-0.25rem);
+  }
+
+  /* Minimal Style - Typography Focus */
+  .hero-minimal {
+    background-color: white;
+    min-height: 100vh;
+  }
+  
+  .hero-minimal .hero-title {
+    color: #111827;
+    font-weight: 300;
+    font-size: var(--font-size-5xl);
+    line-height: 0.9;
+  }
+  
+  .hero-minimal .hero-subtitle {
+    color: #4b5563;
+    font-weight: 300;
+  }
+  
+  .hero-minimal .hero-cta {
+    color: #111827;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    transition: all 0.3s;
+  }
+  .hero-minimal .hero-cta:hover {
+    text-decoration: none;
+  }
+
+  /* Luxury Style - Premium Real Estate */
+  .hero-luxury {
+    background: linear-gradient(to bottom, #172554, #1e3a8a);
+  }
+  
+  .hero-luxury .hero-title {
+    font-family: serif;
+    letter-spacing: 0.1em;
+    font-size: var(--font-size-4xl);
+    text-transform: uppercase;
+  }
+  
+  .hero-luxury .hero-subtitle {
+    font-weight: 300;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+  
+  .hero-luxury .hero-cta {
+    padding: 1.25rem 2.5rem;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.2em;
+    transition: all 0.5s;
+  }
+  .hero-luxury .hero-cta:hover {
+    background-color: white;
+    color: #172554;
+  }
+
+  /* Common animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .scroll-indicator {
+    animation: float 3s ease-in-out infinite;
+  }
+</style>

@@ -1,0 +1,123 @@
+---
+// Adapter component to transform Sanity data for premium components
+import { sanityClient } from '../../lib/sanity';
+
+export interface Props {
+  type: 'posts' | 'categories' | 'countries';
+  limit?: number;
+}
+
+const { type, limit = 10 } = Astro.props;
+
+// Fetch data based on type
+let data = [];
+
+switch(type) {
+  case 'posts':
+    data = await sanityClient.fetch(`
+      *[_type == "post" && !(_id in path("drafts.*"))] | order(publishedAt desc)[0...${limit}] {
+        _id,
+        title,
+        slug,
+        excerpt,
+        mainImage,
+        featuredImage,
+        videoUrl,
+        categories[]-> {
+          title,
+          slug
+        },
+        publishedAt,
+        readTime
+      }
+    `);
+    break;
+    
+  case 'categories':
+    data = await sanityClient.fetch(`
+      *[_type == "category"] | order(title)[0...${limit}] {
+        _id,
+        title,
+        slug,
+        description,
+        "postCount": count(*[_type == "post" && references(^._id)])
+      }
+    `);
+    break;
+    
+  case 'countries':
+    data = await sanityClient.fetch(`
+      *[_type == "country"] | order(name)[0...${limit}] {
+        _id,
+        name,
+        slug,
+        description,
+        image,
+        "postCount": count(*[_type == "post" && references(^._id)])
+      }
+    `);
+    break;
+}
+
+// Transform data for premium components
+const transformedData = data.map((item, index) => {
+  if (type === 'posts') {
+    return {
+      id: item._id,
+      title: item.title,
+      description: item.excerpt,
+      href: `/posts/${item.slug?.current}`,
+      image: item.featuredImage?.asset?.url || item.mainImage?.asset?.url || `/api/placeholder/800/600`,
+      video: item.videoUrl,
+      category: item.categories?.[0]?.title || 'General',
+      readTime: item.readTime || 5,
+      index: index + 1
+    };
+  }
+  
+  if (type === 'categories') {
+    return {
+      id: item._id,
+      title: item.title,
+      description: item.description || `Explore ${item.postCount} articles about ${item.title}`,
+      href: `/categories/${item.slug?.current}`,
+      count: item.postCount,
+      color: getColorForIndex(index),
+      index: index + 1
+    };
+  }
+  
+  if (type === 'countries') {
+    return {
+      id: item._id,
+      title: item.name,
+      description: item.description || `Discover relocation guides for ${item.name}`,
+      href: `/countries/${item.slug?.current}`,
+      image: item.image?.asset?.url || `/api/placeholder/800/600`,
+      count: item.postCount,
+      index: index + 1
+    };
+  }
+  
+  return item;
+});
+
+// Helper function to generate colors
+function getColorForIndex(index) {
+  const colors = [
+    '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', 
+    '#FFEAA7', '#DDA0DD', '#98D8C8', '#FFB6C1'
+  ];
+  return colors[index % colors.length];
+}
+---
+
+<div data-sanity-adapter data-type={type}>
+  <slot data={transformedData} />
+</div>
+
+<script define:vars={{ transformedData, type }}>
+  // Make data available to child components
+  window.sanityData = window.sanityData || {};
+  window.sanityData[type] = transformedData;
+</script>

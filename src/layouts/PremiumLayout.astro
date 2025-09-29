@@ -1,0 +1,134 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const { title, description = 'Premium relocation guides and destination insights', image } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {image && <meta property="og:image" content={image} />}
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <title>{title}</title>
+    
+    <!-- Import Premium Styles -->
+    <style>
+      @import '../styles/premium-global.css';
+    </style>
+  </head>
+  <body>
+    <slot />
+    
+    <!-- GSAP & Animation Scripts -->
+    <script>
+      import { gsap } from 'gsap';
+      import { ScrollTrigger } from 'gsap/ScrollTrigger';
+      import Lenis from 'lenis';
+      import SplitType from 'split-type';
+      
+      // Register GSAP plugins
+      gsap.registerPlugin(ScrollTrigger);
+      
+      // Initialize Lenis smooth scrolling
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smooth: true,
+        mouseMultiplier: 1,
+        touchMultiplier: 2,
+      });
+      
+      // Connect Lenis to GSAP ScrollTrigger
+      lenis.on('scroll', ScrollTrigger.update);
+      
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+      });
+      
+      gsap.ticker.lagSmoothing(0);
+      
+      // Make utilities globally available
+      window.gsap = gsap;
+      window.ScrollTrigger = ScrollTrigger;
+      window.lenis = lenis;
+      window.SplitType = SplitType;
+      
+      // Initialize animations after DOM load
+      document.addEventListener('DOMContentLoaded', () => {
+        // Refresh ScrollTrigger after all content loads
+        ScrollTrigger.refresh();
+        
+        // Split text animations
+        const splitTexts = document.querySelectorAll('[data-split-text]');
+        splitTexts.forEach(text => {
+          const split = new SplitType(text, { 
+            types: 'lines,words,chars',
+            tagName: 'span'
+          });
+          
+          // Add animation classes
+          split.lines.forEach(line => {
+            line.style.overflow = 'hidden';
+          });
+        });
+        
+        // Fade in animations
+        gsap.utils.toArray('[data-fade-in]').forEach(element => {
+          gsap.fromTo(element, 
+            {
+              opacity: 0,
+              y: 50
+            },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 1,
+              scrollTrigger: {
+                trigger: element,
+                start: 'top 90%',
+                toggleActions: 'play none none reverse'
+              }
+            }
+          );
+        });
+        
+        // Parallax effects
+        gsap.utils.toArray('[data-parallax]').forEach(element => {
+          const speed = element.dataset.parallaxSpeed || 0.5;
+          gsap.to(element, {
+            yPercent: -50 * speed,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: element,
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: true
+            }
+          });
+        });
+      });
+      
+      // Handle page transitions
+      document.addEventListener('astro:page-load', () => {
+        ScrollTrigger.refresh();
+        lenis.scrollTo(0, { immediate: true });
+      });
+    </script>
+  </body>
+</html>

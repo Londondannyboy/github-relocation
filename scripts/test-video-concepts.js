@@ -168,12 +168,7 @@ async function generateLumaVideo(prompt, options = {}) {
       prompt: prompt.prompt,
       aspect_ratio: prompt.aspectRatio || '16:9',
       loop: false,
-      keyframes: {
-        frame0: {
-          type: "generation",
-          prompt: prompt.prompt
-        }
-      }
+      model: 'ray-2'  // Required field for Luma API
     })
   });
   

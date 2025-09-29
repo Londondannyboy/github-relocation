@@ -1,0 +1,229 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  words?: string[];
+}
+
+const { title, subtitle, words = ["Innovative", "Modern", "Premium", "Sophisticated"] } = Astro.props;
+---
+
+<section class="split-hero min-h-screen flex items-center justify-center relative overflow-hidden bg-black text-white">
+  <!-- Background gradient animation -->
+  <div class="absolute inset-0 opacity-50">
+    <div class="gradient-bg absolute inset-0"></div>
+  </div>
+
+  <div class="container relative z-10">
+    <div class="max-w-6xl mx-auto">
+      <!-- Animated words carousel -->
+      <div class="rotating-words h-24 md:h-32 mb-8 overflow-hidden">
+        {words.map((word, index) => (
+          <div 
+            class="word-item text-6xl md:text-8xl font-bold"
+            data-index={index}
+            style={`animation-delay: ${index * 3}s`}
+          >
+            {word}
+          </div>
+        ))}
+      </div>
+
+      <!-- Main title with split animation -->
+      <h1 class="split-text text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-none">
+        {title}
+      </h1>
+
+      {subtitle && (
+        <p class="fade-up-text text-xl md:text-2xl opacity-80 max-w-3xl">
+          {subtitle}
+        </p>
+      )}
+
+      <!-- Animated line -->
+      <div class="line-animation mt-12 h-1 bg-white overflow-hidden">
+        <div class="line-fill h-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating elements -->
+  <div class="floating-elements absolute inset-0 pointer-events-none">
+    <div class="float-element float-1"></div>
+    <div class="float-element float-2"></div>
+    <div class="float-element float-3"></div>
+  </div>
+</section>
+
+<style>
+  .gradient-bg {
+    background: linear-gradient(
+      45deg,
+      #667eea,
+      #764ba2,
+      #f093fb,
+      #f5576c,
+      #4facfe,
+      #00f2fe
+    );
+    background-size: 300% 300%;
+    animation: gradientShift 15s ease infinite;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .rotating-words {
+    position: relative;
+  }
+
+  .word-item {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(100%);
+    animation: wordRotate 12s infinite;
+    background: linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @keyframes wordRotate {
+    0%, 100% {
+      opacity: 0;
+      transform: translateY(100%) rotateX(90deg);
+    }
+    5%, 20% {
+      opacity: 1;
+      transform: translateY(0) rotateX(0deg);
+    }
+    25%, 40% {
+      opacity: 0;
+      transform: translateY(-100%) rotateX(-90deg);
+    }
+  }
+
+  .split-text {
+    overflow: hidden;
+  }
+
+  .line-animation {
+    width: 200px;
+    position: relative;
+  }
+
+  .line-fill {
+    animation: lineExpand 2s ease-out forwards;
+    animation-delay: 1s;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  @keyframes lineExpand {
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  /* Floating elements */
+  .float-element {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.3;
+  }
+
+  .float-1 {
+    background: #60a5fa;
+    top: -150px;
+    left: -150px;
+    animation: float1 20s infinite;
+  }
+
+  .float-2 {
+    background: #a78bfa;
+    bottom: -150px;
+    right: -150px;
+    animation: float2 15s infinite;
+  }
+
+  .float-3 {
+    background: #f472b6;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: float3 25s infinite;
+  }
+
+  @keyframes float1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(100px, 50px) scale(1.2); }
+  }
+
+  @keyframes float2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-100px, -50px) scale(0.8); }
+  }
+
+  @keyframes float3 {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-40%, -60%) scale(1.1); }
+  }
+</style>
+
+<script>
+  import SplitType from 'split-type';
+  import gsap from 'gsap';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Split text animation
+    const splitTexts = document.querySelectorAll('.split-text');
+    
+    splitTexts.forEach(text => {
+      const split = new SplitType(text as HTMLElement, {
+        types: 'chars,words',
+        tagName: 'span'
+      });
+
+      gsap.from(split.chars, {
+        opacity: 0,
+        y: 100,
+        rotateZ: 10,
+        stagger: {
+          each: 0.02,
+          from: 'random'
+        },
+        duration: 1,
+        ease: 'back.out(1.7)'
+      });
+    });
+
+    // Fade up animation
+    gsap.from('.fade-up-text', {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      delay: 1,
+      ease: 'power3.out'
+    });
+
+    // Parallax on mouse move
+    document.addEventListener('mousemove', (e) => {
+      const mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+      const mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+
+      gsap.to('.float-element', {
+        x: mouseX * 50,
+        y: mouseY * 50,
+        duration: 1,
+        ease: 'power2.out'
+      });
+    });
+  });
+</script>

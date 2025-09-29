@@ -1,0 +1,106 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  theme?: "light" | "dark" | "gradient" | "accent";
+  spacing?: "normal" | "large" | "small";
+  id?: string;
+}
+
+const { 
+  title, 
+  subtitle, 
+  theme = "light",
+  spacing = "normal",
+  id
+} = Astro.props;
+
+const themeClasses = {
+  light: "section-light",
+  dark: "section-dark",
+  gradient: "section-gradient",
+  accent: "section-accent",
+};
+
+const spacingClasses = {
+  small: "py-12 md:py-16",
+  normal: "py-16 md:py-24",
+  large: "py-24 md:py-32",
+};
+---
+
+<section 
+  id={id}
+  class:list={[
+    "section",
+    themeClasses[theme],
+    spacingClasses[spacing]
+  ]}
+>
+  <div class="container">
+    {(title || subtitle) && (
+      <div class="section-header text-center mb-12 md:mb-16">
+        {title && (
+          <h2 
+            class:list={[
+              "section-title mb-4",
+              theme === "dark" || theme === "accent" ? "text-white" : "text-gray-900"
+            ]}
+            data-gsap="fade-up"
+          >
+            {title}
+          </h2>
+        )}
+        {subtitle && (
+          <p 
+            class:list={[
+              "section-subtitle max-w-3xl mx-auto",
+              theme === "dark" || theme === "accent" ? "text-white/80" : "text-gray-600"
+            ]}
+            data-gsap="fade-up"
+            style="animation-delay: 0.1s"
+          >
+            {subtitle}
+          </p>
+        )}
+      </div>
+    )}
+    
+    <div class="section-content">
+      <slot />
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .section-subtitle {
+    font-size: var(--font-size-lg);
+    line-height: 1.6;
+  }
+
+  .section-light {
+    background-color: white;
+    color: #111827;
+  }
+
+  .section-dark {
+    background-color: #111827;
+    color: white;
+  }
+
+  .section-gradient {
+    background: linear-gradient(to bottom right, #eff6ff, #e0e7ff);
+    color: #111827;
+  }
+
+  .section-accent {
+    background: linear-gradient(to bottom right, #2563eb, #4f46e5);
+    color: white;
+  }
+</style>

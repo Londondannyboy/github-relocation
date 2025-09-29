@@ -1,0 +1,157 @@
+---
+import PremiumLayout from '../layouts/PremiumLayout.astro';
+import Navigation from '../components/premium/Navigation.astro';
+import VideoRevealHero from '../components/premium/VideoRevealHero.astro';
+import SplitTextHero from '../components/premium/SplitTextHero.astro';
+import HorizontalScrollClean from '../components/premium/HorizontalScrollClean.astro';
+import TextMarquee from '../components/premium/TextMarquee.astro';
+import PremiumSection from '../components/premium/PremiumSection.astro';
+import { sanityClient } from '../lib/sanity';
+
+// Fetch recent posts for the horizontal scroll
+const recentPosts = await sanityClient.fetch(`
+  *[_type == "post" && !(_id in path("drafts.*"))] | order(publishedAt desc)[0...8] {
+    _id,
+    title,
+    slug,
+    excerpt,
+    mainImage,
+    featuredImage,
+    categories[]-> {
+      title,
+      slug
+    },
+    readTime
+  }
+`);
+
+// Transform posts for horizontal scroll
+const scrollItems = recentPosts.map((post, index) => ({
+  id: post._id,
+  title: post.title,
+  description: post.excerpt || 'Discover comprehensive guides for international relocation',
+  href: `/posts/${post.slug?.current}`,
+  image: post.featuredImage?.asset?.url || post.mainImage?.asset?.url || `https://images.pexels.com/photos/${3184360 + index}/pexels-photo-${3184360 + index}.jpeg?auto=compress&cs=tinysrgb&w=1920`,
+  category: post.categories?.[0]?.title || 'Guide',
+  readTime: `${post.readTime || 5} min read`
+}));
+
+// Fetch categories for display
+const categories = await sanityClient.fetch(`
+  *[_type == "category"] | order(title) {
+    title,
+    slug
+  }
+`);
+
+// Location names for marquee
+const locations = [
+  'Dubai', 'Singapore', 'Malta', 'Cyprus', 'Portugal',
+  'Estonia', 'Barbados', 'Croatia', 'Mexico', 'Thailand'
+];
+---
+
+<PremiumLayout title="Relocation Quest Premium - Luxury Relocation Guides">
+  <Navigation />
+  
+  <!-- Video Reveal Hero -->
+  <VideoRevealHero
+    heading="Discover Your Perfect Destination"
+    subheading="Premium relocation guides for discerning global citizens"
+    videoUrl="https://player.vimeo.com/external/434045526.hd.mp4?s=c27eecc69a27dbc4ff2b87d38afc35f4a9e3c701&profile_id=175"
+    ctaText="Explore Destinations"
+    ctaLink="/categories"
+  />
+  
+  <!-- Split Text Hero Section -->
+  <SplitTextHero
+    heading="Relocate with Confidence"
+    subheading="Expert Insights"
+    description="From golden visas to tax optimization, our comprehensive guides cover every aspect of international relocation. Make informed decisions with data-driven insights and expert analysis."
+    backgroundImage="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1920"
+  />
+  
+  <!-- Text Marquee -->
+  <TextMarquee
+    text={locations.join(' • ')}
+    speed={50}
+  />
+  
+  <!-- Recent Articles Horizontal Scroll -->
+  <PremiumSection
+    title="Latest Relocation Guides"
+    subtitle="Expert insights for your international move"
+  >
+    <HorizontalScrollClean items={scrollItems} />
+  </PremiumSection>
+  
+  <!-- Categories Section -->
+  <PremiumSection
+    title="Explore by Category"
+    subtitle="Find guides tailored to your needs"
+    theme="dark"
+  >
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-8">
+      {categories.map((category, index) => (
+        <a 
+          href={`/categories/${category.slug?.current}`}
+          class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-neutral-800 to-neutral-900 p-8 transition-all duration-500 hover:scale-105"
+          data-fade-in
+          style={`animation-delay: ${index * 0.1}s`}
+        >
+          <div class="relative z-10">
+            <h3 class="text-xl font-medium text-white mb-2 group-hover:translate-x-2 transition-transform duration-300">
+              {category.title}
+            </h3>
+            <div class="w-12 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 group-hover:w-full transition-all duration-500" />
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        </a>
+      ))}
+    </div>
+  </PremiumSection>
+  
+  <!-- Call to Action -->
+  <PremiumSection
+    title="Start Your Journey"
+    subtitle="Find your perfect destination today"
+    centered
+  >
+    <div class="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+      <a 
+        href="/posts/dubai-golden-visa-ultimate-guide-2025"
+        class="px-8 py-4 bg-white text-black rounded-full font-medium hover:scale-105 transition-transform duration-300"
+      >
+        Browse Guides
+      </a>
+      <a 
+        href="/categories"
+        class="px-8 py-4 border border-white text-white rounded-full font-medium hover:bg-white hover:text-black transition-all duration-300"
+      >
+        View Categories
+      </a>
+    </div>
+  </PremiumSection>
+  
+  <style>
+    /* Premium page specific styles */
+    :root {
+      --color-primary: #6366f1;
+      --color-secondary: #ec4899;
+    }
+    
+    /* Animation classes */
+    [data-fade-in] {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</PremiumLayout>

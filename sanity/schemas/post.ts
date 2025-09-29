@@ -150,6 +150,23 @@ export default defineType({
         return true;
       })
     }),
+    defineField({
+      name: 'premiumVideoUrl',
+      title: 'Premium Hero Video URL',
+      type: 'string',
+      group: 'media',
+      description: 'Full video URL for premium hero sections (Vimeo, Pexels, or direct MP4 link) - optional',
+      validation: Rule => Rule.custom(value => {
+        if (!value) return true; // Optional field
+        // Basic URL validation
+        try {
+          new URL(value);
+          return true;
+        } catch {
+          return 'Please enter a valid video URL';
+        }
+      })
+    }),
 
     // SEO Fields
     defineField({
