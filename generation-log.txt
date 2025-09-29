@@ -1020,3 +1020,124 @@
 [2025-09-29T23:49:07.869Z] 
 🔍 Checking deployment...
 [2025-09-29T23:49:13.810Z]    ✓ Build successful
+[2025-09-29T23:49:14.575Z]    ✓ Pushed to GitHub
+[2025-09-29T23:49:14.575Z]    ⏳ Waiting for Vercel...
+[2025-09-29T23:50:44.984Z]    ✅ Deployment successful!
+[2025-09-29T23:50:44.985Z] ✅ Batch 7 deployed
+[2025-09-29T23:50:44.986Z] 
+⏳ Pausing before next batch...
+[2025-09-29T23:51:14.988Z] 
+============================================================
+[2025-09-29T23:51:14.989Z] 📦 BATCH 8 of 96
+[2025-09-29T23:51:14.989Z] ============================================================
+[2025-09-29T23:51:14.990Z] 
+📋 Topics for this batch:
+[2025-09-29T23:51:14.990Z]    - best bermuda digital nomad visa
+[2025-09-29T23:51:14.990Z]    - france remote work visa requirements
+[2025-09-29T23:51:14.990Z]    - sweden digital nomad visa requirements
+[2025-09-29T23:51:14.990Z]    - south korea digital nomad visa guide
+[2025-09-29T23:51:14.990Z]    - portugal digital nomad visa requirements
+[2025-09-29T23:51:14.990Z]    - best uganda digital nomad visa
+[2025-09-29T23:51:14.990Z]    - switzerland digital nomad visa cost
+[2025-09-29T23:51:14.990Z]    - digital nomad visa ethiopia
+[2025-09-29T23:51:14.990Z]    - qatar digital nomad visa requirements
+[2025-09-29T23:51:14.990Z]    - italy remote work visa guide
+[2025-09-29T23:51:14.990Z] 
+📝 Generating: Best Bermuda Digital Nomad Visa Complete Guide
+[2025-09-29T23:51:14.991Z]    🔬 Researching...
+[2025-09-29T23:51:22.476Z]    ⚠️ Perplexity research skipped
+[2025-09-29T23:51:22.478Z]    🎨 Generating images...
+[2025-09-29T23:51:36.742Z]    ✍️ Creating content...
+[2025-09-29T23:51:36.743Z]    ✓ 2313 words, 10 links, 4 images
+[2025-09-29T23:51:39.941Z]    ✅ Published successfully: best-bermuda-digital-nomad-visa-complete-guide
+[2025-09-29T23:51:42.943Z] 
+📝 Generating: Sweden Digital Nomad Visa Requirements Complete Guide
+[2025-09-29T23:51:42.944Z]    🔬 Researching...
+[2025-09-29T23:51:45.930Z]    ⚠️ Perplexity research skipped
+[2025-09-29T23:51:45.931Z]    🎨 Generating images...
+[2025-09-29T23:52:01.555Z] ⚠️ Image 1 generation failed: Request to https://api.replicate.com/v1/models/black-forest-labs/flux-schnell/predictions failed with status 502 Bad Gateway: <html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+</body>
+</html>
+.
+[2025-09-29T23:52:29.313Z]    ✍️ Creating content...
+[2025-09-29T23:52:29.315Z]    ✓ 2287 words, 10 links, 3 images
+[2025-09-29T23:52:29.986Z]    ✅ Published successfully: sweden-digital-nomad-visa-requirements-complete-guide
+[2025-09-29T23:52:32.988Z] 
+📝 Generating: South Korea Digital Nomad Visa Guide Complete Guide
+[2025-09-29T23:52:32.989Z]    🔬 Researching...
+[2025-09-29T23:52:39.598Z]    ⚠️ Perplexity research skipped
+[2025-09-29T23:52:39.599Z]    🎨 Generating images...
+[2025-09-29T23:52:47.549Z]    ✍️ Creating content...
+[2025-09-29T23:52:47.551Z]    ✓ 1964 words, 10 links, 4 images
+[2025-09-29T23:52:48.694Z]    ✅ Published successfully: south-korea-digital-nomad-visa-guide-complete-guide
+[2025-09-29T23:52:51.696Z] 
+📝 Generating: France Remote Work Visa Requirements Complete Guide
+[2025-09-29T23:52:51.697Z]    🔬 Researching...
+[2025-09-29T23:52:54.313Z]    ⚠️ Perplexity research skipped
+[2025-09-29T23:52:54.314Z]    🎨 Generating images...
+[2025-09-29T23:53:02.716Z]    ✍️ Creating content...
+[2025-09-29T23:53:02.718Z]    ✓ 2404 words, 10 links, 4 images
+[2025-09-29T23:53:03.747Z]    ✅ Published successfully: france-remote-work-visa-requirements-complete-guide
+[2025-09-29T23:53:06.748Z] 
+📝 Generating: Portugal Digital Nomad Visa Requirements Complete Guide
+[2025-09-29T23:53:06.749Z]    🔬 Researching...
+[2025-09-29T23:53:09.551Z]    ⚠️ Perplexity research skipped
+[2025-09-29T23:53:09.553Z]    🎨 Generating images...
+[2025-09-29T23:53:18.178Z]    ✍️ Creating content...
+[2025-09-29T23:53:18.180Z]    ✓ 2394 words, 10 links, 4 images
+[2025-09-29T23:53:19.130Z]    ✅ Published successfully: portugal-digital-nomad-visa-requirements-complete-guide
+[2025-09-29T23:53:22.132Z] 
+📝 Generating: Italy Remote Work Visa Guide Complete Guide
+[2025-09-29T23:53:22.133Z]    🔬 Researching...
+[2025-09-29T23:53:26.621Z]    ⚠️ Perplexity research skipped
+[2025-09-29T23:53:26.623Z]    🎨 Generating images...
+[2025-09-29T23:53:35.007Z]    ✍️ Creating content...
+[2025-09-29T23:53:35.009Z]    ✓ 1956 words, 10 links, 4 images
+[2025-09-29T23:53:36.202Z]    ✅ Published successfully: italy-remote-work-visa-guide-complete-guide
+[2025-09-29T23:53:39.204Z] 
+📝 Generating: Best Uganda Digital Nomad Visa Complete Guide
+[2025-09-29T23:53:39.205Z]    🔬 Researching...
+[2025-09-29T23:53:43.034Z]    ⚠️ Perplexity research skipped
+[2025-09-29T23:53:43.036Z]    🎨 Generating images...
+[2025-09-29T23:53:51.921Z]    ✍️ Creating content...
+[2025-09-29T23:53:51.922Z]    ✓ 2400 words, 10 links, 4 images
+[2025-09-29T23:53:53.153Z]    ✅ Published successfully: best-uganda-digital-nomad-visa-complete-guide
+[2025-09-29T23:53:56.155Z] 
+📝 Generating: Switzerland Digital Nomad Visa Cost Complete Guide
+[2025-09-29T23:53:56.155Z]    🔬 Researching...
+[2025-09-29T23:53:59.461Z]    ⚠️ Perplexity research skipped
+[2025-09-29T23:53:59.462Z]    🎨 Generating images...
+[2025-09-29T23:54:01.532Z] ⚠️ Image 1 generation failed: POST-request to https://93ewsltm.api.sanity.io/v2024-01-01/assets/images/production?filename=switzerland-digital-nomad-visa-cost-1-1759190040662.webp resulted in HTTP 502 Bad Gateway (<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></cente…)
+[2025-09-29T23:54:08.255Z]    ✍️ Creating content...
+[2025-09-29T23:54:08.257Z]    ✓ 2254 words, 10 links, 3 images
+[2025-09-29T23:54:09.275Z]    ✅ Published successfully: switzerland-digital-nomad-visa-cost-complete-guide
+[2025-09-29T23:54:12.277Z] 
+📝 Generating: Qatar Digital Nomad Visa Requirements Complete Guide
+[2025-09-29T23:54:12.278Z]    🔬 Researching...
+[2025-09-29T23:54:19.412Z]    ⚠️ Perplexity research skipped
+[2025-09-29T23:54:19.414Z]    🎨 Generating images...
+[2025-09-29T23:54:28.441Z]    ✍️ Creating content...
+[2025-09-29T23:54:28.443Z]    ✓ 2316 words, 10 links, 4 images
+[2025-09-29T23:54:29.320Z]    ✅ Published successfully: qatar-digital-nomad-visa-requirements-complete-guide
+[2025-09-29T23:54:32.322Z] 
+📝 Generating: Digital Nomad Visa Ethiopia Complete Guide
+[2025-09-29T23:54:32.324Z]    🔬 Researching...
+[2025-09-29T23:54:38.864Z]    ⚠️ Perplexity research skipped
+[2025-09-29T23:54:38.871Z]    🎨 Generating images...
+[2025-09-29T23:54:47.031Z]    ✍️ Creating content...
+[2025-09-29T23:54:47.032Z]    ✓ 2166 words, 10 links, 4 images
+[2025-09-29T23:54:48.020Z]    ✅ Published successfully: digital-nomad-visa-ethiopia-complete-guide
+[2025-09-29T23:54:51.020Z] 
+📊 Batch 8 Results:
+[2025-09-29T23:54:51.021Z]    - Articles generated: 10/10
+[2025-09-29T23:54:51.022Z]    - Average word count: 2245
+[2025-09-29T23:54:51.022Z]    - Failed articles: 0
+[2025-09-29T23:54:51.022Z] 
+🔍 Checking deployment...
+[2025-09-29T23:54:57.990Z]    ✓ Build successful
