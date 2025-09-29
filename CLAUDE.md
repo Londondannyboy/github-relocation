@@ -1,202 +1,232 @@
-# 🤖 CLAUDE.MD - PRIMARY AI REFERENCE DOCUMENT
+# 🤖 CLAUDE.MD - SINGLE SOURCE OF TRUTH
 
 **THIS IS YOUR PRIMARY DOCUMENT - READ THIS FIRST FOR EVERY SESSION**
 
-## 🎯 Project Identity
+## 📚 DOCUMENT RULES
+- **NO NEW DOCUMENTS** unless explicitly requested by user
+- **CLAUDE.md** is the ONLY source for:
+  - Project kickoff
+  - Project restart 
+  - Explaining what we're doing
+  - Current status and next steps
+- **Other documents**:
+  - LOCAL-RELOCATION-PRD.md - Product requirements (kept separate)
+  - All others should be merged here or deleted
+
+## 🎯 Project Status (September 29, 2025 - 18:15)
 
 **Project**: Relocation Quest - International relocation content platform
 **Location**: `/Users/dankeegan/local-relocation`
 **Mission**: Generate 1000 SEO-optimized articles at $0.01 per article
-**Status**: 25/1000 articles published (975 remaining)
+**Current**: 24/1000 articles published (976 remaining)
+**Live Site**: https://relocation.quest ✅
 
-## 📊 Current Performance
+## 📊 Current Reality Check
 
-### Live Metrics (Sep 29, 2025)
-- **Articles Published**: 25
-- **Search Volume Captured**: 65,000+ monthly
-- **Potential Value**: $3,600/month
-- **Average Article Length**: 700 words (TOO SHORT!)
-- **Target Article Length**: 2000+ words
-- **Cost Per Article**: $0.003 → Target $0.01
-- **Generation Speed**: 20 articles in 25 minutes
+### What's Actually Working
+- ✅ Site is LIVE and deployed
+- ✅ 24 articles published (but quality varies)
+- ✅ Sanity CMS connected and functioning
+- ✅ Build pipeline works (when we don't break it)
+- ✅ Image generation via Replicate/Flux
+- ✅ Reading time indicators implemented
 
-## 🚀 ENHANCED CONTENT PIPELINE
+### Critical Issues
+- ❌ Articles too short (700-1500 words vs 2000+ target)
+- ❌ Not consistently using research APIs
+- ❌ Premium components breaking builds
+- ❌ No systematic content generation
+- ❌ Cost tracking not implemented
+- ❌ 976 articles still needed
 
-### Research Phase (USE ALL APIS!)
-```javascript
-// 1. SERP Analysis - ALWAYS USE
-const competitors = await serper.search(keyword); // $0.0003
+## 🏗️ Architecture (CONFIRMED WORKING)
 
-// 2. Competitor Content - CACHE EVERYTHING
-const content = await withCache('competitor', url, async () => {
-  return await firecrawl.scrape(url); // $0.05 first time, free after
-});
-
-// 3. Fresh Research - USE LIBERALLY
-const facts = await tavily.search(questions); // FREE - 1000/month
-// FALLBACK: LinkUp API if Tavily fails
-
-// 4. Keyword Metrics - SELECTIVE
-const metrics = await dataForSEO.check(keyword); // Only Tier 1
-```
-
-### Content Structure (2000+ WORDS MINIMUM!)
-```javascript
-{
-  introduction: 250 words,
-  sections: [
-    'Overview' (400 words),
-    'Requirements' (400 words),
-    'Process' (400 words),
-    'Costs' (300 words),
-    'Benefits' (300 words),
-    'Mistakes' (250 words)
-  ],
-  faqs: 300 words,
-  conclusion: 200 words,
-  
-  // REQUIRED:
-  internalLinks: 5-7,
-  externalLinks: 3-5,
-  images: 2-3,
-  tables: 1-2
-}
-```
-
-## 🏗️ Architecture
-
-### Project Structure
-```
-/Users/dankeegan/local-relocation/
-├── src/               # Astro source
-├── sanity/           # CMS config
-├── scripts/          # Generation scripts
-├── dist/             # Build output
-└── docs/             # Documentation
-```
-
-### Naming Convention
+### Naming Convention (DON'T CONFUSE THESE!)
 - **local-relocation**: Local directory
-- **github-relocation**: GitHub repo
-- **vercel-relocation**: Vercel deployment (ID: prj_1GgLva0kMVd018TGoVK3LXvELhZE)
-- **sanity-relocation**: Workspace
-- **Universal Project**: 93ewsltm
+- **github-relocation**: GitHub repo 
+- **vercel-relocation**: Vercel deployment
+- **Universal Sanity**: Project ID 93ewsltm
+- **sanity-relocation**: Current workspace
 
 ### Live Endpoints
 - **Production**: https://relocation.quest
 - **Sanity Studio**: https://universal-sanity.sanity.studio/
 - **GitHub**: https://github.com/Londondannyboy/github-relocation
-- **Vercel**: https://vercel.com/londondannyboys-projects/vercel-relocation
+- **Vercel Dashboard**: https://vercel.com/londondannyboys-projects/vercel-relocation
 
-## 💰 API Stack & Usage
+## 🚀 CONTENT GENERATION PIPELINE (USE THIS!)
 
-### Active APIs (USE THEM ALL!)
-```bash
-✅ Serper.dev - $0.0003/search - USE FOR EVERY ARTICLE
-✅ Tavily - FREE (1000/month) - USE FOR RESEARCH
-✅ LinkUp - Fallback for Tavily (55ae9876-ffe4-4ee3-92b0-cb3c43ba280f)
-✅ Firecrawl - $0.05/page - CACHE EVERYTHING
-✅ DataForSEO - $50 credit - SELECTIVE USE
-✅ Replicate - Flux Pro images - $0.003/image
-✅ Critique Labs - Quality check - TESTING
+### Step 1: Research Phase
+```javascript
+// ALWAYS use these APIs for quality content
+const research = {
+  serper: await serperSearch(keyword),      // $0.0003 - SERP analysis
+  tavily: await tavilyResearch(query),      // FREE - 1000/month
+  firecrawl: await firecrawlScrape(url),    // $0.05 - cache after first use
+  dataForSEO: await getMetrics(keyword)     // Only for Tier 1 keywords
+};
 ```
 
-## ⚠️ Critical Rules
-
-### NEVER DO
-- ❌ Generate articles under 1500 words
-- ❌ Skip competitor research
-- ❌ Skip image generation
-- ❌ Use American English (use British)
-- ❌ Publish without categories
-- ❌ Exceed $0.02 per article
-
-### ALWAYS DO
-- ✅ Write 2000+ words minimum
-- ✅ Use Serper for SERP analysis
-- ✅ Cache all competitor content
-- ✅ Include 5-7 internal links
-- ✅ Add 3-5 authoritative external links
-- ✅ Generate unique Flux Pro images
-- ✅ Track progress in master list
-- ✅ Use British English
-
-## 📝 Quick Commands
-
-### Generate Articles
-```bash
-# Test enhanced pipeline
-node scripts/test-enhanced-pipeline.js
-
-# Generate batch (with research)
-node scripts/generate-batch-enhanced.js --count=20
-
-# Generate to target
-node scripts/generate-to-target.js --target=1000
+### Step 2: Content Structure (2000+ WORDS MANDATORY)
+```javascript
+const article = {
+  title: "Under 70 characters for SEO",
+  sections: {
+    introduction: 250,      // Hook the reader
+    overview: 400,         // Set context
+    requirements: 400,     // Detailed criteria
+    process: 400,         // Step-by-step guide
+    costs: 300,          // Breakdown with tables
+    benefits: 300,       // Value proposition
+    mistakes: 250,       // Common pitfalls
+    faqs: 300,          // Answer searches
+    conclusion: 200     // CTA and summary
+  },
+  totalWords: 2600,
+  
+  requirements: {
+    internalLinks: "5-7 to related articles",
+    externalLinks: "3-5 authoritative sources",
+    images: "Hero image REQUIRED (Flux/SDXL)",
+    readTime: "Calculate at 225 words/minute",
+    category: "MUST assign to existing category"
+  }
+};
 ```
 
-### Monitoring
+### Step 3: Image Generation
+```javascript
+// Use Flux Schnell for speed, SDXL as fallback
+const image = await generateImage({
+  model: "flux-schnell",  // Fast, good quality
+  prompt: "Professional, relevant to article topic",
+  format: "jpg",          // JPEG for body images
+  cost: "$0.003"         // Track in article metadata
+});
+```
+
+### Step 4: Publishing Checklist
+- [ ] Title under 70 characters
+- [ ] 2000+ words minimum
+- [ ] Hero image generated
+- [ ] Reading time calculated
+- [ ] Category assigned
+- [ ] No draft status
+- [ ] Build tested locally
+
+## 💰 API Keys & Costs
+
 ```bash
-# Check progress
-node scripts/check-progress.js
+# All configured in .env.local
+TAVILY_API_KEY=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  # 1000 free/month
+SERPER_API_KEY=dc168391eeb102a7da15466f1b04477445356d9d    # $0.0003/search
+FIRECRAWL_API_KEY=fc-fcc00e00206d4c1db2653d3815a2b0b0      # $0.05/scrape
+REPLICATE_API_TOKEN=[REDACTED]
+LUMA_API_KEY=luma-c78aecd8-ffe1-4e77-acb0-8231ae4749ef-1a63a717-96c8-48b8-8c04-700ea35dc2e2
+```
+
+## 📝 Working Scripts (TESTED)
+
+```bash
+# Generate content with images
+node scripts/generate-dubai-fast.js       # Creates article without research
+node scripts/generate-batch-fast.js       # Multiple articles quickly
+node scripts/add-reading-time.js          # Update all reading times
+node scripts/fix-dubai-image.js           # Add image to existing article
 
 # Build and deploy
-npm run build && git push
+npm run build                              # Test locally first!
+git add -A && git commit -m "msg" && git push  # Deploy to Vercel
 ```
 
-## 📊 Progress Tracking
+## 🔧 Common Build Fixes
 
-### Completed (25/1000)
-- Exit Tax: 3 articles
-- Digital Nomad Visas: 8 articles
-- Golden Visas: 5 articles
-- Tax Strategies: 4 articles
-- Other: 5 articles
+### If build fails with "Cannot read properties of null"
+1. Check for posts without images
+2. Check for drafts (delete them)
+3. Clear dist folder: `rm -rf dist .astro`
+4. Check slug conflicts
 
-### Next Priorities (975 remaining)
-1. Cyprus focus (20 keywords)
-2. Dubai focus (20 keywords)
-3. Portugal NHR (15 keywords)
-4. Singapore expat (15 keywords)
-5. Malta programs (10 keywords)
+### If premium components break
+1. Remove from pages temporarily
+2. Test components individually
+3. Check prop types match usage
 
-## 🔧 Troubleshooting
+### If deployment fails
+1. Check Vercel logs for specific error
+2. Test build locally first
+3. Remove problematic content
+4. Push clean version
 
-### If Generation Fails
-1. Check API credits
-2. Verify cache is working
-3. Fallback to simpler pipeline
-4. Never block - always publish something
+## 🎯 TODAY'S FOCUS: CONTENT GENERATION
 
-### If Quality Too Low
-1. Increase word count target
-2. Add more research sources
-3. Use Critique Labs validation
-4. Add more external citations
+### Immediate Actions (Sep 29, 2025)
+1. **Generate 10 quality articles NOW**
+   - Focus: Dubai, Singapore, Malta, Cyprus
+   - 2000+ words each
+   - WITH images
+   - WITH research
 
-### If Costs Too High
-1. Increase cache TTL
-2. Skip DataForSEO for Tier 3
-3. Batch similar articles
-4. Reuse research across topics
+2. **Scripts to Create**
+   ```bash
+   scripts/generate-enhanced-batch.js  # With all APIs
+   scripts/track-costs.js              # Monitor spending
+   scripts/validate-content.js         # Quality check
+   ```
 
-## 🎯 Current Priority
+3. **Content Calendar**
+   - Today: 10 articles (34 total)
+   - Tomorrow: 20 articles (54 total)
+   - This week: 100 articles (124 total)
+   - End goal: 1000 articles
 
-**IMMEDIATE TASK**: Implement enhanced pipeline
-1. Build script with full research integration
-2. Test with 5 articles
-3. Compare quality vs current
-4. Scale to 100 articles today
-5. Reach 1000 by end of week
+## ⚠️ CRITICAL RULES
 
-## 📈 Success Metrics
+### NEVER
+- ❌ Push untested code
+- ❌ Generate without images
+- ❌ Skip build test
+- ❌ Create articles under 2000 words
+- ❌ Ignore build errors
+- ❌ Mix up project names
 
-- **Word Count**: 2000+ (currently 700)
-- **Cost**: Under $0.01 (currently $0.003)
-- **Quality Score**: 80+ (currently ~65)
-- **Generation Time**: 2 min/article
-- **Cache Hit Rate**: 80%+
+### ALWAYS
+- ✅ Test build locally first
+- ✅ Include hero images
+- ✅ Calculate reading time
+- ✅ Use British English
+- ✅ Cache API responses
+- ✅ Track costs
+
+## 📊 Progress Metrics
+
+| Metric | Current | Target | Status |
+|--------|---------|--------|---------|
+| Articles | 24 | 1000 | 🔴 2.4% |
+| Avg Words | 700 | 2000+ | 🔴 35% |
+| Cost/Article | $0.003 | $0.01 | 🟢 30% |
+| Quality Score | 65 | 80+ | 🟡 81% |
+| Build Success | 90% | 100% | 🟡 90% |
+
+## 🚨 Recovery Procedure (If Everything Breaks)
+
+```bash
+# 1. Revert to last working commit
+git log --oneline -10  # Find last working
+git reset --hard <commit-hash>
+
+# 2. Clean build
+rm -rf dist .astro node_modules
+npm install
+npm run build
+
+# 3. Test locally
+npm run dev  # Check localhost:4321
+
+# 4. Deploy clean version
+git push --force
+```
 
 ---
 
-**Remember**: We're building authority. Every article must be comprehensive, well-researched, and better than competitors. Use ALL available APIs to achieve this!
+**REMEMBER**: We're here to generate 1000 articles. Everything else is secondary. Focus on content, test before pushing, and keep the site live.

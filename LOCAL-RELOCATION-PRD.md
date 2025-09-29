@@ -1,260 +1,215 @@
-# 📋 RELOCATION-PRD-UNIFIED v4.0
-**Product Requirements Document - Enhanced Content Pipeline**  
-**Last Updated**: September 29, 2025  
-**Status**: ACTIVE - Industrialized Content Generation
+# 📋 PRODUCT REQUIREMENTS DOCUMENT - RELOCATION QUEST
+
+**Version**: 5.0 - Content Generation Sprint
+**Last Updated**: September 29, 2025 - 18:20
+**Status**: ACTIVE - Focus on 1000 Articles
 
 ---
 
-## 🎯 Project Overview
+## 🎯 SINGLE OBJECTIVE
 
-### Current Status
-- **Articles Published**: 25 live articles
-- **Search Volume Captured**: 65,000+ monthly searches
-- **Potential Value**: $3,600/month
-- **Articles Remaining**: 975 of 1000 target
-- **Cost Per Article**: $0.003 (current) → $0.01 (enhanced)
+**Generate 1000 high-quality articles at $0.01/article to capture $50K+/month revenue**
 
-### Project Structure
-- **Local Directory**: `/Users/dankeegan/local-relocation`
-- **GitHub Repository**: `github-relocation` (https://github.com/Londondannyboy/github-relocation)
-- **Sanity Workspace**: `sanity-relocation` (Universal Project: 93ewsltm)
-- **Vercel Project**: `vercel-relocation` (ID: prj_1GgLva0kMVd018TGoVK3LXvELhZE)
-- **Production Domain**: `https://relocation.quest` (live)
-
-### Objectives
-- Generate 1000 high-quality SEO articles (2000+ words each)
-- Achieve 20,000+ organic visits/month within 90 days
-- Capture 10-40% conversion from AI search traffic
-- Build topical authority across relocation/immigration topics
-- Maintain quality score 80+ per article
+Current: 24/1000 (2.4% complete)
+Deadline: Q4 2025
+Daily Target: 50 articles
 
 ---
 
-## 🚀 ENHANCED CONTENT PIPELINE (ACTIVE)
+## 📊 CURRENT REALITY (Sep 29, 18:20)
 
-### Research Phase (Cached)
-```javascript
-// Step 1: SERP Analysis - $0.0003
-await serper.search(keyword) // Get top 10 competitors
+### What's Live
+- **Site**: https://relocation.quest ✅
+- **Articles**: 24 published
+- **Quality**: 700 words average (TOO LOW)
+- **Cost**: $0.003/article (can afford more)
+- **Build**: 90% success rate
 
-// Step 2: Competitor Scraping - $0.05 (cached after first use)
-await firecrawl.scrape(competitorURL) // Deep content analysis
+### What's Broken
+- Articles too short (need 2000+ words)
+- Not using research APIs consistently
+- No batch generation system
+- 976 articles still needed
 
-// Step 3: Fact Research - FREE
-await tavily.search(questions) // 1000 free searches/month
-// FALLBACK: LinkUp API (55ae9876-ffe4-4ee3-92b0-cb3c43ba280f)
+---
 
-// Step 4: Keyword Validation - $0.01 (selective)
-await dataForSEO.getMetrics(keyword) // Only for Tier 1
+## 🚀 CONTENT REQUIREMENTS (NON-NEGOTIABLE)
+
+### Every Article MUST Have:
+```
+✅ 2000+ words (2500 target)
+✅ Hero image (Flux/SDXL)
+✅ 70 character title max
+✅ British English
+✅ 5-7 internal links
+✅ 3-5 external citations
+✅ Reading time calculated
+✅ Category assigned
+✅ Build tested
 ```
 
-### Content Generation (2000+ words)
+### Article Structure Template
+```
+1. Title (70 chars max)
+2. Introduction (250 words) - Problem/solution hook
+3. Overview (400 words) - Context and background  
+4. Requirements (400 words) - Detailed criteria
+5. Process (400 words) - Step-by-step guide
+6. Costs (300 words) - With comparison table
+7. Benefits (300 words) - Value proposition
+8. Mistakes (250 words) - Common pitfalls
+9. FAQs (300 words) - Search intent answers
+10. Conclusion (200 words) - Summary and CTA
+
+TOTAL: 2600 words
+```
+
+---
+
+## 💰 ECONOMICS (Why This Matters)
+
+### Investment
+- 1000 articles × $0.01 = $10 total cost
+- Time: 20 hours of compute
+- APIs: $100 in credits
+
+### Returns
+- Search Volume: 5M+ monthly
+- Traffic: 500K visitors/month
+- Ad Revenue: $20K/month 
+- Affiliates: $30K/month
+- **Total: $50K+/month**
+- **ROI: 5000% monthly**
+
+---
+
+## 🤖 GENERATION PIPELINE (USE THIS)
+
 ```javascript
-const article = {
-  introduction: 250 words,
-  mainSections: [
-    { title: 'Overview', content: 400 words },
-    { title: 'Requirements', content: 400 words },
-    { title: 'Process', content: 400 words },
-    { title: 'Costs & Timeline', content: 300 words },
-    { title: 'Benefits', content: 300 words },
-    { title: 'Common Mistakes', content: 250 words }
-  ],
-  faqSection: 300 words,
-  conclusion: 200 words,
+async function generateArticle(keyword) {
+  // 1. RESEARCH (with caching)
+  const serp = await serper.search(keyword);          // $0.0003
+  const competitors = await firecrawl.scrape(top3);   // $0.05 (cached)
+  const facts = await tavily.research(questions);     // FREE
   
-  // Required Elements:
-  internalLinks: 5-7,
-  externalLinks: 3-5 authoritative,
-  images: 2-3 (hero + body),
-  tables: 1-2 comparisons,
-  lists: 3-4 bulleted
-}
-```
-
-### Quality Validation
-```javascript
-// Primary: Critique Labs (if available)
-await critiqueLabs.factCheck(content)
-
-// Fallback Validation:
-- Word count >= 2000
-- British English
-- Authoritative citations
-- Fact-checked claims
-- SEO optimization score
-```
-
----
-
-## 💰 Cost Structure
-
-### Per Article (Enhanced Pipeline)
-| Component | Cost | Purpose |
-|-----------|------|---------|
-| Flux Pro Image | $0.003 | Hero image generation |
-| Serper.dev | $0.0003 | SERP analysis |
-| Firecrawl | $0.005 | Competitor content (cached) |
-| Tavily/LinkUp | FREE | Fact research |
-| DataForSEO | $0.001 | Selective validation |
-| Critique Labs | $0.002 | Quality check |
-| **Total** | **$0.011** | Per article |
-
-### At Scale (1000 Articles)
-- Total Investment: $11
-- Monthly Value Potential: $180,000+
-- ROI: 16,000x per month
-
----
-
-## 🔧 Technical Stack
-
-### Core Technologies
-- **Framework**: Astro 5.x + React + TypeScript
-- **CMS**: Sanity Universal (93ewsltm)
-- **Deployment**: Vercel (auto-deploy)
-- **Images**: Flux Pro via Replicate
-- **Sitemap**: @astrojs/sitemap (implemented)
-
-### Active APIs
-```markdown
-✅ Replicate: Flux Pro images ($0.003/image)
-✅ Serper.dev: SERP analysis ($0.0003/search)
-✅ Tavily: Research (1000 free/month)
-✅ LinkUp: Research fallback (55ae9876-ffe4-4ee3-92b0-cb3c43ba280f)
-✅ Firecrawl: Competitor scraping ($0.05/page, cached)
-✅ DataForSEO: Keyword metrics ($50 credit)
-✅ Sanity: CMS operations (multiple tokens)
-⚠️ Critique Labs: Quality validation (testing)
-```
-
-### Smart Caching System
-```javascript
-const cache = {
-  competitor: {}, // 30-day TTL - 80% cost reduction
-  serp: {},      // 7-day TTL
-  research: {},  // 24-hour TTL
+  // 2. GENERATE (2000+ words)
+  const content = await generateWithStructure({
+    research: combinedData,
+    template: articleTemplate,
+    wordCount: 2500
+  });
   
-  withCache(type, key, fetchFn) {
-    if (cached && !expired) return cached;
-    const data = await fetchFn();
-    this.save(type, key, data);
-    return data;
-  }
+  // 3. ENHANCE
+  const image = await flux.generateHero(prompt);      // $0.003
+  const readTime = Math.ceil(wordCount / 225);
+  
+  // 4. VALIDATE & PUBLISH
+  await sanity.create(article);
+  await npm.run('build'); // Test locally
+  
+  return { success: true, cost: 0.008 };
 }
 ```
 
 ---
 
-## 📊 Content Strategy
+## 📅 EXECUTION PLAN
 
-### 1000 Article Formula
+### TODAY (Sep 29) - 10 Articles
+```bash
+1. Create scripts/generate-enhanced-batch.js
+2. Generate 10 articles:
+   - Dubai Golden Visa Guide
+   - Singapore PR Requirements
+   - Malta Digital Nomad Visa
+   - Cyprus Non-Dom Tax Benefits
+   - Portugal D7 Visa Guide
+   - Estonia e-Residency Program
+   - Barbados Welcome Stamp
+   - Croatia Digital Nomad
+   - Mexico Temporary Residence
+   - Thailand Elite Visa
+3. All with images, 2000+ words
+4. Deploy successfully
 ```
-5 Countries × 10 Topics × 20 Variations = 1000 Articles
 
-Countries: Cyprus, Dubai, Malta, Portugal, Singapore
-Topics: visa, tax, business, residency, banking, 
-        property, education, healthcare, cost, citizenship
-Variations: 2025, requirements, for Americans, process, guide,
-           cost, best, vs comparisons, calculator, how to...
+### THIS WEEK - 100 Articles
+- Day 1 (Today): 10 articles
+- Day 2: 20 articles  
+- Day 3: 20 articles
+- Day 4: 20 articles
+- Day 5: 30 articles
+
+### THIS MONTH - 1000 Articles
+- Week 1: 100 articles
+- Week 2: 300 articles
+- Week 3: 300 articles
+- Week 4: 300 articles
+
+---
+
+## 🛠️ TECHNICAL STACK (WORKING)
+
+### Core
+- **Astro** + Tailwind (frontend)
+- **Sanity** Universal Project: 93ewsltm
+- **Vercel** Auto-deploy from GitHub
+- **GitHub** github-relocation repo
+
+### APIs (All Configured)
+```bash
+TAVILY_API_KEY=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
+SERPER_API_KEY=dc168391eeb102a7da15466f1b04477445356d9d  
+FIRECRAWL_API_KEY=fc-fcc00e00206d4c1db2653d3815a2b0b0
+REPLICATE_API_TOKEN=[REDACTED]
 ```
 
-### Content Tiers
-- **Tier 1** (100 articles): 2500+ words, full research, all features
-- **Tier 2** (300 articles): 2000+ words, standard research
-- **Tier 3** (600 articles): 1500+ words, cached research
+---
+
+## ✅ SUCCESS CRITERIA
+
+### Article Quality
+- [ ] 2000+ words
+- [ ] Hero image present
+- [ ] 9+ minute read time
+- [ ] Passes build test
+
+### Pipeline Performance  
+- [ ] < $0.01 per article
+- [ ] < 2 minutes generation
+- [ ] 100% build success
+- [ ] 80% cache hit rate
+
+### Business Metrics
+- [ ] 1000 articles by Q4
+- [ ] $50K monthly revenue
+- [ ] 500K monthly visitors
+- [ ] 10K+ keywords ranked
 
 ---
 
-## 📈 Progress Tracking
+## 🚨 RULES TO NEVER BREAK
 
-### Current Stats (Sep 29, 2025)
-- Articles Created: 25
-- Total Word Count: ~35,000
-- Categories Active: 12
-- Tags Created: 34
-- Images Generated: 25
-- Total Cost: $0.075
-- Time per 20 articles: ~25 minutes
-
-### Quality Metrics
-- Average Word Count: Currently 700 → Target 2000+
-- Internal Links: 2-3 → Target 5-7
-- External Citations: 1-2 → Target 3-5
-- SEO Score: 65 → Target 85+
+1. **NO articles under 2000 words**
+2. **NO publishing without images**
+3. **NO American English** (use British)
+4. **NO untested deployments**
+5. **NO new documentation** (update CLAUDE.md only)
+6. **NO premium components** (they break builds)
 
 ---
 
-## 🔄 Workflow Automation
+## 📝 NEXT ACTIONS (DO NOW)
 
-### Batch Generation Options
-1. **Cron Schedule**: Every 30 min, 10 articles
-2. **Continuous**: Run until target reached
-3. **Context-Managed**: 50 per session, auto-resume
-
-### Error Handling
-- API fallbacks for all services
-- Progress saved every article
-- Automatic retry with exponential backoff
-- Never block on single failure
+```bash
+1. cd /Users/dankeegan/local-relocation
+2. Create enhanced generation script
+3. Generate 10 articles TODAY
+4. Test build locally
+5. Deploy to production
+6. Update CLAUDE.md with progress
+```
 
 ---
 
-## 📝 Documentation
-
-### Key Files
-- **PRD**: This document (strategy & requirements)
-- **CLAUDE.md**: AI assistant reference
-- **CREDENTIALS.md**: API keys (git-ignored)
-- **RESTART.md**: Recovery procedures
-- **CONTENT.md**: Keyword tracking
-- **SUMMARY.md**: Current state
-
-### Tracking Tools
-- Sanity Studio: Content management
-- Vercel Dashboard: Deployment status
-- GitHub: Version control
-- Local CSV: Progress tracking
-
----
-
-## ✅ Success Metrics
-
-### Phase 1 (Current)
-- ✅ 25 articles published
-- ✅ Basic pipeline working
-- ✅ Cost under $0.01/article
-- ⚠️ Articles too thin (700 words)
-
-### Phase 2 (This Week)
-- [ ] Implement enhanced pipeline
-- [ ] 2000+ word articles
-- [ ] 100 articles published
-- [ ] Quality score 80+
-
-### Phase 3 (Next Week)
-- [ ] 500 articles published
-- [ ] Full automation running
-- [ ] 10,000+ organic visits
-- [ ] AI visibility confirmed
-
-### Phase 4 (Month End)
-- [ ] 1000 articles complete
-- [ ] 20,000+ monthly visits
-- [ ] $15,000+ monthly value
-- [ ] Top 3 rankings achieved
-
----
-
-## 🚨 Critical Notes
-
-1. **ALWAYS use British English** (optimisation, not optimization)
-2. **ALWAYS include authoritative external links**
-3. **NEVER generate articles under 1500 words**
-4. **NEVER skip image generation** ($0.003 is worth it)
-5. **ALWAYS cache competitor research** (80% cost savings)
-6. **ALWAYS track progress** in master spreadsheet
-
----
-
-**Next Action**: Implement enhanced pipeline with 2000+ word articles!
+**REMEMBER**: We need 976 more articles. Everything else is noise. Generate content, test builds, deploy. Repeat until done.
