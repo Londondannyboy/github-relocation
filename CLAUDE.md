@@ -53,6 +53,8 @@
 - ❌ Create video-first content (too expensive)
 - ❌ Skip image generation (required for every article)
 - ❌ Exceed $0.01 per article cost
+- ❌ Create excerpts over 200 characters (Sanity validation will fail)
+- ❌ Reference categories/tags that don't exist in Sanity
 
 ### ALWAYS DO
 - ✅ Use Flux Pro for images ($0.003/image)

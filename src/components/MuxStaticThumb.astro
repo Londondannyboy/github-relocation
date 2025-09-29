@@ -1,0 +1,44 @@
+---
+// Simple static thumbnail from Mux - this MUST work
+export interface Props {
+  playbackId: string;
+  title?: string;
+  width?: number;
+  height?: number;
+  time?: number;
+}
+
+const {
+  playbackId,
+  title = "Video",
+  width = 640,
+  height = 360,
+  time = 5 // Get thumbnail from 5 seconds into video
+} = Astro.props;
+
+// Static thumbnail URL - this should always work
+const thumbnailUrl = `https://image.mux.com/${playbackId}/thumbnail.jpg?width=${width}&height=${height}&time=${time}`;
+
+// Fallback to a placeholder if even this fails
+const fallbackUrl = `https://via.placeholder.com/${width}x${height}/4A90E2/FFFFFF?text=${encodeURIComponent(title)}`;
+---
+
+<div class="relative w-full h-full overflow-hidden rounded-lg group cursor-pointer">
+  <!-- Static thumbnail image -->
+  <img
+    src={thumbnailUrl}
+    alt={title}
+    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+    loading="lazy"
+    onerror={`this.onerror=null; this.src='${fallbackUrl}'`}
+  />
+  
+  <!-- Play button overlay -->
+  <div class="absolute inset-0 flex items-center justify-center">
+    <div class="w-12 h-12 bg-white bg-opacity-90 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+      <svg class="w-5 h-5 text-gray-800 ml-1" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M8 5v10l6-5z"/>
+      </svg>
+    </div>
+  </div>
+</div>

@@ -37,6 +37,29 @@ export default defineType({
       description: 'Emoji icon for this category (optional)'
     }),
     defineField({
+      name: 'featuredImage',
+      title: 'Featured Image',
+      type: 'image',
+      options: {
+        hotspot: true
+      },
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Alternative Text',
+          description: 'Important for SEO and accessibility'
+        }
+      ],
+      description: 'Category thumbnail image for display on category pages'
+    }),
+    defineField({
+      name: 'videoThumbnail',
+      title: 'Video Thumbnail',
+      type: 'string',
+      description: 'MUX Playback ID for category video preview (optional)'
+    }),
+    defineField({
       name: 'order',
       title: 'Display Order',
       type: 'number',
