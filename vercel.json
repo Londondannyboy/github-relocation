@@ -1,21 +1,5 @@
 {
-  "functions": {
-    "dist/posts/[slug]/index.html": {
-      "isr": {
-        "expiration": 60,
-        "bypassToken": "relocation-quest-2025"
-      }
-    },
-    "dist/posts/index.html": {
-      "isr": {
-        "expiration": 60
-      }
-    }
-  },
-  "rewrites": [
-    {
-      "source": "/posts/:slug",
-      "destination": "/posts/:slug/index.html"
-    }
-  ]
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "astro"
 }
