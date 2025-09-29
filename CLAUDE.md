@@ -7,225 +7,196 @@
 **Project**: Relocation Quest - International relocation content platform
 **Location**: `/Users/dankeegan/local-relocation`
 **Mission**: Generate 1000 SEO-optimized articles at $0.01 per article
+**Status**: 25/1000 articles published (975 remaining)
 
-## 🏗️ Current Architecture
+## 📊 Current Performance
+
+### Live Metrics (Sep 29, 2025)
+- **Articles Published**: 25
+- **Search Volume Captured**: 65,000+ monthly
+- **Potential Value**: $3,600/month
+- **Average Article Length**: 700 words (TOO SHORT!)
+- **Target Article Length**: 2000+ words
+- **Cost Per Article**: $0.003 → Target $0.01
+- **Generation Speed**: 20 articles in 25 minutes
+
+## 🚀 ENHANCED CONTENT PIPELINE
+
+### Research Phase (USE ALL APIS!)
+```javascript
+// 1. SERP Analysis - ALWAYS USE
+const competitors = await serper.search(keyword); // $0.0003
+
+// 2. Competitor Content - CACHE EVERYTHING
+const content = await withCache('competitor', url, async () => {
+  return await firecrawl.scrape(url); // $0.05 first time, free after
+});
+
+// 3. Fresh Research - USE LIBERALLY
+const facts = await tavily.search(questions); // FREE - 1000/month
+// FALLBACK: LinkUp API if Tavily fails
+
+// 4. Keyword Metrics - SELECTIVE
+const metrics = await dataForSEO.check(keyword); // Only Tier 1
+```
+
+### Content Structure (2000+ WORDS MINIMUM!)
+```javascript
+{
+  introduction: 250 words,
+  sections: [
+    'Overview' (400 words),
+    'Requirements' (400 words),
+    'Process' (400 words),
+    'Costs' (300 words),
+    'Benefits' (300 words),
+    'Mistakes' (250 words)
+  ],
+  faqs: 300 words,
+  conclusion: 200 words,
+  
+  // REQUIRED:
+  internalLinks: 5-7,
+  externalLinks: 3-5,
+  images: 2-3,
+  tables: 1-2
+}
+```
+
+## 🏗️ Architecture
 
 ### Project Structure
 ```
 /Users/dankeegan/local-relocation/
-├── src/
-│   ├── pages/        # Astro pages
-│   ├── layouts/      # Layout templates
-│   ├── components/   # React/Astro components
-│   ├── lib/          # Utilities (Sanity client)
-│   └── styles/       # Global styles
-├── public/           # Static assets
-├── sanity/           # Sanity studio configuration
-└── scripts/          # Content generation scripts
+├── src/               # Astro source
+├── sanity/           # CMS config
+├── scripts/          # Generation scripts
+├── dist/             # Build output
+└── docs/             # Documentation
 ```
 
-### Naming Convention (CRITICAL)
+### Naming Convention
 - **local-relocation**: Local directory
-- **github-relocation**: GitHub repository  
-- **vercel-relocation**: Vercel deployment (Project ID: prj_1GgLva0kMVd018TGoVK3LXvELhZE)
-- **sanity-relocation**: Sanity workspace
-- **Universal Project**: Sanity project ID 93ewsltm
+- **github-relocation**: GitHub repo
+- **vercel-relocation**: Vercel deployment (ID: prj_1GgLva0kMVd018TGoVK3LXvELhZE)
+- **sanity-relocation**: Workspace
+- **Universal Project**: 93ewsltm
 
 ### Live Endpoints
-- **Production**: https://relocation.quest (live with custom domain)
-- **Vercel Dashboard**: https://vercel.com/londondannyboys-projects/vercel-relocation
+- **Production**: https://relocation.quest
 - **Sanity Studio**: https://universal-sanity.sanity.studio/
 - **GitHub**: https://github.com/Londondannyboy/github-relocation
+- **Vercel**: https://vercel.com/londondannyboys-projects/vercel-relocation
 
-## 📋 Essential Documents to Check
+## 💰 API Stack & Usage
 
-1. **LOCAL-RELOCATION-PRD.md** - Product requirements, workflow, schemas
-2. **LOCAL-RELOCATION-CREDENTIALS.md** - All API keys and tokens
-3. **LOCAL-RELOCATION-CONTENT.md** - 1000 keywords, content strategy
-4. **LOCAL-RELOCATION-SUMMARY.md** - Current project state
-5. **LOCAL-RELOCATION-RESTART.md** - What to avoid, lessons learned
+### Active APIs (USE THEM ALL!)
+```bash
+✅ Serper.dev - $0.0003/search - USE FOR EVERY ARTICLE
+✅ Tavily - FREE (1000/month) - USE FOR RESEARCH
+✅ LinkUp - Fallback for Tavily (55ae9876-ffe4-4ee3-92b0-cb3c43ba280f)
+✅ Firecrawl - $0.05/page - CACHE EVERYTHING
+✅ DataForSEO - $50 credit - SELECTIVE USE
+✅ Replicate - Flux Pro images - $0.003/image
+✅ Critique Labs - Quality check - TESTING
+```
 
 ## ⚠️ Critical Rules
 
 ### NEVER DO
-- ❌ Use "article" schema - ALWAYS use "post"
-- ❌ Reference old project bc08ijz6 (deleted)
-- ❌ Create video-first content (too expensive)
-- ❌ Skip image generation (required for every article)
-- ❌ Exceed $0.01 per article cost
-- ❌ Create excerpts over 200 characters (Sanity validation will fail)
-- ❌ Reference categories/tags that don't exist in Sanity
+- ❌ Generate articles under 1500 words
+- ❌ Skip competitor research
+- ❌ Skip image generation
+- ❌ Use American English (use British)
+- ❌ Publish without categories
+- ❌ Exceed $0.02 per article
 
 ### ALWAYS DO
-- ✅ Use Flux Pro for images ($0.003/image)
-- ✅ Implement smart caching for API calls
-- ✅ Generate AVIF format with WebP fallback
-- ✅ Track generation costs in Sanity
-- ✅ Include DataForSEO metrics (search volume, CPC)
-- ✅ Write in British English (optimisation, centre, realise, etc.)
-- ✅ Include external source links for every major claim
-- ✅ Use Critique Labs for fact-checking when available
+- ✅ Write 2000+ words minimum
+- ✅ Use Serper for SERP analysis
+- ✅ Cache all competitor content
+- ✅ Include 5-7 internal links
+- ✅ Add 3-5 authoritative external links
+- ✅ Generate unique Flux Pro images
+- ✅ Track progress in master list
+- ✅ Use British English
 
-## 🔄 Content Generation Workflow
+## 📝 Quick Commands
 
-### Step 1: Research (Cache Everything)
-```javascript
-// Check cache first
-const cached = await checkCache(keyword);
-if (cached) return cached;
-
-// If not cached, fetch and store
-const data = await fetchCompetitors(keyword);
-await saveCache(keyword, data);
-```
-
-### Step 2: Generate Content
-- Use GPT-4 for main content
-- Target word counts: Tier 1 (2000+), Tier 2 (1500+), Tier 3 (1000+)
-- Include FAQs with schema markup
-- Add internal links (3-5) and external links (2-3)
-
-### Step 3: Generate Image
-```javascript
-// Flux Pro via Replicate
-const image = await replicate.run(
-  "black-forest-labs/flux-1.1-pro",
-  { 
-    prompt: imagePrompt,
-    aspect_ratio: "16:9" 
-  }
-);
-// Cost: $0.003 per image
-```
-
-### Step 4: Publish to Sanity
-```javascript
-const post = {
-  _type: 'post', // NOT 'article'!
-  title,
-  slug,
-  body,
-  featuredImage,
-  focusKeyword,
-  searchVolume, // From DataForSEO
-  cpc,          // From DataForSEO
-  category,     // Reference to category
-  generationCost: 0.01 // Track actual cost
-};
-```
-
-## 💰 Cost Breakdown (Per Article Target: $0.01)
-
-| Service | Cost | Usage |
-|---------|------|-------|
-| DataForSEO | $0.003 | Use selectively (cache results) |
-| Serper | $0.0003 | Use liberally! |
-| Firecrawl | $0.002 | Cache after first scrape |
-| Flux Pro | $0.003 | Every article needs image |
-| GPT-4 | $0.002 | Main content generation |
-| **Total** | **$0.0103** | Within budget! |
-
-## 🚀 Quick Commands
-
-### Development Commands
+### Generate Articles
 ```bash
-# Install dependencies
-npm install
+# Test enhanced pipeline
+node scripts/test-enhanced-pipeline.js
 
-# Start development server
-npm run dev
+# Generate batch (with research)
+node scripts/generate-batch-enhanced.js --count=20
 
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
+# Generate to target
+node scripts/generate-to-target.js --target=1000
 ```
 
-### Testing Scripts
+### Monitoring
 ```bash
-# Test Sanity Connection
-node scripts/test-universal-sanity.js
+# Check progress
+node scripts/check-progress.js
 
-# Generate Test Article
-node scripts/generate-test-article.js
+# Build and deploy
+npm run build && git push
 ```
-
-### Deploy to Production
-```bash
-# Auto-deploys to Vercel on push
-git add . && git commit -m "Update" && git push origin main
-```
-
-## 🔑 Key Technical Details
-
-### Sanity Configuration
-- Project ID: `93ewsltm`
-- Dataset: `production`
-- Schema: `post` (with categories and tags)
-
-### Image Handling
-- Primary: AVIF format
-- Fallback: WebP
-- Optimization: Via Sharp
-- Hosting: Sanity CDN
-
-### API Credentials Status
-- ✅ DataForSEO: $50 credit available
-- ✅ Flux Pro: Working via Replicate
-- ✅ Serper: Active with credits
-- ✅ Firecrawl: Token ready
-- ✅ Tavily: 1000 free searches/month
 
 ## 📊 Progress Tracking
 
-### Content Status
-- Keywords Identified: 1000
-- Articles Published: 0
-- Next Milestone: 20 test articles
-- Final Goal: 1000 articles
+### Completed (25/1000)
+- Exit Tax: 3 articles
+- Digital Nomad Visas: 8 articles
+- Golden Visas: 5 articles
+- Tax Strategies: 4 articles
+- Other: 5 articles
 
-### Categories Created
-1. Visa Requirements (📄)
-2. Tax Strategies (💰)
-3. Living Costs (🏠)
+### Next Priorities (975 remaining)
+1. Cyprus focus (20 keywords)
+2. Dubai focus (20 keywords)
+3. Portugal NHR (15 keywords)
+4. Singapore expat (15 keywords)
+5. Malta programs (10 keywords)
+
+## 🔧 Troubleshooting
+
+### If Generation Fails
+1. Check API credits
+2. Verify cache is working
+3. Fallback to simpler pipeline
+4. Never block - always publish something
+
+### If Quality Too Low
+1. Increase word count target
+2. Add more research sources
+3. Use Critique Labs validation
+4. Add more external citations
+
+### If Costs Too High
+1. Increase cache TTL
+2. Skip DataForSEO for Tier 3
+3. Batch similar articles
+4. Reuse research across topics
 
 ## 🎯 Current Priority
 
-**NEXT TASK**: Create and publish test article
-1. Pick keyword: "Cyprus golden visa" (590 searches/month)
-2. Research top 3 competitors (cache results)
-3. Generate 2000+ word article
-4. Create Flux Pro hero image
-5. Publish to Sanity with cost tracking
-6. Verify on staging site
+**IMMEDIATE TASK**: Implement enhanced pipeline
+1. Build script with full research integration
+2. Test with 5 articles
+3. Compare quality vs current
+4. Scale to 100 articles today
+5. Reach 1000 by end of week
 
-## 🚨 Emergency Procedures
+## 📈 Success Metrics
 
-### If Sanity Connection Fails
-1. Check token in LOCAL-RELOCATION-CREDENTIALS.md
-2. Verify project ID is 93ewsltm
-3. Access https://universal-sanity.sanity.studio/ to check status
-
-### If Costs Exceed Target
-1. Review LOCAL-RELOCATION-PRD.md for optimization strategies
-2. Increase caching aggressiveness
-3. Reduce DataForSEO calls
-
-### If Deployment Fails
-1. Check GitHub token validity
-2. Verify Vercel connection
-3. Run `npm run build` locally first
-
-## 📝 Session Checklist
-
-When starting any work session:
-- [ ] Read this CLAUDE.md first
-- [ ] Check LOCAL-RELOCATION-SUMMARY.md for current state
-- [ ] Verify Sanity Studio is accessible
-- [ ] Review any new requirements in PRD
-- [ ] Check cost tracking is working
+- **Word Count**: 2000+ (currently 700)
+- **Cost**: Under $0.01 (currently $0.003)
+- **Quality Score**: 80+ (currently ~65)
+- **Generation Time**: 2 min/article
+- **Cache Hit Rate**: 80%+
 
 ---
 
-**Remember**: This project has been restarted clean. No old schemas, no contamination. The Universal project (93ewsltm) is the ONLY Sanity project. Always use "post" schema, never "article".
+**Remember**: We're building authority. Every article must be comprehensive, well-researched, and better than competitors. Use ALL available APIs to achieve this!

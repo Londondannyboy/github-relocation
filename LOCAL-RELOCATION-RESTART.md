@@ -1,13 +1,27 @@
-# 🔄 RESTART RELOCATION QUEST - FRESH START PLAN
+# 🔄 RESTART GUIDE - RELOCATION QUEST
 
-## 🎯 NEW NAMING CONVENTION
-**CRITICAL**: All services now use consistent prefixed naming:
-- **Local Directory**: `/Users/dankeegan/local-relocation`
-- **GitHub Repository**: `github-relocation` (https://github.com/Londondannyboy/github-relocation)
-- **Sanity Workspace**: `sanity-relocation`
-- **Vercel Project**: `vercel-relocation`
+**Purpose**: Recovery procedures and lessons learned
+**Last Updated**: September 29, 2025
+**Status**: 25/1000 articles published
 
-## ⚡ QUICK RESTART (3 HOURS TOTAL)
+## 🚀 CURRENT STATE - PROJECT IS LIVE
+
+### What's Working
+- ✅ 25 articles published at https://relocation.quest
+- ✅ Sanity Universal project (93ewsltm) 
+- ✅ Vercel deployment (prj_1GgLva0kMVd018TGoVK3LXvELhZE)
+- ✅ GitHub repo (github-relocation)
+- ✅ Basic content pipeline ($0.003/article)
+- ✅ Categories and tags system
+- ✅ Sitemap at /sitemap-0.xml
+
+### What Needs Improvement
+- ⚠️ Articles too short (700 words vs 2000+ target)
+- ⚠️ Not using research APIs (Serper, Tavily, Firecrawl)
+- ⚠️ No caching system implemented
+- ⚠️ No progress tracking
+
+## ⚡ QUICK RECOVERY (IF NEEDED)
 
 ### Hour 1: Fresh Setup & Test Basics
 ```bash
