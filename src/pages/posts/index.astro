@@ -16,7 +16,7 @@ const posts = await sanityClient.fetch(`
       },
       alt
     },
-    category-> {
+    categories[]-> {
       title,
       slug
     },
@@ -44,9 +44,9 @@ const posts = await sanityClient.fetch(`
               />
             )}
             <div class="p-6">
-              {post.category && (
+              {post.categories && post.categories.length > 0 && (
                 <span class="text-sm text-blue-600 font-semibold">
-                  {post.category.title}
+                  {post.categories.map(cat => cat.title).join(', ')}
                 </span>
               )}
               <h2 class="text-xl font-bold mt-2 mb-3">

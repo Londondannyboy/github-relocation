@@ -19,9 +19,9 @@ Universal Sanity Project (93ewsltm)
 ### Deployment Stack
 - **Local**: /Users/dankeegan/local-relocation
 - **GitHub**: github-relocation
-- **Vercel**: local-relocation.vercel.app
+- **Vercel**: vercel-relocation (Project ID: prj_1GgLva0kMVd018TGoVK3LXvELhZE)
 - **Sanity Studio**: https://universal-sanity.sanity.studio/
-- **Production Domain**: relocation.quest (ready to switch)
+- **Production Domain**: https://relocation.quest (live)
 
 ## ✅ What's Been Accomplished
 

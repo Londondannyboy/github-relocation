@@ -27,13 +27,13 @@
 ### Naming Convention (CRITICAL)
 - **local-relocation**: Local directory
 - **github-relocation**: GitHub repository  
-- **vercel-relocation**: Vercel deployment
+- **vercel-relocation**: Vercel deployment (Project ID: prj_1GgLva0kMVd018TGoVK3LXvELhZE)
 - **sanity-relocation**: Sanity workspace
 - **Universal Project**: Sanity project ID 93ewsltm
 
 ### Live Endpoints
-- **Staging**: https://local-relocation.vercel.app
-- **Production**: relocation.quest (ready to switch)
+- **Production**: https://relocation.quest (live with custom domain)
+- **Vercel Dashboard**: https://vercel.com/londondannyboys-projects/vercel-relocation
 - **Sanity Studio**: https://universal-sanity.sanity.studio/
 - **GitHub**: https://github.com/Londondannyboy/github-relocation
 

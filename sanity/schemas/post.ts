@@ -194,13 +194,13 @@ export default defineType({
 
     // Taxonomy Fields
     defineField({
-      name: 'category',
-      title: 'Category',
-      type: 'reference',
-      to: [{type: 'category'}],
+      name: 'categories',
+      title: 'Categories',
+      type: 'array',
+      of: [{type: 'reference', to: [{type: 'category'}]}],
       group: 'taxonomy',
-      validation: Rule => Rule.required(),
-      description: 'Primary category for organization'
+      validation: Rule => Rule.required().min(1).error('At least one category is required'),
+      description: 'Article can belong to multiple categories'
     }),
     defineField({
       name: 'tags',
@@ -254,16 +254,18 @@ export default defineType({
   preview: {
     select: {
       title: 'title',
-      category: 'category.title',
+      category0: 'categories.0.title',
+      category1: 'categories.1.title',
       media: 'featuredImage',
       publishedAt: 'publishedAt',
       featured: 'featured'
     },
-    prepare({title, category, media, publishedAt, featured}) {
+    prepare({title, category0, category1, media, publishedAt, featured}) {
       const date = publishedAt ? new Date(publishedAt).toLocaleDateString() : 'Draft'
+      const categories = [category0, category1].filter(Boolean).join(', ') || 'No category'
       return {
         title: `${featured ? '⭐ ' : ''}${title}`,
-        subtitle: `${category} · ${date}`,
+        subtitle: `${categories} · ${date}`,
         media
       }
     }

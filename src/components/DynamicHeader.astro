@@ -1,0 +1,155 @@
+---
+import { sanityClient } from '../lib/sanity';
+
+const currentPath = Astro.url.pathname;
+
+// Fetch real categories from Sanity
+const categories = await sanityClient.fetch(`
+  *[_type == "category"] | order(title) {
+    _id,
+    title,
+    slug,
+    icon
+  }
+`);
+
+// Group categories for navigation
+const navItems = [
+  {
+    name: 'Visas',
+    href: '/visas/',
+    categories: categories.filter(c => 
+      c.title.toLowerCase().includes('visa') || 
+      c.title.toLowerCase().includes('permit')
+    )
+  },
+  {
+    name: 'Taxes',
+    href: '/taxes/',
+    categories: categories.filter(c => 
+      c.title.toLowerCase().includes('tax') || 
+      c.title.toLowerCase().includes('fatca')
+    )
+  },
+  {
+    name: 'Insurance',
+    href: '/insurance/',
+    categories: categories.filter(c => 
+      c.title.toLowerCase().includes('insurance') || 
+      c.title.toLowerCase().includes('health')
+    )
+  },
+  {
+    name: 'Living',
+    href: '/living/',
+    categories: categories.filter(c => 
+      c.title.toLowerCase().includes('living') || 
+      c.title.toLowerCase().includes('housing') ||
+      c.title.toLowerCase().includes('cost')
+    )
+  },
+  {
+    name: 'Countries',
+    href: '/countries/',
+    categories: categories.filter(c => 
+      c.title.toLowerCase().includes('cyprus') || 
+      c.title.toLowerCase().includes('malta') ||
+      c.title.toLowerCase().includes('portugal') ||
+      c.title.toLowerCase().includes('dubai')
+    )
+  }
+];
+
+// Filter out empty nav items
+const activeNavItems = navItems.filter(item => item.categories.length > 0);
+---
+
+<header class="bg-white shadow-md sticky top-0 z-50">
+  <div class="container mx-auto px-4">
+    <nav class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="/" class="flex items-center">
+        <span class="text-2xl font-bold text-blue-600">🌍 Relocation Quest</span>
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        {activeNavItems.map(item => (
+          <div class="relative group">
+            <a href={item.href} 
+               class={`text-gray-700 hover:text-blue-600 font-medium transition-colors ${
+                 currentPath.startsWith(item.href) ? 'text-blue-600' : ''
+               }`}>
+              {item.name}
+            </a>
+            
+            {item.categories.length > 0 && (
+              <div class="absolute left-0 mt-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div class="py-1">
+                  {item.categories.map(cat => (
+                    <a href={`/categories/${cat.slug.current}/`} 
+                       class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">
+                      <span class="mr-2">{cat.icon}</span>
+                      <span>{cat.title}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
+        
+        <a href="/posts" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+          All Articles
+        </a>
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden" id="mobile-menu-button">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="md:hidden hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        {activeNavItems.map(item => (
+          <div>
+            <a href={item.href} 
+               class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">
+              {item.name}
+            </a>
+            {item.categories.length > 0 && (
+              <div class="pl-4">
+                {item.categories.map(cat => (
+                  <a href={`/categories/${cat.slug.current}/`} 
+                     class="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600">
+                    <span class="mr-2">{cat.icon}</span>
+                    {cat.title}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+        <a href="/posts" 
+           class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">
+          All Articles
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const button = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  
+  button?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>
