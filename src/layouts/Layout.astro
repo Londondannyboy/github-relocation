@@ -1,0 +1,109 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  imageAlt?: string;
+  keywords?: string;
+  canonicalUrl?: string;
+  type?: 'website' | 'article';
+}
+
+const { 
+  title, 
+  description = "Expert guidance on international relocation, visas, tax optimization, and building your dream life abroad.",
+  image = "/og-image.jpg",
+  imageAlt = "Relocation Quest - Your Guide to Global Living",
+  keywords = "relocation, international living, visa applications, tax optimization, golden visa, digital nomad",
+  canonicalUrl = Astro.url.href,
+  type = "website"
+} = Astro.props;
+
+const siteUrl = "https://relocation.quest";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <link rel="canonical" href={canonicalUrl} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image.startsWith('http') ? image : `${siteUrl}${image}`} />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta property="og:site_name" content="Relocation Quest" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image.startsWith('http') ? image : `${siteUrl}${image}`} />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#1E40AF" />
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://relocation.quest/#organization",
+            "name": "Relocation Quest",
+            "url": "https://relocation.quest",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://relocation.quest/logo.png",
+              "width": 400,
+              "height": 400
+            },
+            "description": "Expert guidance on international relocation, golden visas, and tax optimization.",
+            "sameAs": [
+              "https://twitter.com/RelocationQuest"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://relocation.quest/#website",
+            "url": "https://relocation.quest",
+            "name": "Relocation Quest",
+            "description": "Your comprehensive guide to international relocation and global living.",
+            "publisher": {
+              "@id": "https://relocation.quest/#organization"
+            },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://relocation.quest/search?q={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
