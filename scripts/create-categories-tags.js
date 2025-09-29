@@ -8,7 +8,7 @@ const sanityClient = createClient({
   dataset: 'production',
   useCdn: false,
   apiVersion: '2024-01-01',
-  token: 'skTqzbDpQ9uWHpwJPk1XL6Xd0BuaSu9FXwNQZVtHa5xxzchB2jZGZQaURJ71hn1z2OsCqeLGiH2ooyrnEHcKFRKBlH24l6Fd6iHZA4hQw00RPVo8aBlclHBO4yTyMub5bDd9c8ICRuez9LyN5OE5T8o4cXvFrTXNnjozf0W7CZlZvd5CTvQE' // Developer token
+  token: 'skgoNQFzPC3j0BAzMD0OvRqHPhgGBkcyLGJLGU97b770oRTI7Qz9qBWExxPEYVHtIVF82CbAG9kyt4Bd2WCybUZaaORM0BUYMHLCy45uNzs3b0HX1w4UCqJ3wAF1PFuHrBtf3CtugrlbxOQKxrGIQFTcehbSvVlF8LdE5EW0kg6VpnDI6BIC' // Developer token from credentials
 });
 
 // Categories to create
