@@ -1,0 +1,151 @@
+---
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  {
+    name: 'Visas',
+    href: '/visas/',
+    dropdown: [
+      { name: 'Digital Nomad Visas', href: '/visas/digital-nomad/', hot: true },
+      { name: 'Golden Visas', href: '/visas/golden-visa/' },
+      { name: 'Work Permits', href: '/visas/work-permits/' },
+      { name: 'Student Visas', href: '/visas/student/' }
+    ]
+  },
+  {
+    name: 'Taxes',
+    href: '/taxes/',
+    dropdown: [
+      { name: 'Exit Tax USA', href: '/taxes/exit-tax/', hot: true },
+      { name: 'FATCA & FBAR', href: '/taxes/fatca-fbar/' },
+      { name: 'Tax Treaties', href: '/taxes/treaties/' },
+      { name: 'Non-Dom Programs', href: '/taxes/non-dom/' }
+    ]
+  },
+  {
+    name: 'Insurance',
+    href: '/insurance/',
+    dropdown: [
+      { name: 'Expat Health Insurance', href: '/insurance/health/', hot: true },
+      { name: 'Travel Insurance', href: '/insurance/travel/' },
+      { name: 'Medicare Overseas', href: '/insurance/medicare/' },
+      { name: 'Life Insurance', href: '/insurance/life/' }
+    ]
+  },
+  {
+    name: 'Countries',
+    href: '/countries/',
+    dropdown: [
+      { name: '🇨🇾 Cyprus', href: '/countries/cyprus/' },
+      { name: '🇲🇹 Malta', href: '/countries/malta/' },
+      { name: '🇦🇪 Dubai', href: '/countries/dubai/' },
+      { name: '🇵🇹 Portugal', href: '/countries/portugal/' },
+      { name: '🇸🇬 Singapore', href: '/countries/singapore/' }
+    ]
+  },
+  {
+    name: 'Tools',
+    href: '/tools/',
+    dropdown: [
+      { name: 'Exit Tax Calculator', href: '/tools/exit-tax-calculator/', new: true },
+      { name: 'Visa Eligibility', href: '/tools/visa-checker/' },
+      { name: 'Cost of Living', href: '/tools/cost-calculator/' },
+      { name: 'Tax Comparator', href: '/tools/tax-compare/' }
+    ]
+  }
+];
+---
+
+<header class="bg-white shadow-md sticky top-0 z-50">
+  <div class="container mx-auto px-4">
+    <nav class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="/" class="flex items-center">
+        <span class="text-2xl font-bold text-blue-600">🌍 Relocation Quest</span>
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        {navItems.map(item => (
+          <div class="relative group">
+            <a href={item.href} 
+               class={`text-gray-700 hover:text-blue-600 font-medium transition-colors ${
+                 currentPath.startsWith(item.href) ? 'text-blue-600' : ''
+               }`}>
+              {item.name}
+            </a>
+            
+            {item.dropdown && (
+              <div class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div class="py-1">
+                  {item.dropdown.map(subItem => (
+                    <a href={subItem.href} 
+                       class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">
+                      <span>{subItem.name}</span>
+                      {subItem.hot && (
+                        <span class="text-xs bg-red-500 text-white px-2 py-1 rounded">HOT</span>
+                      )}
+                      {subItem.new && (
+                        <span class="text-xs bg-green-500 text-white px-2 py-1 rounded">NEW</span>
+                      )}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
+        
+        <a href="/posts" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+          All Articles
+        </a>
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden" id="mobile-menu-button">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="md:hidden hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        {navItems.map(item => (
+          <div>
+            <a href={item.href} 
+               class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">
+              {item.name}
+            </a>
+            {item.dropdown && (
+              <div class="pl-4">
+                {item.dropdown.map(subItem => (
+                  <a href={subItem.href} 
+                     class="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600">
+                    {subItem.name}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+        <a href="/posts" 
+           class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">
+          All Articles
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const button = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  
+  button?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>

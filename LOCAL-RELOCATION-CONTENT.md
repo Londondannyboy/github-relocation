@@ -15,12 +15,12 @@
 - **Vercel Project**: `vercel-relocation`
 - **Production Domain**: `relocation.quest` (after validation)
 
-### Content Metrics (September 29, 2025)
-- **Keywords Documented**: 25 actual, 975 planned
-- **Articles Created**: 11 (testing phase)
-- **Articles Published**: 6
-- **Total Search Volume**: ~13,100/month
-- **Cost Per Article**: $0.012-0.042 (with smart caching)
+### Content Metrics (September 29, 2025 - 13:45)
+- **Keywords Documented**: 1000 (formula ready)
+- **Articles Created**: 2 test articles
+- **Articles Published**: 2 (live on staging)
+- **Total Search Volume**: 1,890/month (current 2 articles)
+- **Cost Per Article**: $0.0083 achieved (with Flux Pro)
 
 ### Technology Stack (Finalized)
 - **Images**: Flux Pro ($0.003/image) 
@@ -69,17 +69,16 @@
 
 ---
 
-## ✅ CONTENT CREATED (25 Keywords)
+## ✅ CONTENT CREATED (2 Test Articles)
 
-| # | Keyword | URL | Status | Ranking | Traffic |
-|---|---------|-----|--------|---------|---------|
-| 1 | Cyprus business relocation 2025 | https://relocation.quest/posts/cyprus-business-relocation-2025-setup-guide-v2/ | Published | - | 0 |
-| 2 | Cyprus non-dom tax status | https://relocation.quest/posts/cyprus-non-dom-tax-status-benefits-v2/ | Published | - | 0 |
-| 3 | Cyprus company setup remote | https://relocation.quest/posts/cyprus-company-setup-remote-process-v2/ | Published | - | 0 |
-| 4 | Cyprus digital nomad visa | https://relocation.quest/posts/cyprus-digital-nomad-visa-guide-v2/ | Published | - | 0 |
-| 5 | Cyprus vs Malta business | https://relocation.quest/posts/cyprus-vs-malta-business-tax-comparison-v2/ | Published | - | 0 |
-| 6 | Dubai business setup | https://relocation.quest/posts/dubai-business-setup-complete-guide-2025/ | Published | - | 0 |
-| 7-25 | [Various test articles] | - | Created/Draft | - | - |
+| # | Keyword | URL | Status | Search Vol | CPC |
+|---|---------|-----|--------|------------|-----|
+| 1 | Cyprus golden visa | https://local-relocation.vercel.app/posts/cyprus-golden-visa-2025-guide | Live | 590 | $2.41 |
+| 2 | Malta digital nomad visa | https://local-relocation.vercel.app/posts/malta-digital-nomad-visa-guide-2025 | Live | 1,300 | $1.85 |
+
+### Article Features
+- Cyprus: 2000+ words, MUX video (autoplay), internal/external links
+- Malta: 1800+ words, Flux Pro images, body image test
 
 ---
 

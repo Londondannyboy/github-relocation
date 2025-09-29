@@ -73,12 +73,31 @@ Universal Sanity Project (93ewsltm)
 - ❌ universal-relocation studio (replaced with universal-sanity)
 - ❌ All legacy schema contamination
 
-## 📊 Content Status
+## 📊 Content Status (Updated: Sep 29, 2025 13:40)
 
-- **Keywords Identified**: 1000
-- **Articles Created**: 0 (clean slate)
-- **Categories Ready**: 3 (Visa, Tax, Living)
-- **Cost per Article**: $0.01 target
+- **Keywords Identified**: 1000 (formula ready)
+- **Articles Created**: 2 test articles
+  - Cyprus Golden Visa Guide (2000+ words, MUX video)
+  - Malta Digital Nomad Visa Guide (1800+ words, body image)
+- **Live URLs**:
+  - https://local-relocation.vercel.app/posts/cyprus-golden-visa-2025-guide
+  - https://local-relocation.vercel.app/posts/malta-digital-nomad-visa-guide-2025
+- **Categories Ready**: 3 (Visa Requirements, Tax Strategies, Living Costs)
+- **Cost per Article**: $0.0083 achieved (under $0.01 target!)
+
+## 🎯 Current Status
+
+### What's Working
+- ✅ MUX video autoplay (muted, loop, no controls)
+- ✅ Internal/external links functioning
+- ✅ 2000+ word content generation
+- ✅ Flux Pro image generation
+- ✅ Cost tracking accurate
+
+### Issues to Fix
+- ⚠️ Body images need JPEG format (WebP not displaying in article body)
+- ⚠️ Need Astro SEO plugin & sitemap generation
+- ⚠️ Need smart caching implementation for mass generation
 
 ## 🚀 Next Steps
 

@@ -1,0 +1,196 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { sanityClient } from '../../lib/sanity';
+
+// Fetch visa-related posts
+const visaPosts = await sanityClient.fetch(`
+  *[_type == "post" && (
+    focusKeyword match "*visa*" ||
+    focusKeyword match "*nomad*" ||
+    category->slug.current == "visas"
+  )] | order(searchVolume desc) [0...20] {
+    _id,
+    title,
+    slug,
+    excerpt,
+    searchVolume,
+    cpc,
+    contentTier
+  }
+`);
+
+const digitalNomadPosts = visaPosts.filter(p => 
+  p.title?.toLowerCase().includes('digital nomad')
+);
+
+const goldenVisaPosts = visaPosts.filter(p => 
+  p.title?.toLowerCase().includes('golden visa')
+);
+
+const workVisaPosts = visaPosts.filter(p => 
+  p.title?.toLowerCase().includes('work') && !p.title?.toLowerCase().includes('golden')
+);
+---
+
+<Layout title="Visa Guides & Requirements | Relocation Quest">
+  <main class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div class="container mx-auto px-4 py-16">
+      <!-- Breadcrumbs -->
+      <nav class="text-sm mb-6">
+        <a href="/" class="text-blue-600 hover:underline">Home</a>
+        <span class="mx-2">/</span>
+        <span class="text-gray-600">Visas</span>
+      </nav>
+
+      <!-- Hero Section -->
+      <div class="bg-white rounded-lg shadow-lg p-8 mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-blue-900 mb-4">
+          Global Visa Guides & Requirements
+        </h1>
+        <p class="text-xl text-gray-700 mb-6">
+          Comprehensive visa information for digital nomads, investors, and professionals
+        </p>
+        
+        <!-- Key Stats -->
+        <div class="grid md:grid-cols-3 gap-6 mt-8">
+          <div class="bg-blue-50 p-4 rounded-lg">
+            <div class="text-3xl font-bold text-blue-600">18,100</div>
+            <div class="text-sm text-gray-600">Monthly searches for digital nomad visas</div>
+          </div>
+          <div class="bg-green-50 p-4 rounded-lg">
+            <div class="text-3xl font-bold text-green-600">195</div>
+            <div class="text-sm text-gray-600">Countries covered</div>
+          </div>
+          <div class="bg-purple-50 p-4 rounded-lg">
+            <div class="text-3xl font-bold text-purple-600">$31K</div>
+            <div class="text-sm text-gray-600">Monthly search value</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Digital Nomad Visas Section -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">
+          🌍 Digital Nomad Visas
+          <span class="text-sm font-normal text-red-600 ml-2">HOT TOPIC</span>
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Featured Countries -->
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="text-xl font-semibold mb-4">New Programs 2025</h3>
+            <ul class="space-y-3">
+              <li>
+                <a href="/visas/japan-digital-nomad-visa" class="text-blue-600 hover:underline">
+                  🇯🇵 Japan Digital Nomad Visa
+                </a>
+                <span class="text-sm text-gray-500 ml-2">NEW</span>
+              </li>
+              <li>
+                <a href="/visas/slovenia-digital-nomad-visa" class="text-blue-600 hover:underline">
+                  🇸🇮 Slovenia Digital Nomad Visa
+                </a>
+                <span class="text-sm text-gray-500 ml-2">Launches Nov 2025</span>
+              </li>
+              <li>
+                <a href="/visas/bulgaria-digital-nomad-visa" class="text-blue-600 hover:underline">
+                  🇧🇬 Bulgaria Digital Nomad Visa
+                </a>
+                <span class="text-sm text-gray-500 ml-2">Just Launched</span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Quick Links -->
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="text-xl font-semibold mb-4">Popular Guides</h3>
+            <ul class="space-y-3">
+              {digitalNomadPosts.slice(0, 5).map(post => (
+                <li>
+                  <a href={`/posts/${post.slug.current}`} class="text-blue-600 hover:underline">
+                    {post.title}
+                  </a>
+                  {post.searchVolume && (
+                    <span class="text-xs text-gray-500 ml-2">
+                      {post.searchVolume} searches/mo
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Golden Visa Section -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">
+          💰 Golden Visa Programs
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-6">
+            <h3 class="text-xl font-semibold mb-2">Cyprus Golden Visa</h3>
+            <p class="text-gray-600 text-sm mb-4">
+              Investment from €300,000 • Fast track available
+            </p>
+            <a href="/visas/cyprus-golden-visa" class="text-blue-600 hover:underline">
+              Learn more →
+            </a>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-6">
+            <h3 class="text-xl font-semibold mb-2">Dubai Golden Visa</h3>
+            <p class="text-gray-600 text-sm mb-4">
+              10-year renewable • Multiple categories
+            </p>
+            <a href="/visas/dubai-golden-visa" class="text-blue-600 hover:underline">
+              Learn more →
+            </a>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-6">
+            <h3 class="text-xl font-semibold mb-2">Portugal Golden Visa</h3>
+            <p class="text-gray-600 text-sm mb-4">
+              Path to EU citizenship • Fund investment option
+            </p>
+            <a href="/visas/portugal-golden-visa" class="text-blue-600 hover:underline">
+              Learn more →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- All Visa Articles -->
+      {visaPosts.length > 0 && (
+        <section>
+          <h2 class="text-3xl font-bold mb-6 text-gray-800">All Visa Guides</h2>
+          <div class="bg-white rounded-lg shadow p-6">
+            <div class="grid gap-4">
+              {visaPosts.map(post => (
+                <div class="border-b pb-4 last:border-b-0">
+                  <a href={`/posts/${post.slug.current}`} 
+                     class="text-lg font-semibold text-blue-700 hover:underline">
+                    {post.title}
+                  </a>
+                  {post.excerpt && (
+                    <p class="text-gray-600 mt-1">{post.excerpt}</p>
+                  )}
+                  <div class="flex gap-4 mt-2 text-sm text-gray-500">
+                    {post.searchVolume && (
+                      <span>📊 {post.searchVolume} searches/mo</span>
+                    )}
+                    {post.cpc && (
+                      <span>💵 ${post.cpc} CPC</span>
+                    )}
+                    {post.contentTier && (
+                      <span class="capitalize">📚 {post.contentTier}</span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+    </div>
+  </main>
+</Layout>

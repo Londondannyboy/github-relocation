@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { sanityClient } from '../../lib/sanity';
+import { getBodyImageUrl, getFeaturedImageUrl } from '../../lib/imageUtils.js';
 
 export async function getStaticPaths() {
   const posts = await sanityClient.fetch(
@@ -103,7 +104,9 @@ function renderContent(blocks) {
     if (block._type === 'image') {
       const url = block.asset?.url || '';
       const alt = block.alt || '';
-      return `<figure class="my-8"><img src="${url}" alt="${alt}" class="w-full rounded-lg shadow-lg" /></figure>`;
+      // Use JPEG format for body images for better compatibility
+      const optimizedUrl = getBodyImageUrl(url);
+      return `<figure class="my-8"><img src="${optimizedUrl}" alt="${alt}" class="w-full rounded-lg shadow-lg" loading="lazy" /></figure>`;
     }
     
     return '';
@@ -174,9 +177,10 @@ const content = renderContent(post.body);
     ) : post.featuredImage?.asset?.url && (
       <figure class="mb-8">
         <img 
-          src={post.featuredImage.asset.url} 
+          src={getFeaturedImageUrl(post.featuredImage.asset.url)} 
           alt={post.featuredImage.alt || post.title}
           class="w-full rounded-lg shadow-lg"
+          loading="eager"
         />
         {post.featuredImage.credit && (
           <figcaption class="text-sm text-gray-500 mt-2 text-center">

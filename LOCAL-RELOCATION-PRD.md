@@ -47,6 +47,15 @@
 
 ## 🔧 Technical Stack
 
+### Core Technologies
+- **Framework**: Astro 5.x + React + TypeScript
+- **Styling**: Tailwind CSS 4.x
+- **CMS**: Sanity Universal (93ewsltm/production)
+- **Deployment**: Vercel (auto-deploy on push)
+- **SEO**: @astrojs/sitemap (TO BE IMPLEMENTED)
+- **Images**: Flux Pro via Replicate
+- **Video**: MUX Player (optional, autoplay working)
+
 ### APIs & Credits
 ```markdown
 ✅ Perplexity API: Configured (see CREDENTIALS.md)

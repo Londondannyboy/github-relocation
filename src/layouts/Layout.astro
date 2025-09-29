@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Header from '../components/Header.astro';
 
 export interface Props {
   title: string;
@@ -104,6 +105,7 @@ const siteUrl = "https://relocation.quest";
     </script>
   </head>
   <body>
+    <Header />
     <slot />
   </body>
 </html>

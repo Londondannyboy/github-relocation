@@ -109,3 +109,23 @@ Located in `/Users/dankeegan/local-relocation/scripts/`:
 ---
 
 **READY TO LAUNCH**: Fresh start with `/Users/dankeegan/local-relocation`. All foundations proper. Videos optional but validated.
+
+## 🎯 LESSONS LEARNED (Sep 29, 2025 Session)
+
+### Test Articles Success
+- ✅ Created 2 test articles (Cyprus & Malta)
+- ✅ MUX video autoplay works: autoplay, muted, loop (no controls)
+- ✅ Internal/external links functioning in portable text
+- ✅ 2000+ word generation successful
+- ✅ Cost achieved: $0.0083 per article (under $0.01 target!)
+
+### Issues Discovered
+- ⚠️ Body images MUST be JPEG (WebP doesn't display in article body)
+- ⚠️ Need @astrojs/sitemap for dynamic sitemap generation
+- ⚠️ Smart caching essential for mass generation
+
+### DataForSEO Opportunities
+- Exit Tax USA: 1,900 searches, $3.16 CPC = $6K/month
+- Digital Nomad Visa: 18,100 searches!
+- Expat Health Insurance: $17.35 CPC
+- Total opportunity: $30K+/month identified

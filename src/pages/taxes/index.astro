@@ -1,0 +1,289 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { sanityClient } from '../../lib/sanity';
+
+// Fetch tax-related posts
+const taxPosts = await sanityClient.fetch(`
+  *[_type == "post" && (
+    focusKeyword match "*tax*" ||
+    focusKeyword match "*fatca*" ||
+    focusKeyword match "*fbar*" ||
+    category->slug.current == "taxes"
+  )] | order(cpc desc) [0...20] {
+    _id,
+    title,
+    slug,
+    excerpt,
+    searchVolume,
+    cpc,
+    contentTier
+  }
+`);
+
+const exitTaxPosts = taxPosts.filter(p => 
+  p.title?.toLowerCase().includes('exit tax')
+);
+
+const fatcaPosts = taxPosts.filter(p => 
+  p.title?.toLowerCase().includes('fatca') || p.title?.toLowerCase().includes('fbar')
+);
+---
+
+<Layout title="International Tax Guides | Exit Tax & FATCA | Relocation Quest">
+  <main class="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100">
+    <div class="container mx-auto px-4 py-16">
+      <!-- Breadcrumbs -->
+      <nav class="text-sm mb-6">
+        <a href="/" class="text-blue-600 hover:underline">Home</a>
+        <span class="mx-2">/</span>
+        <span class="text-gray-600">Taxes</span>
+      </nav>
+
+      <!-- Hero Section -->
+      <div class="bg-white rounded-lg shadow-lg p-8 mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-green-900 mb-4">
+          International Tax Planning & Compliance
+        </h1>
+        <p class="text-xl text-gray-700 mb-6">
+          Expert guidance on exit tax, FATCA, FBAR, and international tax optimization
+        </p>
+        
+        <!-- Alert Banner -->
+        <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-6">
+          <p class="font-semibold text-red-900">⚠️ Important Tax Deadlines</p>
+          <p class="text-sm text-red-700">Form 8854 must be filed by tax return due date • FBAR deadline: April 15 (automatic extension to October 15)</p>
+        </div>
+        
+        <!-- Key Stats -->
+        <div class="grid md:grid-cols-3 gap-6 mt-8">
+          <div class="bg-green-50 p-4 rounded-lg">
+            <div class="text-3xl font-bold text-green-600">$6K+</div>
+            <div class="text-sm text-gray-600">Monthly value in exit tax searches</div>
+          </div>
+          <div class="bg-yellow-50 p-4 rounded-lg">
+            <div class="text-3xl font-bold text-yellow-600">$13.49</div>
+            <div class="text-sm text-gray-600">Average CPC for compliance keywords</div>
+          </div>
+          <div class="bg-blue-50 p-4 rounded-lg">
+            <div class="text-3xl font-bold text-blue-600">1,900</div>
+            <div class="text-sm text-gray-600">Monthly searches for "exit tax USA"</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exit Tax Section -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">
+          🚪 Exit Tax Planning
+          <span class="text-sm font-normal text-green-600 ml-2">HIGH VALUE • LOW COMPETITION</span>
+        </h2>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Key Topics -->
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="text-xl font-semibold mb-4">Essential Exit Tax Guides</h3>
+            <ul class="space-y-3">
+              <li>
+                <a href="/taxes/exit-tax-usa" class="text-blue-600 hover:underline font-semibold">
+                  Exit Tax USA - Complete Guide
+                </a>
+                <p class="text-sm text-gray-600">Form 8854, covered expatriate rules, $866K exclusion</p>
+              </li>
+              <li>
+                <a href="/taxes/form-8854-threshold" class="text-blue-600 hover:underline font-semibold">
+                  Form 8854 Threshold & Requirements
+                </a>
+                <p class="text-sm text-gray-600">2025 thresholds: $201,000 income, $2.5M net worth</p>
+              </li>
+              <li>
+                <a href="/taxes/covered-expatriate-tax" class="text-blue-600 hover:underline font-semibold">
+                  Covered Expatriate Tax Rules
+                </a>
+                <p class="text-sm text-gray-600">Three tests, exceptions, planning strategies</p>
+              </li>
+              <li>
+                <a href="/taxes/streamlined-filing-compliance" class="text-blue-600 hover:underline font-semibold">
+                  Streamlined Filing Compliance
+                </a>
+                <p class="text-sm text-gray-600">Catch up on unfiled returns, avoid penalties</p>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Calculator Tool -->
+          <div class="bg-gradient-to-br from-green-100 to-blue-100 rounded-lg shadow p-6">
+            <h3 class="text-xl font-semibold mb-4">📊 Exit Tax Calculator</h3>
+            <p class="text-gray-700 mb-4">
+              Estimate your potential exit tax liability based on your assets and income
+            </p>
+            <div class="space-y-3">
+              <div class="bg-white p-3 rounded">
+                <label class="text-sm font-medium">Net Worth</label>
+                <p class="text-xs text-gray-500">Are you above the $2.5M threshold?</p>
+              </div>
+              <div class="bg-white p-3 rounded">
+                <label class="text-sm font-medium">Average Income (5 years)</label>
+                <p class="text-xs text-gray-500">Is it above $201,000 (2025)?</p>
+              </div>
+              <div class="bg-white p-3 rounded">
+                <label class="text-sm font-medium">Tax Compliance</label>
+                <p class="text-xs text-gray-500">Filed all required returns for 5 years?</p>
+              </div>
+            </div>
+            <a href="/tools/exit-tax-calculator" class="mt-4 inline-block bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+              Use Full Calculator →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FATCA/FBAR Section -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">
+          📋 FATCA & FBAR Compliance
+        </h2>
+        <div class="bg-white rounded-lg shadow p-6">
+          <div class="grid md:grid-cols-3 gap-6">
+            <div>
+              <h3 class="font-semibold text-lg mb-2">FATCA Requirements</h3>
+              <ul class="text-sm text-gray-600 space-y-1">
+                <li>• Form 8938 filing</li>
+                <li>• Reporting thresholds</li>
+                <li>• Foreign account disclosure</li>
+                <li>• Penalties for non-compliance</li>
+              </ul>
+              <a href="/taxes/fatca-reporting" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
+                Full FATCA Guide →
+              </a>
+            </div>
+            
+            <div>
+              <h3 class="font-semibold text-lg mb-2">FBAR Filing</h3>
+              <ul class="text-sm text-gray-600 space-y-1">
+                <li>• $10,000 aggregate threshold</li>
+                <li>• FinCEN Form 114</li>
+                <li>• Annual filing requirement</li>
+                <li>• Electronic filing only</li>
+              </ul>
+              <a href="/taxes/fbar-filing" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
+                FBAR Filing Guide →
+              </a>
+            </div>
+            
+            <div>
+              <h3 class="font-semibold text-lg mb-2">Totalization Agreements</h3>
+              <ul class="text-sm text-gray-600 space-y-1">
+                <li>• Avoid double taxation</li>
+                <li>• Social Security benefits</li>
+                <li>• 30+ countries covered</li>
+                <li>• Certificate of coverage</li>
+              </ul>
+              <a href="/taxes/totalization-agreements" class="text-blue-600 hover:underline text-sm mt-2 inline-block">
+                View All Agreements →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tax by Country -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold mb-6 text-gray-800">Tax Optimization by Country</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-6">
+            <h3 class="text-xl font-semibold mb-2">🇨🇾 Cyprus Non-Dom</h3>
+            <p class="text-gray-600 text-sm mb-3">
+              17 years tax benefits • 0% on foreign dividends • No wealth tax
+            </p>
+            <a href="/taxes/cyprus-non-dom" class="text-blue-600 hover:underline">
+              Learn more →
+            </a>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-6">
+            <h3 class="text-xl font-semibold mb-2">🇲🇹 Malta Remittance</h3>
+            <p class="text-gray-600 text-sm mb-3">
+              Tax on remitted income only • 5% minimum tax • EU access
+            </p>
+            <a href="/taxes/malta-remittance-basis" class="text-blue-600 hover:underline">
+              Learn more →
+            </a>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-6">
+            <h3 class="text-xl font-semibold mb-2">🇦🇪 Dubai Tax Free</h3>
+            <p class="text-gray-600 text-sm mb-3">
+              0% personal income tax • No capital gains • Corporate 9% (mainland)
+            </p>
+            <a href="/taxes/dubai-tax-benefits" class="text-blue-600 hover:underline">
+              Learn more →
+            </a>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-6">
+            <h3 class="text-xl font-semibold mb-2">🇵🇹 Portugal NHR</h3>
+            <p class="text-gray-600 text-sm mb-3">
+              10 years benefits • 0% foreign income • 20% flat rate option
+            </p>
+            <a href="/taxes/portugal-nhr" class="text-blue-600 hover:underline">
+              Learn more →
+            </a>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-6">
+            <h3 class="text-xl font-semibold mb-2">🇸🇬 Singapore Territorial</h3>
+            <p class="text-gray-600 text-sm mb-3">
+              Foreign income exempt • Progressive rates • No capital gains tax
+            </p>
+            <a href="/taxes/singapore-tax-system" class="text-blue-600 hover:underline">
+              Learn more →
+            </a>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-6">
+            <h3 class="text-xl font-semibold mb-2">🇬🇷 Greece Lump Sum</h3>
+            <p class="text-gray-600 text-sm mb-3">
+              €100K annual tax • All foreign income covered • 15 years
+            </p>
+            <a href="/taxes/greece-lump-sum-tax" class="text-blue-600 hover:underline">
+              Learn more →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- All Tax Articles -->
+      {taxPosts.length > 0 && (
+        <section>
+          <h2 class="text-3xl font-bold mb-6 text-gray-800">All Tax Guides</h2>
+          <div class="bg-white rounded-lg shadow p-6">
+            <div class="grid gap-4">
+              {taxPosts.map(post => (
+                <div class="border-b pb-4 last:border-b-0">
+                  <a href={`/posts/${post.slug.current}`} 
+                     class="text-lg font-semibold text-blue-700 hover:underline">
+                    {post.title}
+                  </a>
+                  {post.excerpt && (
+                    <p class="text-gray-600 mt-1">{post.excerpt}</p>
+                  )}
+                  <div class="flex gap-4 mt-2 text-sm text-gray-500">
+                    {post.searchVolume && (
+                      <span>📊 {post.searchVolume} searches/mo</span>
+                    )}
+                    {post.cpc && (
+                      <span>💵 ${post.cpc} CPC</span>
+                    )}
+                    {post.contentTier && (
+                      <span class="capitalize">📚 {post.contentTier}</span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+    </div>
+  </main>
+</Layout>

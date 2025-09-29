@@ -10,6 +10,20 @@
 
 ## 🏗️ Current Architecture
 
+### Project Structure
+```
+/Users/dankeegan/local-relocation/
+├── src/
+│   ├── pages/        # Astro pages
+│   ├── layouts/      # Layout templates
+│   ├── components/   # React/Astro components
+│   ├── lib/          # Utilities (Sanity client)
+│   └── styles/       # Global styles
+├── public/           # Static assets
+├── sanity/           # Sanity studio configuration
+└── scripts/          # Content generation scripts
+```
+
 ### Naming Convention (CRITICAL)
 - **local-relocation**: Local directory
 - **github-relocation**: GitHub repository  
@@ -108,23 +122,33 @@ const post = {
 
 ## 🚀 Quick Commands
 
-### Test Sanity Connection
+### Development Commands
 ```bash
-node scripts/test-universal-sanity.js
-```
+# Install dependencies
+npm install
 
-### Generate Test Article
-```bash
-node scripts/generate-test-article.js
-```
-
-### Local Development
-```bash
+# Start development server
 npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+### Testing Scripts
+```bash
+# Test Sanity Connection
+node scripts/test-universal-sanity.js
+
+# Generate Test Article
+node scripts/generate-test-article.js
 ```
 
 ### Deploy to Production
 ```bash
+# Auto-deploys to Vercel on push
 git add . && git commit -m "Update" && git push origin main
 ```
 
