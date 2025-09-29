@@ -8,7 +8,7 @@ This is the Relocation Quest project - a content platform focused on internation
 - **Local Directory**: `/Users/dankeegan/local-relocation` ✅
 - **GitHub Repository**: `github-relocation` (https://github.com/Londondannyboy/github-relocation) ✅
 - **Vercel Project**: `local-relocation` (auto-linked) ✅
-- **Sanity Project**: `bc08ijz6` (production dataset)
+- **Sanity Project**: `93ewsltm` (Universal project, production dataset)
 - **Production Domain**: `relocation.quest` (ready to switch)
 
 This new naming convention prevents confusion between services.

@@ -29,7 +29,7 @@ This is a clean, optimized rebuild of Relocation Quest with:
 
 - **Framework**: Astro 5.x + React + TypeScript
 - **Styling**: Tailwind CSS 4.x
-- **CMS**: Sanity (bc08ijz6/production)
+- **CMS**: Sanity Universal (93ewsltm/production)
 - **Images**: Flux Pro via Replicate
 - **Deployment**: Vercel
 
@@ -63,7 +63,7 @@ git push origin main
 - **GitHub**: github-relocation
 - **Vercel**: vercel-relocation.vercel.app
 - **Production**: relocation.quest (after domain switch)
-- **Sanity**: sanity-relocation.sanity.studio
+- **Sanity Studio**: https://universal-sanity.sanity.studio/
 
 ## 📊 Content Strategy
 

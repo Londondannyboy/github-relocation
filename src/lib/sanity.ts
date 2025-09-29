@@ -1,11 +1,12 @@
 import { createClient } from '@sanity/client';
 
 export const sanityClient = createClient({
-  projectId: 'bc08ijz6',
+  projectId: '93ewsltm', // Universal project
   dataset: 'production',
   apiVersion: '2024-01-01',
   useCdn: true,
   perspective: 'published',
+  token: process.env.SANITY_API_TOKEN, // For authenticated requests
 });
 
 // Helper function to get image URL from Sanity
@@ -18,5 +19,5 @@ export function urlForImage(source: any): string {
   const [_file, id, dimensions, format] = ref.split('-');
   const [width, height] = dimensions.split('x');
   
-  return `https://cdn.sanity.io/images/bc08ijz6/production/${id}-${dimensions}.${format}`;
+  return `https://cdn.sanity.io/images/93ewsltm/production/${id}-${dimensions}.${format}`;
 }
