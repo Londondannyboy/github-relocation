@@ -4,10 +4,13 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
+// import vercel from '@astrojs/vercel/serverless'; // Need to install first
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://relocation.quest',
+  output: 'static', // Keep static for now - need Vercel adapter for hybrid
+  // adapter: vercel(), // Uncomment when package is installed
   vite: {
     plugins: [tailwindcss()]
   },
