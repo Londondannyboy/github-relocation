@@ -7,7 +7,7 @@ const visaPosts = await sanityClient.fetch(`
   *[_type == "post" && (
     focusKeyword match "*visa*" ||
     focusKeyword match "*nomad*" ||
-    category->slug.current == "visas"
+    "Visa Requirements" in categories[]->title
   )] | order(searchVolume desc) [0...20] {
     _id,
     title,
@@ -79,23 +79,17 @@ const workVisaPosts = visaPosts.filter(p =>
           <div class="bg-white rounded-lg shadow p-6">
             <h3 class="text-xl font-semibold mb-4">New Programs 2025</h3>
             <ul class="space-y-3">
-              <li>
-                <a href="/visas/japan-digital-nomad-visa" class="text-blue-600 hover:underline">
-                  🇯🇵 Japan Digital Nomad Visa
-                </a>
-                <span class="text-sm text-gray-500 ml-2">NEW</span>
+              <li class="text-gray-600">
+                🇯🇵 Japan Digital Nomad Visa
+                <span class="text-sm text-gray-500 ml-2">Coming Soon</span>
               </li>
-              <li>
-                <a href="/visas/slovenia-digital-nomad-visa" class="text-blue-600 hover:underline">
-                  🇸🇮 Slovenia Digital Nomad Visa
-                </a>
-                <span class="text-sm text-gray-500 ml-2">Launches Nov 2025</span>
+              <li class="text-gray-600">
+                🇸🇮 Slovenia Digital Nomad Visa
+                <span class="text-sm text-gray-500 ml-2">Coming Soon</span>
               </li>
-              <li>
-                <a href="/visas/bulgaria-digital-nomad-visa" class="text-blue-600 hover:underline">
-                  🇧🇬 Bulgaria Digital Nomad Visa
-                </a>
-                <span class="text-sm text-gray-500 ml-2">Just Launched</span>
+              <li class="text-gray-600">
+                🇧🇬 Bulgaria Digital Nomad Visa
+                <span class="text-sm text-gray-500 ml-2">Coming Soon</span>
               </li>
             </ul>
           </div>
@@ -127,33 +121,33 @@ const workVisaPosts = visaPosts.filter(p =>
           💰 Golden Visa Programs
         </h2>
         <div class="grid md:grid-cols-3 gap-6">
-          <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-6">
+          <div class="bg-white rounded-lg shadow p-6">
             <h3 class="text-xl font-semibold mb-2">Cyprus Golden Visa</h3>
             <p class="text-gray-600 text-sm mb-4">
               Investment from €300,000 • Fast track available
             </p>
-            <a href="/visas/cyprus-golden-visa" class="text-blue-600 hover:underline">
-              Learn more →
-            </a>
+            <span class="text-gray-400">
+              Guide coming soon
+            </span>
           </div>
           
-          <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-6">
+          <div class="bg-white rounded-lg shadow p-6">
             <h3 class="text-xl font-semibold mb-2">Dubai Golden Visa</h3>
             <p class="text-gray-600 text-sm mb-4">
               10-year renewable • Multiple categories
             </p>
-            <a href="/visas/dubai-golden-visa" class="text-blue-600 hover:underline">
-              Learn more →
-            </a>
+            <span class="text-gray-400">
+              Guide coming soon
+            </span>
           </div>
           
-          <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-6">
+          <div class="bg-white rounded-lg shadow p-6">
             <h3 class="text-xl font-semibold mb-2">Portugal Golden Visa</h3>
             <p class="text-gray-600 text-sm mb-4">
               Path to EU citizenship • Fund investment option
             </p>
-            <a href="/visas/portugal-golden-visa" class="text-blue-600 hover:underline">
-              Learn more →
+            <a href="/posts/portugal-golden-visa-2025-investment-guide" class="text-blue-600 hover:underline">
+              Read our guide →
             </a>
           </div>
         </div>
