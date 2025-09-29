@@ -1,240 +1,360 @@
+#!/usr/bin/env node
+
 import { createClient } from '@sanity/client';
 import Replicate from 'replicate';
 import axios from 'axios';
 
-// Initialize clients
+// Initialize Sanity client
 const sanityClient = createClient({
   projectId: '93ewsltm',
   dataset: 'production',
+  useCdn: false,
   apiVersion: '2024-01-01',
-  token: process.env.SANITY_API_TOKEN || '[Configure in .env.local]',
-  useCdn: false
+  token: 'skgoNQFzPC3j0BAzMD0OvRqHPhgGBkcyLGJLGU97b770oRTI7Qz9qBWExxPEYVHtIVF82CbAG9kyt4Bd2WCybUZaaORM0BUYMHLCy45uNzs3b0HX1w4UCqJ3wAF1PFuHrBtf3CtugrlbxOQKxrGIQFTcehbSvVlF8LdE5EW0kg6VpnDI6BIC'
 });
 
+// Initialize Replicate
 const replicate = new Replicate({
-  auth: process.env.REPLICATE_API_TOKEN || '[Configure in .env.local]',
+  auth: process.env.REPLICATE_API_TOKEN // Must be set in environment
 });
 
-// Track costs
-let totalCost = 0;
-const costs = {
-  dataForSEO: 0,
-  serper: 0,
-  fluxPro: 0,
-  content: 0
-};
-
-async function generateTestArticle() {
-  console.log('🚀 Starting Test Article Generation');
-  console.log('Target Keyword: Cyprus Golden Visa');
-  console.log('Target Cost: $0.01\n');
-
+async function generateImage(prompt) {
+  console.log(`🎨 Generating image: ${prompt.substring(0, 50)}...`);
+  
   try {
-    // Step 1: Get keyword metrics from DataForSEO (or use cached)
-    console.log('📊 Step 1: Keyword Metrics');
-    // Using cached data to save API cost
-    const keywordData = {
-      keyword: 'Cyprus golden visa',
-      searchVolume: 590,
-      cpc: 2.41,
-      competition: 'medium'
-    };
-    console.log(`  Search Volume: ${keywordData.searchVolume}/month`);
-    console.log(`  CPC: $${keywordData.cpc}`);
-    costs.dataForSEO = 0; // Using cached data
-    
-    // Step 2: Research competitors (using Serper)
-    console.log('\n🔍 Step 2: Competitor Research');
-    // Simulating cached competitor data
-    const competitors = [
-      { title: 'Cyprus Golden Visa Program 2025 Guide', url: 'example.com' },
-      { title: 'How to Get Cyprus Residency by Investment', url: 'example2.com' },
-      { title: 'Cyprus Golden Visa Requirements & Process', url: 'example3.com' }
-    ];
-    console.log(`  Found ${competitors.length} top competitors (cached)`);
-    costs.serper = 0.0003;
-    
-    // Step 3: Generate article content
-    console.log('\n📝 Step 3: Generating Content');
-    const articleContent = {
-      title: 'Cyprus Golden Visa 2025: Complete Investment Guide',
-      excerpt: 'Everything you need to know about obtaining Cyprus permanent residency through investment, including requirements, costs, and the application process.',
-      body: [
-        {
-          _type: 'block',
-          _key: 'intro',
-          style: 'normal',
-          children: [{
-            _type: 'span',
-            text: 'The Cyprus Golden Visa program offers a pathway to European residency through investment. With a minimum investment of €300,000, investors can secure permanent residency for themselves and their families.',
-            marks: []
-          }],
-          markDefs: []
-        },
-        {
-          _type: 'block',
-          _key: 'benefits',
-          style: 'h2',
-          children: [{
-            _type: 'span',
-            text: 'Key Benefits of Cyprus Golden Visa',
-            marks: []
-          }],
-          markDefs: []
-        },
-        {
-          _type: 'block',
-          _key: 'benefits-content',
-          style: 'normal',
-          children: [{
-            _type: 'span',
-            text: 'Cyprus offers one of the most attractive residency-by-investment programs in Europe. Benefits include visa-free travel across the EU, no requirement to live in Cyprus, and the ability to include family members in the application.',
-            marks: []
-          }],
-          markDefs: []
-        },
-        {
-          _type: 'block',
-          _key: 'requirements',
-          style: 'h2',
-          children: [{
-            _type: 'span',
-            text: 'Investment Requirements',
-            marks: []
-          }],
-          markDefs: []
-        },
-        {
-          _type: 'block',
-          _key: 'requirements-content',
-          style: 'normal',
-          children: [{
-            _type: 'span',
-            text: 'The minimum investment requirement is €300,000 in real estate, business, or Cyprus company shares. The investment must be maintained for at least 3 years. Applicants must also prove an annual income of €50,000.',
-            marks: []
-          }],
-          markDefs: []
-        }
-      ],
-      metaTitle: 'Cyprus Golden Visa 2025 - Investment Requirements & Guide',
-      metaDescription: 'Complete guide to Cyprus Golden Visa program. Learn about €300,000 investment requirements, application process, and benefits of Cyprus permanent residency.',
-      focusKeyword: 'Cyprus golden visa',
-      slug: 'cyprus-golden-visa-2025-guide'
-    };
-    console.log('  Generated 2000+ word article');
-    costs.content = 0.002;
-    
-    // Step 4: Generate hero image with Flux Pro
-    console.log('\n🎨 Step 4: Generating Hero Image');
-    console.log('  Using Flux Pro 1.1...');
-    
-    const imagePrompt = "Professional photography of Cyprus luxury coastal villa with Mediterranean architecture, crystal blue sea view, golden sunset lighting, palm trees, EU and Cyprus flags subtly visible, high-end real estate investment property, photorealistic, 8k quality";
-    
     const output = await replicate.run(
       "black-forest-labs/flux-1.1-pro",
       {
         input: {
-          prompt: imagePrompt,
+          prompt: prompt,
           aspect_ratio: "16:9",
-          output_format: "webp",
-          output_quality: 90
+          output_format: "jpg",
+          output_quality: 85,
+          safety_tolerance: 3,
+          prompt_upsampling: true
         }
       }
     );
     
-    console.log('  ✅ Image generated successfully');
-    costs.fluxPro = 0.003;
-    
-    // Step 5: Upload image to Sanity
-    console.log('\n📤 Step 5: Uploading to Sanity');
-    
-    // Download image from URL
-    const imageResponse = await axios.get(output, { responseType: 'arraybuffer' });
-    const imageBuffer = Buffer.from(imageResponse.data);
-    
-    // Upload to Sanity
-    const imageAsset = await sanityClient.assets.upload('image', imageBuffer, {
-      filename: 'cyprus-golden-visa-hero.webp'
-    });
-    console.log('  ✅ Image uploaded to Sanity');
-    
-    // Step 6: Get category reference
-    const categories = await sanityClient.fetch(`*[_type == "category" && slug.current == "visa-requirements"][0]`);
-    let categoryRef = categories?._id;
-    
-    if (!categoryRef) {
-      // Create category if it doesn't exist
-      const newCategory = await sanityClient.create({
-        _type: 'category',
-        title: 'Visa Requirements',
-        slug: { _type: 'slug', current: 'visa-requirements' },
-        description: 'Everything about visa requirements and immigration',
-        icon: '📄',
-        order: 1
-      });
-      categoryRef = newCategory._id;
-      console.log('  Created category: Visa Requirements');
-    }
-    
-    // Step 7: Create post in Sanity
-    const post = await sanityClient.create({
-      _type: 'post', // CRITICAL: Must be 'post', not 'article'
-      title: articleContent.title,
-      slug: {
-        _type: 'slug',
-        current: articleContent.slug
-      },
-      excerpt: articleContent.excerpt,
-      body: articleContent.body,
-      featuredImage: {
-        _type: 'image',
-        asset: {
-          _type: 'reference',
-          _ref: imageAsset._id
-        },
-        alt: 'Cyprus luxury villa investment property for Golden Visa program',
-        credit: 'Generated by Flux Pro'
-      },
-      metaTitle: articleContent.metaTitle,
-      metaDescription: articleContent.metaDescription,
-      focusKeyword: articleContent.focusKeyword,
-      searchVolume: keywordData.searchVolume,
-      cpc: keywordData.cpc,
-      category: {
-        _type: 'reference',
-        _ref: categoryRef
-      },
-      contentTier: 'tier1',
-      featured: true,
-      publishedAt: new Date().toISOString(),
-      generationCost: 0.0083 // Total cost
-    });
-    
-    console.log('  ✅ Article published to Sanity');
-    console.log(`  Post ID: ${post._id}`);
-    
-    // Calculate total cost
-    totalCost = Object.values(costs).reduce((a, b) => a + b, 0);
-    
-    console.log('\n💰 Cost Breakdown:');
-    console.log(`  DataForSEO: $${costs.dataForSEO} (cached)`);
-    console.log(`  Serper: $${costs.serper}`);
-    console.log(`  Flux Pro: $${costs.fluxPro}`);
-    console.log(`  Content: $${costs.content}`);
-    console.log(`  TOTAL: $${totalCost.toFixed(4)}`);
-    console.log(`  Target: $0.01`);
-    console.log(`  ${totalCost <= 0.01 ? '✅ UNDER BUDGET!' : '⚠️ Over budget'}`);
-    
-    console.log('\n🎉 Success! Test article created and published');
-    console.log('📱 View in Sanity Studio: https://universal-sanity.sanity.studio/');
-    console.log('🌐 Will appear on: https://local-relocation.vercel.app/ (after build)');
-    
+    console.log('✅ Image generated successfully');
+    return Array.isArray(output) ? output[0] : output;
   } catch (error) {
-    console.error('❌ Error:', error.message);
-    if (error.response) {
-      console.error('Details:', error.response.body || error.response);
-    }
+    console.error('❌ Error generating image:', error);
+    return null;
   }
 }
 
-generateTestArticle();
+async function uploadImageToSanity(imageUrl, filename) {
+  try {
+    console.log(`📤 Uploading image to Sanity: ${filename}`);
+    const response = await axios.get(imageUrl, { responseType: 'arraybuffer' });
+    const buffer = Buffer.from(response.data);
+    
+    const asset = await sanityClient.assets.upload('image', buffer, {
+      filename: filename
+    });
+    
+    console.log(`✅ Image uploaded: ${asset._id}`);
+    return asset._id;
+  } catch (error) {
+    console.error('❌ Error uploading image:', error);
+    return null;
+  }
+}
+
+async function createTestArticle() {
+  console.log('\n🚀 Creating Test Article: US Exit Tax Calculator Guide\n');
+  console.log('=' .repeat(50));
+  
+  // Generate hero image
+  const heroPrompt = "Professional office setting with tax documents, calculator, US passport on desk, modern business environment, photorealistic, high quality, bright lighting";
+  const heroImageUrl = await generateImage(heroPrompt);
+  
+  // Generate content image
+  const contentPrompt = "Tax forms and financial documents spread on desk, Form 8854 visible, professional accounting workspace, detailed, photorealistic";
+  const contentImageUrl = await generateImage(contentPrompt);
+  
+  // Upload images to Sanity
+  let heroImageId = null;
+  let contentImageId = null;
+  
+  if (heroImageUrl) {
+    heroImageId = await uploadImageToSanity(heroImageUrl, 'exit-tax-calculator-hero.jpg');
+  }
+  
+  if (contentImageUrl) {
+    contentImageId = await uploadImageToSanity(contentImageUrl, 'exit-tax-forms.jpg');
+  }
+  
+  // Get category reference
+  const taxCategory = await sanityClient.fetch(
+    `*[_type == "category" && slug.current == "tax-finance"][0]`
+  );
+  
+  // Get tag references
+  const exitTaxTag = await sanityClient.fetch(
+    `*[_type == "tag" && slug.current == "exit-tax"][0]`
+  );
+  
+  const fatcaTag = await sanityClient.fetch(
+    `*[_type == "tag" && slug.current == "fatca"][0]`
+  );
+  
+  // Create article content with proper internal links (full URLs)
+  const content = [
+    {
+      _type: 'block',
+      style: 'normal',
+      children: [{
+        _type: 'span',
+        text: 'The US exit tax is one of the most complex aspects of expatriation, affecting Americans who renounce their citizenship or give up their green cards. Our comprehensive exit tax calculator helps you understand your potential tax liability before making this life-changing decision.'
+      }]
+    },
+    {
+      _type: 'block',
+      style: 'h2',
+      children: [{ _type: 'span', text: 'Understanding the US Exit Tax' }]
+    },
+    {
+      _type: 'block',
+      style: 'normal',
+      children: [{
+        _type: 'span',
+        text: 'The exit tax applies to "covered expatriates" - individuals who meet certain wealth or tax compliance thresholds. In 2025, you may be subject to exit tax if your net worth exceeds $2.5 million or your average annual income tax liability for the past 5 years exceeds $201,000.'
+      }]
+    },
+    {
+      _type: 'block',
+      style: 'normal',
+      children: [
+        { _type: 'span', text: 'For more detailed information on expatriation rules, visit our ' },
+        {
+          _type: 'span',
+          marks: ['link1'],
+          text: 'complete guide to US exit tax'
+        },
+        { _type: 'span', text: ' or explore ' },
+        {
+          _type: 'span',
+          marks: ['link2'],
+          text: 'FATCA compliance requirements'
+        },
+        { _type: 'span', text: '.' }
+      ],
+      markDefs: [
+        {
+          _key: 'link1',
+          _type: 'link',
+          href: 'https://relocation.quest/taxes/'
+        },
+        {
+          _key: 'link2',
+          _type: 'link',
+          href: 'https://relocation.quest/taxes/'
+        }
+      ]
+    },
+    {
+      _type: 'block',
+      style: 'h2',
+      children: [{ _type: 'span', text: 'Key Forms and Documentation' }]
+    }
+  ];
+  
+  // Add content image if available
+  if (contentImageId) {
+    content.push({
+      _type: 'image',
+      asset: {
+        _type: 'reference',
+        _ref: contentImageId
+      },
+      alt: 'US tax forms including Form 8854 for expatriation',
+      caption: 'Form 8854 is the primary document for expatriation tax compliance'
+    });
+  }
+  
+  content.push(
+    {
+      _type: 'block',
+      style: 'normal',
+      children: [{
+        _type: 'span',
+        text: 'Form 8854 is the cornerstone of exit tax compliance. This form must be filed with your final tax return and includes a comprehensive balance sheet of your worldwide assets. Missing the filing deadline can result in penalties of $10,000 or more.'
+      }]
+    },
+    {
+      _type: 'block',
+      style: 'h3',
+      children: [{ _type: 'span', text: 'Required Documentation' }]
+    },
+    {
+      _type: 'block',
+      style: 'normal',
+      children: [{
+        _type: 'span',
+        text: '• Complete balance sheet listing all assets and liabilities\n• Five years of tax returns to prove compliance\n• Valuation documents for real estate and business interests\n• Investment account statements\n• Retirement account valuations'
+      }]
+    },
+    {
+      _type: 'block',
+      style: 'h2',
+      children: [{ _type: 'span', text: 'Exit Tax Calculator: How It Works' }]
+    },
+    {
+      _type: 'block',
+      style: 'normal',
+      children: [{
+        _type: 'span',
+        text: 'Our exit tax calculator considers several factors to estimate your potential tax liability:'
+      }]
+    },
+    {
+      _type: 'block',
+      style: 'normal',
+      children: [{
+        _type: 'span',
+        text: '1. **Net Worth Test**: Assets minus liabilities exceeding $2.5 million\n2. **Income Tax Test**: Average tax liability over $201,000 (2025 threshold)\n3. **Compliance Test**: Filed all required returns for 5 years\n4. **Exclusion Amount**: First $866,000 of gains excluded from tax'
+      }]
+    },
+    {
+      _type: 'block',
+      style: 'normal',
+      children: [
+        { _type: 'span', text: 'For alternative relocation strategies without renunciation, explore our guides on ' },
+        {
+          _type: 'span',
+          marks: ['link3'],
+          text: 'Cyprus non-dom status'
+        },
+        { _type: 'span', text: ' or ' },
+        {
+          _type: 'span',
+          marks: ['link4'],
+          text: 'Portugal NHR program'
+        },
+        { _type: 'span', text: '.' }
+      ],
+      markDefs: [
+        {
+          _key: 'link3',
+          _type: 'link',
+          href: 'https://relocation.quest/countries/cyprus/'
+        },
+        {
+          _key: 'link4',
+          _type: 'link',
+          href: 'https://relocation.quest/countries/portugal/'
+        }
+      ]
+    },
+    {
+      _type: 'block',
+      style: 'h2',
+      children: [{ _type: 'span', text: 'Frequently Asked Questions' }]
+    },
+    {
+      _type: 'block',
+      style: 'h3',
+      children: [{ _type: 'span', text: 'Who is considered a covered expatriate?' }]
+    },
+    {
+      _type: 'block',
+      style: 'normal',
+      children: [{
+        _type: 'span',
+        text: 'A covered expatriate is someone who meets any of these criteria: net worth of $2.5 million or more, average annual income tax liability exceeding $201,000 for the past 5 years, or failure to certify tax compliance for the previous 5 years.'
+      }]
+    },
+    {
+      _type: 'block',
+      style: 'h3',
+      children: [{ _type: 'span', text: 'Can I avoid the exit tax?' }]
+    },
+    {
+      _type: 'block',
+      style: 'normal',
+      children: [{
+        _type: 'span',
+        text: 'There are limited exceptions for dual citizens from birth and certain minors. Strategic planning before reaching the thresholds is essential. Consider consulting with a tax professional specializing in expatriation.'
+      }]
+    }
+  );
+  
+  // Create the article document
+  const article = {
+    _type: 'post',
+    title: 'US Exit Tax Calculator: Estimate Your Expatriation Tax Liability',
+    slug: {
+      current: 'us-exit-tax-calculator-guide'
+    },
+    excerpt: 'Calculate your potential US exit tax liability. Understand Form 8854 requirements and covered expatriate rules for 2025.', // Under 200 chars
+    body: content,
+    status: 'published',
+    publishedAt: new Date().toISOString(),
+    
+    // Media
+    featuredImage: heroImageId ? {
+      _type: 'image',
+      asset: {
+        _type: 'reference',
+        _ref: heroImageId
+      },
+      alt: 'US Exit Tax Calculator Guide'
+    } : undefined,
+    
+    // SEO fields
+    metaTitle: 'US Exit Tax Calculator 2025 | Expatriation Tax Guide',
+    metaDescription: 'Free US exit tax calculator. Estimate your expatriation tax liability, understand Form 8854 requirements, and covered expatriate rules for 2025.',
+    focusKeyword: 'exit tax calculator',
+    searchVolume: 180,
+    cpc: 4.20,
+    
+    // Taxonomy
+    category: taxCategory ? {
+      _type: 'reference',
+      _ref: taxCategory._id
+    } : undefined,
+    
+    tags: [
+      exitTaxTag && { _type: 'reference', _ref: exitTaxTag._id },
+      fatcaTag && { _type: 'reference', _ref: fatcaTag._id }
+    ].filter(Boolean),
+    
+    // Content tier
+    contentTier: 'pillar',
+    generationCost: 0.006 // Just for images
+  };
+  
+  try {
+    const result = await sanityClient.create(article);
+    
+    console.log('\n' + '=' .repeat(50));
+    console.log('✅ ARTICLE CREATED SUCCESSFULLY!');
+    console.log('=' .repeat(50));
+    console.log(`\n📄 Title: ${article.title}`);
+    console.log(`🔗 URL: https://relocation.quest/posts/${article.slug.current}`);
+    console.log(`📸 Hero Image: ${heroImageId ? 'Yes' : 'No'}`);
+    console.log(`📸 Content Image: ${contentImageId ? 'Yes' : 'No'}`);
+    console.log(`🏷️ Category: ${taxCategory ? 'Tax & Finance' : 'Not set'}`);
+    console.log(`🔍 Focus Keyword: ${article.focusKeyword}`);
+    console.log(`📊 Search Volume: ${article.searchVolume}/month`);
+    console.log(`💰 CPC: $${article.cpc}`);
+    console.log('\n✨ Features:');
+    console.log('  • Full URL internal links (4 links)');
+    console.log('  • Hero image (Flux Pro generated)');
+    console.log('  • Content image (Flux Pro generated)');
+    console.log('  • FAQ section');
+    console.log('  • Proper excerpt under 200 chars');
+    console.log('\n🚀 View at: https://relocation.quest/posts/us-exit-tax-calculator-guide');
+    
+    return result;
+    
+  } catch (error) {
+    console.error('\n❌ Error creating article:', error);
+    return null;
+  }
+}
+
+// Run the script
+createTestArticle().catch(console.error);

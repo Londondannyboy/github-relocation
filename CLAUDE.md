@@ -62,6 +62,9 @@
 - ✅ Generate AVIF format with WebP fallback
 - ✅ Track generation costs in Sanity
 - ✅ Include DataForSEO metrics (search volume, CPC)
+- ✅ Write in British English (optimisation, centre, realise, etc.)
+- ✅ Include external source links for every major claim
+- ✅ Use Critique Labs for fact-checking when available
 
 ## 🔄 Content Generation Workflow
 
