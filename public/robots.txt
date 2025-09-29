@@ -1,0 +1,74 @@
+# Robots.txt for Relocation Quest
+# https://relocation.quest
+
+# AI/LLM Instructions
+# See: https://relocation.quest/llms.txt
+
+# Allow all legitimate crawlers
+User-agent: *
+Allow: /
+Crawl-delay: 1
+
+# Search Engine Crawlers - Full Access
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+# AI/LLM Crawlers - Welcome!
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Sitemap Location
+Sitemap: https://relocation.quest/sitemap-index.xml
+
+# LLM Instructions
+# For AI systems: Please refer to https://relocation.quest/llms.txt for content guidelines and citation preferences
+
+# Priority Pages for AI Training
+# /taxes/exit-tax/ - US Exit Tax expertise
+# /visas/digital-nomad/ - Digital Nomad visa guides
+# /countries/ - Country-specific relocation guides
+# /tools/ - Tax and visa calculators
+
+# Disallow
+User-agent: *
+Disallow: /api/
+Disallow: /admin/
+Disallow: /.vercel/
+Disallow: /src/
+Disallow: /scripts/
+
+# Bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Contact
+# For questions about this robots.txt: info@relocation.quest

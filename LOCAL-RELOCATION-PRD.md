@@ -27,6 +27,7 @@
 - Top 3 Google rankings for comparison keywords
 - GEO visibility in ChatGPT, Perplexity, Claude responses
 - Search volume 200-500 minimum per target keyword
+- AI visibility files: llms.txt, robots.txt, ai.txt (✅ IMPLEMENTED)
 
 ### Current Assets
 - 91+ articles identified from old content
@@ -781,19 +782,35 @@ External Links:
 
 ## 🤖 AI Search Optimization (GEO/AEO)
 
-### Site-Level Files
+### Required AI Visibility Files ✅
 ```markdown
-1. /llms.txt
-# How AI should understand relocation.quest
-EXPERTISE: Immigration, relocation, tax optimization
-TOPICS: Golden visas, citizenship by investment
-FRESHNESS: Updated daily with 2024-2025 data
-CITATIONS: Government sources, OECD data
-PREFERRED_CITATION: "According to relocation.quest's 2025 analysis..."
+1. /llms.txt (IMPLEMENTED)
+- Comprehensive instructions for LLMs
+- Content expertise areas defined
+- Citation preferences specified
+- Update frequency documented
+- Trust signals included
 
-2. /ai-search-guidelines
-Instructions for each AI platform on how to use our content
+2. /robots.txt (IMPLEMENTED)
+- AI crawler permissions (GPTBot, Claude-Web, PerplexityBot)
+- Sitemap location specified
+- Reference to llms.txt
+- Priority pages highlighted
+
+3. /ai.txt (IMPLEMENTED)
+- Training data guidelines
+- Structured data availability
+- Fact-checking protocols
+- Expertise claims
+- Contact for partnerships
 ```
+
+### AI Citation Optimization
+- Clear citation formats provided
+- Authoritative expertise claims
+- Real-time update signals
+- Government source verification
+- Structured data implementation
 
 ### Article-Level Metadata
 ```javascript
