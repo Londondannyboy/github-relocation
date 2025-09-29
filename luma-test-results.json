@@ -1,0 +1,32 @@
+[
+  {
+    "concept": "Golden Thread",
+    "location": "Cyprus",
+    "videoUrl": "https://storage.cdn-luma.com/dream_machine/7596711c-2dd6-41ca-ae9a-303b5574e4bf/bb8d4752-103e-4b7a-8db4-cb27f7f07fdb_resultdaaec349d5bff945.mp4",
+    "duration": "91.3",
+    "cost": 0.04,
+    "timestamp": "2025-09-29T16:52:30.654Z"
+  },
+  {
+    "concept": "First Person Explorer",
+    "location": "Lisbon",
+    "error": "API Error: {\"detail\":\"Insufficient credits\"}",
+    "timestamp": "2025-09-29T16:52:43.778Z"
+  },
+  {
+    "concept": "Portal Transition",
+    "location": "Dubai",
+    "videoUrl": "https://storage.cdn-luma.com/dream_machine/d4573a47-3270-42e6-9ad9-070ec0ba8095/df8ae935-a019-4990-b5fe-cba2b28c560c_result509771bba667d483.mp4",
+    "duration": "92.7",
+    "cost": 0.04,
+    "timestamp": "2025-09-29T16:54:08.580Z"
+  },
+  {
+    "concept": "Data Visualization",
+    "location": "Malta",
+    "videoUrl": "https://storage.cdn-luma.com/dream_machine/96248a00-4cf1-4f2b-9cdb-ae2a8ba59e41/c4e6db3e-e74d-4a4a-bda1-c520c2b4875c_result81a94b29cb3c60e8.mp4",
+    "duration": "90.2",
+    "cost": 0.04,
+    "timestamp": "2025-09-29T16:54:10.220Z"
+  }
+]

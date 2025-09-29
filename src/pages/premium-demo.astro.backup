@@ -73,7 +73,7 @@ const locations = [
   
   <!-- Text Marquee -->
   <TextMarquee
-    text={locations.join(' • ')}
+    texts={locations}
     speed={50}
   />
   
