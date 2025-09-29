@@ -21,7 +21,15 @@ const post = await sanityClient.fetch(
     title,
     slug,
     excerpt,
-    body,
+    body[] {
+      ...,
+      _type == 'image' => {
+        ...,
+        asset-> {
+          url
+        }
+      }
+    },
     publishedAt,
     featuredImage {
       asset-> { url },
@@ -130,10 +138,14 @@ const content = renderContent(post.body);
 
     <!-- Header -->
     <header class="mb-8">
-      {post.category && (
-        <span class="text-blue-600 font-semibold uppercase text-sm">
-          {post.category.title}
-        </span>
+      {post.categories && post.categories.length > 0 && (
+        <div class="flex gap-2 mb-2">
+          {post.categories.map(cat => (
+            <a href={`/categories/${cat.slug.current}/`} class="text-blue-600 font-semibold uppercase text-sm hover:underline">
+              {cat.title}
+            </a>
+          ))}
+        </div>
       )}
       <h1 class="text-4xl md:text-5xl font-bold mt-2 mb-4">{post.title}</h1>
       
