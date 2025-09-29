@@ -108,10 +108,31 @@ function validateArticle(article, wordCount, linkCount, imageCount) {
   return errors; // Only return errors that will block publishing
 }
 
+// Helper function to add timeout to fetch requests
+async function fetchWithTimeout(url, options, timeoutMs = 30000) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+  
+  try {
+    const response = await fetch(url, {
+      ...options,
+      signal: controller.signal
+    });
+    clearTimeout(timeout);
+    return response;
+  } catch (error) {
+    clearTimeout(timeout);
+    if (error.name === 'AbortError') {
+      throw new Error(`Request timeout after ${timeoutMs}ms`);
+    }
+    throw error;
+  }
+}
+
 // WORKING API FUNCTIONS (NO LinkUp or Critique)
 async function tavilyResearch(query) {
   try {
-    const response = await fetch('https://api.tavily.com/search', {
+    const response = await fetchWithTimeout('https://api.tavily.com/search', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -122,7 +143,7 @@ async function tavilyResearch(query) {
         include_raw_content: true,
         max_results: 10
       })
-    });
+    }, 30000); // 30 second timeout
     return await response.json();
   } catch (error) {
     await log(`⚠️ Tavily failed: ${error.message}`);
@@ -132,7 +153,7 @@ async function tavilyResearch(query) {
 
 async function serperSearch(keyword) {
   try {
-    const response = await fetch('https://google.serper.dev/search', {
+    const response = await fetchWithTimeout('https://google.serper.dev/search', {
       method: 'POST',
       headers: {
         'X-API-KEY': process.env.SERPER_API_KEY,
@@ -144,7 +165,7 @@ async function serperSearch(keyword) {
         gl: 'us',
         hl: 'en'
       })
-    });
+    }, 30000); // 30 second timeout
     return await response.json();
   } catch (error) {
     await log(`⚠️ Serper failed: ${error.message}`);
@@ -154,7 +175,7 @@ async function serperSearch(keyword) {
 
 async function firecrawlScrape(url) {
   try {
-    const response = await fetch('https://api.firecrawl.dev/v1/scrape', {
+    const response = await fetchWithTimeout('https://api.firecrawl.dev/v1/scrape', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${process.env.FIRECRAWL_API_KEY}`,
@@ -164,7 +185,7 @@ async function firecrawlScrape(url) {
         url: url,
         formats: ['markdown']
       })
-    });
+    }, 30000); // 30 second timeout
     return await response.json();
   } catch (error) {
     await log(`⚠️ Firecrawl failed: ${error.message}`);
@@ -693,15 +714,40 @@ async function generateSafeguardedArticle(topic, existingArticles) {
   try {
     await log(`\n📝 Generating: ${topic.title}`);
     
-    // Research phase
+    // Research phase with timeout protection
     await log('   🔬 Researching...');
-    const [tavilyData, serperData, perplexityData] = await Promise.all([
+    
+    // Use Promise.allSettled instead of Promise.all to handle individual failures
+    // Add overall timeout to prevent hanging
+    const researchPromise = Promise.allSettled([
       tavilyResearch(`${topic.keyword} requirements costs benefits 2025`),
       serperSearch(topic.keyword),
       perplexityResearch(`${topic.keyword} latest updates 2025`)
     ]);
     
-    const serpAnalysis = analyzeSERP(serperData);
+    // Timeout after 45 seconds for all research
+    const timeoutPromise = new Promise((resolve) => {
+      setTimeout(() => {
+        resolve([
+          { status: 'fulfilled', value: null },
+          { status: 'fulfilled', value: null },
+          { status: 'fulfilled', value: null }
+        ]);
+      }, 45000);
+    });
+    
+    const results = await Promise.race([researchPromise, timeoutPromise]);
+    
+    const tavilyData = results[0]?.status === 'fulfilled' ? results[0].value : null;
+    const serperData = results[1]?.status === 'fulfilled' ? results[1].value : null;
+    const perplexityData = results[2]?.status === 'fulfilled' ? results[2].value : null;
+    
+    // Log if any research failed
+    if (!tavilyData) await log('   ⚠️ Tavily research skipped');
+    if (!serperData) await log('   ⚠️ Serper research skipped');
+    if (!perplexityData) await log('   ⚠️ Perplexity research skipped');
+    
+    const serpAnalysis = serperData ? analyzeSERP(serperData) : null;
     
     // Generate images
     await log('   🎨 Generating images...');

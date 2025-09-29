@@ -199,3 +199,164 @@
 [2025-09-29T19:05:31.023Z] 
 🔍 Checking deployment...
 [2025-09-29T19:05:35.642Z]    ✓ Build successful
+[2025-09-29T19:05:36.458Z]    ✓ Pushed to GitHub
+[2025-09-29T19:05:36.459Z]    ⏳ Waiting for Vercel...
+[2025-09-29T19:07:06.748Z]    ✅ Deployment successful!
+[2025-09-29T19:07:06.749Z] ✅ Batch 1 deployed
+[2025-09-29T19:07:06.750Z] 
+⏳ Pausing before next batch...
+[2025-09-29T19:07:36.750Z] 
+============================================================
+[2025-09-29T19:07:36.751Z] 📦 BATCH 2 of 97
+[2025-09-29T19:07:36.752Z] ============================================================
+[2025-09-29T19:07:36.752Z] 
+📋 Topics for this batch:
+[2025-09-29T19:07:36.753Z]    - tanzania digital nomad visa cost
+[2025-09-29T19:07:36.753Z]    - india digital nomad visa process
+[2025-09-29T19:07:36.753Z]    - sweden digital nomad visa process
+[2025-09-29T19:07:36.753Z]    - digital nomad visa denmark
+[2025-09-29T19:07:36.753Z]    - canada digital nomad visa cost
+[2025-09-29T19:07:36.753Z]    - hong kong digital nomad visa process
+[2025-09-29T19:07:36.753Z]    - malta digital nomad visa 2025
+[2025-09-29T19:07:36.753Z]    - san marino digital nomad visa
+[2025-09-29T19:07:36.753Z]    - oman digital nomad visa guide
+[2025-09-29T19:07:36.753Z]    - costa rica digital nomad visa guide
+[2025-09-29T19:07:36.753Z] 
+📝 Generating: Tanzania Digital Nomad Visa Cost Complete Guide
+[2025-09-29T19:07:36.753Z]    🔬 Researching...
+[2025-09-29T19:07:42.735Z]    🎨 Generating images...
+[2025-09-29T19:07:53.143Z]    ✍️ Creating content...
+[2025-09-29T19:07:53.145Z]    ✓ 2251 words, 10 links, 4 images
+[2025-09-29T19:07:54.100Z]    ✅ Published successfully: tanzania-digital-nomad-visa-cost-complete-guide
+[2025-09-29T19:07:57.103Z] 
+📝 Generating: India Digital Nomad Visa Process Complete Guide
+[2025-09-29T19:07:57.103Z]    🔬 Researching...
+[2025-09-29T19:08:00.210Z]    🎨 Generating images...
+[2025-09-29T19:08:10.143Z]    ✍️ Creating content...
+[2025-09-29T19:08:10.144Z]    ✓ 2203 words, 10 links, 4 images
+[2025-09-29T19:08:11.172Z]    ✅ Published successfully: india-digital-nomad-visa-process-complete-guide
+[2025-09-29T19:08:14.174Z] 
+📝 Generating: Sweden Digital Nomad Visa Process Complete Guide
+[2025-09-29T19:08:14.175Z]    🔬 Researching...
+[2025-09-29T19:08:21.918Z]    🎨 Generating images...
+[2025-09-29T19:25:59.108Z] ⚠️ Image 1 generation failed: read ECONNRESET
+[2025-09-29T19:43:51.151Z] ⚠️ Image 3 generation failed: read ECONNRESET
+[2025-09-29T19:43:54.800Z]    ✍️ Creating content...
+[2025-09-29T19:43:54.802Z]    ✓ 2283 words, 10 links, 2 images
+[2025-09-29T19:59:56.155Z]    ❌ Failed: Sweden Digital Nomad Visa Process Complete Guide - read ECONNRESET
+[2025-09-29T19:59:56.161Z]    ⚠️ Skipping failed article: Sweden Digital Nomad Visa Process Complete Guide
+[2025-09-29T19:59:56.163Z] 
+📝 Generating: Digital Nomad Visa Denmark Complete Guide
+[2025-09-29T19:59:56.164Z]    🔬 Researching...
+[2025-09-29T22:54:34.964Z] 🤖 Initializing safeguarded generation system...
+
+[2025-09-29T22:54:34.968Z] 🚀 SAFEGUARDED GENERATION TO 1000 ARTICLES
+[2025-09-29T22:54:34.968Z] ============================================================
+[2025-09-29T22:54:35.033Z] 
+📊 Current articles: 47
+[2025-09-29T22:54:35.034Z] 📝 Articles to generate: 953
+[2025-09-29T22:54:35.034Z] 📦 Batches to run: 96
+[2025-09-29T22:54:35.141Z] 
+============================================================
+[2025-09-29T22:54:35.142Z] 📦 BATCH 1 of 96
+[2025-09-29T22:54:35.142Z] ============================================================
+[2025-09-29T22:54:35.142Z] 
+📋 Topics for this batch:
+[2025-09-29T22:54:35.142Z]    - digital nomad visa denmark
+[2025-09-29T22:54:35.142Z]    - canada digital nomad visa cost
+[2025-09-29T22:54:35.142Z]    - hong kong digital nomad visa process
+[2025-09-29T22:54:35.142Z]    - malta digital nomad visa 2025
+[2025-09-29T22:54:35.142Z]    - san marino digital nomad visa
+[2025-09-29T22:54:35.142Z]    - oman digital nomad visa guide
+[2025-09-29T22:54:35.142Z]    - costa rica digital nomad visa guide
+[2025-09-29T22:54:35.142Z]    - cyprus digital nomad visa process
+[2025-09-29T22:54:35.142Z]    - turkey digital nomad visa
+[2025-09-29T22:54:35.142Z]    - kuwait digital nomad visa requirements
+[2025-09-29T22:54:35.143Z] 
+📝 Generating: Digital Nomad Visa Denmark Complete Guide
+[2025-09-29T22:54:35.143Z]    🔬 Researching...
+[2025-09-29T22:54:39.700Z]    ⚠️ Perplexity research skipped
+[2025-09-29T22:54:39.701Z]    🎨 Generating images...
+[2025-09-29T22:54:48.695Z]    ✍️ Creating content...
+[2025-09-29T22:54:48.700Z]    ✓ 2186 words, 10 links, 4 images
+[2025-09-29T22:54:50.012Z]    ✅ Published successfully: digital-nomad-visa-denmark-complete-guide
+[2025-09-29T22:54:53.015Z] 
+📝 Generating: Canada Digital Nomad Visa Cost Complete Guide
+[2025-09-29T22:54:53.015Z]    🔬 Researching...
+[2025-09-29T22:55:01.124Z]    ⚠️ Perplexity research skipped
+[2025-09-29T22:55:01.125Z]    🎨 Generating images...
+[2025-09-29T22:55:09.946Z]    ✍️ Creating content...
+[2025-09-29T22:55:09.949Z]    ✓ 2274 words, 10 links, 4 images
+[2025-09-29T22:55:11.004Z]    ✅ Published successfully: canada-digital-nomad-visa-cost-complete-guide
+[2025-09-29T22:55:14.006Z] 
+📝 Generating: Hong Kong Digital Nomad Visa Process Complete Guide
+[2025-09-29T22:55:14.008Z]    🔬 Researching...
+[2025-09-29T22:55:19.206Z]    ⚠️ Perplexity research skipped
+[2025-09-29T22:55:19.208Z]    🎨 Generating images...
+[2025-09-29T22:55:27.526Z]    ✍️ Creating content...
+[2025-09-29T22:55:27.529Z]    ✓ 2317 words, 10 links, 4 images
+[2025-09-29T22:55:28.276Z]    ✅ Published successfully: hong-kong-digital-nomad-visa-process-complete-guide
+[2025-09-29T22:55:31.280Z] 
+📝 Generating: Malta Digital Nomad Visa 2025 Complete Guide
+[2025-09-29T22:55:31.281Z]    🔬 Researching...
+[2025-09-29T22:55:35.984Z]    ⚠️ Perplexity research skipped
+[2025-09-29T22:55:35.985Z]    🎨 Generating images...
+[2025-09-29T22:55:43.555Z]    ✍️ Creating content...
+[2025-09-29T22:55:43.558Z]    ✓ 2374 words, 10 links, 4 images
+[2025-09-29T22:55:44.318Z]    ✅ Published successfully: malta-digital-nomad-visa-2025-complete-guide
+[2025-09-29T22:55:47.320Z] 
+📝 Generating: San Marino Digital Nomad Visa Complete Guide
+[2025-09-29T22:55:47.321Z]    🔬 Researching...
+[2025-09-29T22:55:52.915Z]    ⚠️ Perplexity research skipped
+[2025-09-29T22:55:52.925Z]    🎨 Generating images...
+[2025-09-29T22:56:01.385Z]    ✍️ Creating content...
+[2025-09-29T22:56:01.387Z]    ✓ 2319 words, 10 links, 4 images
+[2025-09-29T22:56:02.361Z]    ✅ Published successfully: san-marino-digital-nomad-visa-complete-guide
+[2025-09-29T22:56:05.364Z] 
+📝 Generating: Oman Digital Nomad Visa Guide Complete Guide
+[2025-09-29T22:56:05.365Z]    🔬 Researching...
+[2025-09-29T22:56:09.887Z]    ⚠️ Perplexity research skipped
+[2025-09-29T22:56:09.888Z]    🎨 Generating images...
+[2025-09-29T22:56:19.749Z]    ✍️ Creating content...
+[2025-09-29T22:56:19.751Z]    ✓ 2323 words, 10 links, 4 images
+[2025-09-29T22:56:20.416Z]    ✅ Published successfully: oman-digital-nomad-visa-guide-complete-guide
+[2025-09-29T22:56:23.419Z] 
+📝 Generating: Costa Rica Digital Nomad Visa Guide Complete Guide
+[2025-09-29T22:56:23.419Z]    🔬 Researching...
+[2025-09-29T22:56:27.875Z]    ⚠️ Perplexity research skipped
+[2025-09-29T22:56:27.877Z]    🎨 Generating images...
+[2025-09-29T22:56:48.015Z]    ✍️ Creating content...
+[2025-09-29T22:56:48.017Z]    ✓ 1969 words, 10 links, 4 images
+[2025-09-29T22:56:49.213Z]    ✅ Published successfully: costa-rica-digital-nomad-visa-guide-complete-guide
+[2025-09-29T22:56:52.216Z] 
+📝 Generating: Cyprus Digital Nomad Visa Process Complete Guide
+[2025-09-29T22:56:52.217Z]    🔬 Researching...
+[2025-09-29T22:56:56.617Z]    ⚠️ Perplexity research skipped
+[2025-09-29T22:56:56.618Z]    🎨 Generating images...
+[2025-09-29T22:57:05.746Z]    ✍️ Creating content...
+[2025-09-29T22:57:05.749Z]    ✓ 2341 words, 10 links, 4 images
+[2025-09-29T22:57:06.530Z]    ✅ Published successfully: cyprus-digital-nomad-visa-process-complete-guide
+[2025-09-29T22:57:09.532Z] 
+📝 Generating: Turkey Digital Nomad Visa Complete Guide
+[2025-09-29T22:57:09.533Z]    🔬 Researching...
+[2025-09-29T22:57:13.674Z]    ⚠️ Perplexity research skipped
+[2025-09-29T22:57:13.678Z]    🎨 Generating images...
+[2025-09-29T22:57:21.800Z]    ✍️ Creating content...
+[2025-09-29T22:57:21.802Z]    ✓ 2375 words, 10 links, 4 images
+[2025-09-29T22:57:22.602Z]    ✅ Published successfully: turkey-digital-nomad-visa-complete-guide
+[2025-09-29T22:57:25.604Z] 
+📝 Generating: Kuwait Digital Nomad Visa Requirements Complete Guide
+[2025-09-29T22:57:25.605Z]    🔬 Researching...
+[2025-09-29T22:57:33.399Z]    ⚠️ Perplexity research skipped
+[2025-09-29T22:57:33.400Z]    🎨 Generating images...
+[2025-09-29T22:57:41.395Z]    ✍️ Creating content...
+[2025-09-29T22:57:41.396Z]    ✓ 2336 words, 10 links, 4 images
+[2025-09-29T22:57:42.416Z]    ✅ Published successfully: kuwait-digital-nomad-visa-requirements-complete-guide
+[2025-09-29T22:57:45.418Z] 
+📊 Batch 1 Results:
+[2025-09-29T22:57:45.419Z]    - Articles generated: 10/10
+[2025-09-29T22:57:45.419Z]    - Average word count: 2281
+[2025-09-29T22:57:45.420Z]    - Failed articles: 0
+[2025-09-29T22:57:45.420Z] 
+🔍 Checking deployment...
+[2025-09-29T22:57:51.368Z]    ✓ Build successful
