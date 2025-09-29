@@ -1,0 +1,88 @@
+{
+  "timestamp": "2025-09-29T16:32:49.303Z",
+  "platform": "Replicate (Stable Video)",
+  "concepts": {
+    "goldenThread": {
+      "name": "Golden Thread Visual Signature",
+      "description": "Elegant golden particle stream connecting locations",
+      "videos": {
+        "cyprus": {
+          "error": "Replicate API error: {\"detail\":\"- input: input_image is required\\n- input.video_length: Invalid type. Expected: string, given: integer\\n\",\"status\":422,\"title\":\"Input validation failed\",\"invalid_fields\":[{\"type\":\"required\",\"field\":\"input\",\"description\":\"input_image is required\"},{\"type\":\"invalid_type\",\"field\":\"input.video_length\",\"description\":\"Invalid type. Expected: string, given: integer\"}]}\n",
+          "status": "failed"
+        },
+        "dubai": {
+          "error": "Replicate API error: {\"detail\":\"- input: input_image is required\\n- input.video_length: Invalid type. Expected: string, given: integer\\n\",\"status\":422,\"title\":\"Input validation failed\",\"invalid_fields\":[{\"type\":\"required\",\"field\":\"input\",\"description\":\"input_image is required\"},{\"type\":\"invalid_type\",\"field\":\"input.video_length\",\"description\":\"Invalid type. Expected: string, given: integer\"}]}\n",
+          "status": "failed"
+        },
+        "malta": {
+          "error": "Replicate API error: {\"detail\":\"- input: input_image is required\\n- input.video_length: Invalid type. Expected: string, given: integer\\n\",\"status\":422,\"title\":\"Input validation failed\",\"invalid_fields\":[{\"type\":\"required\",\"field\":\"input\",\"description\":\"input_image is required\"},{\"type\":\"invalid_type\",\"field\":\"input.video_length\",\"description\":\"Invalid type. Expected: string, given: integer\"}]}\n",
+          "status": "failed"
+        }
+      },
+      "totalTime": 0,
+      "totalCost": 0
+    },
+    "portal": {
+      "name": "Portal Transitions",
+      "description": "Geometric portals revealing destinations",
+      "videos": {
+        "cyprus": {
+          "error": "Replicate API error: {\"detail\":\"- input: input_image is required\\n- input.video_length: Invalid type. Expected: string, given: integer\\n\",\"status\":422,\"title\":\"Input validation failed\",\"invalid_fields\":[{\"type\":\"required\",\"field\":\"input\",\"description\":\"input_image is required\"},{\"type\":\"invalid_type\",\"field\":\"input.video_length\",\"description\":\"Invalid type. Expected: string, given: integer\"}]}\n",
+          "status": "failed"
+        },
+        "dubai": {
+          "error": "Replicate API error: {\"detail\":\"- input: input_image is required\\n- input.video_length: Invalid type. Expected: string, given: integer\\n\",\"status\":422,\"title\":\"Input validation failed\",\"invalid_fields\":[{\"type\":\"required\",\"field\":\"input\",\"description\":\"input_image is required\"},{\"type\":\"invalid_type\",\"field\":\"input.video_length\",\"description\":\"Invalid type. Expected: string, given: integer\"}]}\n",
+          "status": "failed"
+        },
+        "malta": {
+          "error": "Replicate API error: {\"detail\":\"- input: input_image is required\\n- input.video_length: Invalid type. Expected: string, given: integer\\n\",\"status\":422,\"title\":\"Input validation failed\",\"invalid_fields\":[{\"type\":\"required\",\"field\":\"input\",\"description\":\"input_image is required\"},{\"type\":\"invalid_type\",\"field\":\"input.video_length\",\"description\":\"Invalid type. Expected: string, given: integer\"}]}\n",
+          "status": "failed"
+        }
+      },
+      "totalTime": 0,
+      "totalCost": 0
+    },
+    "dataVisualization": {
+      "name": "Data Visualization Journey",
+      "description": "Statistics morphing into real locations",
+      "videos": {
+        "cyprus": {
+          "error": "Replicate API error: {\"detail\":\"- input: input_image is required\\n- input.video_length: Invalid type. Expected: string, given: integer\\n\",\"status\":422,\"title\":\"Input validation failed\",\"invalid_fields\":[{\"type\":\"required\",\"field\":\"input\",\"description\":\"input_image is required\"},{\"type\":\"invalid_type\",\"field\":\"input.video_length\",\"description\":\"Invalid type. Expected: string, given: integer\"}]}\n",
+          "status": "failed"
+        },
+        "dubai": {
+          "error": "Replicate API error: {\"detail\":\"- input: input_image is required\\n- input.video_length: Invalid type. Expected: string, given: integer\\n\",\"status\":422,\"title\":\"Input validation failed\",\"invalid_fields\":[{\"type\":\"required\",\"field\":\"input\",\"description\":\"input_image is required\"},{\"type\":\"invalid_type\",\"field\":\"input.video_length\",\"description\":\"Invalid type. Expected: string, given: integer\"}]}\n",
+          "status": "failed"
+        },
+        "malta": {
+          "error": "Replicate API error: {\"detail\":\"- input: input_image is required\\n- input.video_length: Invalid type. Expected: string, given: integer\\n\",\"status\":422,\"title\":\"Input validation failed\",\"invalid_fields\":[{\"type\":\"required\",\"field\":\"input\",\"description\":\"input_image is required\"},{\"type\":\"invalid_type\",\"field\":\"input.video_length\",\"description\":\"Invalid type. Expected: string, given: integer\"}]}\n",
+          "status": "failed"
+        }
+      },
+      "totalTime": 0,
+      "totalCost": 0
+    },
+    "firstPerson": {
+      "name": "First Person Explorer",
+      "description": "POV shots with consistent props",
+      "videos": {
+        "cyprus": {
+          "error": "Replicate API error: {\"detail\":\"- input: input_image is required\\n- input.video_length: Invalid type. Expected: string, given: integer\\n\",\"status\":422,\"title\":\"Input validation failed\",\"invalid_fields\":[{\"type\":\"required\",\"field\":\"input\",\"description\":\"input_image is required\"},{\"type\":\"invalid_type\",\"field\":\"input.video_length\",\"description\":\"Invalid type. Expected: string, given: integer\"}]}\n",
+          "status": "failed"
+        },
+        "dubai": {
+          "error": "Replicate API error: {\"detail\":\"- input: input_image is required\\n- input.video_length: Invalid type. Expected: string, given: integer\\n\",\"status\":422,\"title\":\"Input validation failed\",\"invalid_fields\":[{\"type\":\"required\",\"field\":\"input\",\"description\":\"input_image is required\"},{\"type\":\"invalid_type\",\"field\":\"input.video_length\",\"description\":\"Invalid type. Expected: string, given: integer\"}]}\n",
+          "status": "failed"
+        },
+        "malta": {
+          "error": "Replicate API error: {\"detail\":\"- input: input_image is required\\n- input.video_length: Invalid type. Expected: string, given: integer\\n\",\"status\":422,\"title\":\"Input validation failed\",\"invalid_fields\":[{\"type\":\"required\",\"field\":\"input\",\"description\":\"input_image is required\"},{\"type\":\"invalid_type\",\"field\":\"input.video_length\",\"description\":\"Invalid type. Expected: string, given: integer\"}]}\n",
+          "status": "failed"
+        }
+      },
+      "totalTime": 0,
+      "totalCost": 0
+    }
+  },
+  "totalCost": 0,
+  "totalTime": 0
+}
