@@ -6435,3 +6435,115 @@
 [2025-09-30T04:10:00.018Z] 
 🔍 Checking deployment...
 [2025-09-30T04:10:24.005Z]    ✓ Build successful
+[2025-09-30T04:10:24.821Z]    ✓ Pushed to GitHub
+[2025-09-30T04:10:24.822Z]    ⏳ Waiting for Vercel...
+[2025-09-30T04:11:55.218Z]    ✅ Deployment successful!
+[2025-09-30T04:11:55.219Z] ✅ Batch 56 deployed
+[2025-09-30T04:11:55.220Z] 
+⏳ Pausing before next batch...
+[2025-09-30T04:12:25.222Z] 
+============================================================
+[2025-09-30T04:12:25.223Z] 📦 BATCH 57 of 96
+[2025-09-30T04:12:25.224Z] ============================================================
+[2025-09-30T04:12:25.225Z] 
+📋 Topics for this batch:
+[2025-09-30T04:12:25.225Z]    - netherlands remote work visa
+[2025-09-30T04:12:25.225Z]    - kenya digital nomad visa cost
+[2025-09-30T04:12:25.225Z]    - cayman islands digital nomad visa requirements
+[2025-09-30T04:12:25.225Z]    - liechtenstein digital nomad visa cost
+[2025-09-30T04:12:25.225Z]    - cyprus digital nomad visa 2025
+[2025-09-30T04:12:25.225Z]    - switzerland remote work visa process
+[2025-09-30T04:12:25.225Z]    - canada digital nomad visa 2025
+[2025-09-30T04:12:25.225Z]    - best switzerland digital nomad visa
+[2025-09-30T04:12:25.225Z]    - seychelles digital nomad visa cost
+[2025-09-30T04:12:25.225Z]    - best peru digital nomad visa
+[2025-09-30T04:12:25.225Z] 
+📝 Generating: Netherlands Remote Work Visa Complete Guide
+[2025-09-30T04:12:25.226Z]    🔬 Researching...
+[2025-09-30T04:12:29.371Z]    ⚠️ Perplexity research skipped
+[2025-09-30T04:12:29.372Z]    🎨 Generating images...
+[2025-09-30T04:12:37.620Z]    ✍️ Creating content...
+[2025-09-30T04:12:37.623Z]    ✓ 2310 words, 10 links, 4 images
+[2025-09-30T04:12:38.883Z]    ✅ Published successfully: netherlands-remote-work-visa-complete-guide
+[2025-09-30T04:12:41.886Z] 
+📝 Generating: Kenya Digital Nomad Visa Cost Complete Guide
+[2025-09-30T04:12:41.887Z]    🔬 Researching...
+[2025-09-30T04:12:47.377Z]    ⚠️ Perplexity research skipped
+[2025-09-30T04:12:47.378Z]    🎨 Generating images...
+[2025-09-30T04:12:56.867Z]    ✍️ Creating content...
+[2025-09-30T04:12:56.870Z]    ✓ 2203 words, 10 links, 4 images
+[2025-09-30T04:12:57.907Z]    ✅ Published successfully: kenya-digital-nomad-visa-cost-complete-guide
+[2025-09-30T04:13:00.910Z] 
+📝 Generating: Cayman Islands Digital Nomad Visa Requirements Complete Guid
+[2025-09-30T04:13:00.911Z]    🔬 Researching...
+[2025-09-30T04:13:45.917Z]    ⚠️ Tavily research skipped
+[2025-09-30T04:13:45.918Z]    ⚠️ Serper research skipped
+[2025-09-30T04:13:45.918Z]    ⚠️ Perplexity research skipped
+[2025-09-30T04:13:45.919Z]    🎨 Generating images...
+[2025-09-30T04:13:54.850Z]    ✍️ Creating content...
+[2025-09-30T04:13:54.853Z]    ❌ Failed: Cayman Islands Digital Nomad Visa Requirements Complete Guid - Cannot read properties of null (reading 'commonQuestions')
+[2025-09-30T04:13:54.853Z]    ⚠️ Skipping failed article: Cayman Islands Digital Nomad Visa Requirements Complete Guid
+[2025-09-30T04:13:54.854Z] 
+📝 Generating: Liechtenstein Digital Nomad Visa Cost Complete Guide
+[2025-09-30T04:13:54.854Z]    🔬 Researching...
+[2025-09-30T04:14:05.071Z]    ⚠️ Perplexity research skipped
+[2025-09-30T04:14:05.072Z]    🎨 Generating images...
+[2025-09-30T04:14:13.980Z]    ✍️ Creating content...
+[2025-09-30T04:14:13.983Z]    ✓ 2206 words, 10 links, 4 images
+[2025-09-30T04:14:15.018Z]    ✅ Published successfully: liechtenstein-digital-nomad-visa-cost-complete-guide
+[2025-09-30T04:14:18.021Z] 
+📝 Generating: Cyprus Digital Nomad Visa 2025 Complete Guide
+[2025-09-30T04:14:18.022Z]    🔬 Researching...
+[2025-09-30T04:14:20.944Z]    ⚠️ Perplexity research skipped
+[2025-09-30T04:14:20.944Z]    🎨 Generating images...
+[2025-09-30T04:14:28.906Z]    ✍️ Creating content...
+[2025-09-30T04:14:28.908Z]    ✓ 2418 words, 10 links, 4 images
+[2025-09-30T04:14:30.059Z]    ✅ Published successfully: cyprus-digital-nomad-visa-2025-complete-guide
+[2025-09-30T04:14:33.062Z] 
+📝 Generating: Switzerland Remote Work Visa Process Complete Guide
+[2025-09-30T04:14:33.063Z]    🔬 Researching...
+[2025-09-30T04:14:35.889Z]    ⚠️ Perplexity research skipped
+[2025-09-30T04:14:35.891Z]    🎨 Generating images...
+[2025-09-30T04:14:47.631Z]    ✍️ Creating content...
+[2025-09-30T04:14:47.633Z]    ✓ 2351 words, 10 links, 4 images
+[2025-09-30T04:14:48.333Z]    ✅ Published successfully: switzerland-remote-work-visa-process-complete-guide
+[2025-09-30T04:14:51.336Z] 
+📝 Generating: Canada Digital Nomad Visa 2025 Complete Guide
+[2025-09-30T04:14:51.336Z]    🔬 Researching...
+[2025-09-30T04:14:56.812Z]    ⚠️ Perplexity research skipped
+[2025-09-30T04:14:56.814Z]    🎨 Generating images...
+[2025-09-30T04:15:06.096Z]    ✍️ Creating content...
+[2025-09-30T04:15:06.098Z]    ✓ 2306 words, 10 links, 4 images
+[2025-09-30T04:15:07.163Z]    ✅ Published successfully: canada-digital-nomad-visa-2025-complete-guide
+[2025-09-30T04:15:10.165Z] 
+📝 Generating: Best Switzerland Digital Nomad Visa Complete Guide
+[2025-09-30T04:15:10.166Z]    🔬 Researching...
+[2025-09-30T04:15:13.345Z]    ⚠️ Perplexity research skipped
+[2025-09-30T04:15:13.346Z]    🎨 Generating images...
+[2025-09-30T04:15:22.889Z]    ✍️ Creating content...
+[2025-09-30T04:15:22.891Z]    ✓ 2256 words, 10 links, 4 images
+[2025-09-30T04:15:24.078Z]    ✅ Published successfully: best-switzerland-digital-nomad-visa-complete-guide
+[2025-09-30T04:15:27.080Z] 
+📝 Generating: Seychelles Digital Nomad Visa Cost Complete Guide
+[2025-09-30T04:15:27.081Z]    🔬 Researching...
+[2025-09-30T04:15:35.059Z]    ⚠️ Perplexity research skipped
+[2025-09-30T04:15:35.061Z]    🎨 Generating images...
+[2025-09-30T04:15:45.011Z]    ✍️ Creating content...
+[2025-09-30T04:15:45.013Z]    ✓ 2322 words, 10 links, 4 images
+[2025-09-30T04:15:46.136Z]    ✅ Published successfully: seychelles-digital-nomad-visa-cost-complete-guide
+[2025-09-30T04:15:49.139Z] 
+📝 Generating: Best Peru Digital Nomad Visa Complete Guide
+[2025-09-30T04:15:49.140Z]    🔬 Researching...
+[2025-09-30T04:15:52.630Z]    ⚠️ Perplexity research skipped
+[2025-09-30T04:15:52.630Z]    🎨 Generating images...
+[2025-09-30T04:16:00.751Z]    ✍️ Creating content...
+[2025-09-30T04:16:00.753Z]    ✓ 2368 words, 10 links, 4 images
+[2025-09-30T04:16:01.492Z]    ✅ Published successfully: best-peru-digital-nomad-visa-complete-guide
+[2025-09-30T04:16:04.496Z] 
+📊 Batch 57 Results:
+[2025-09-30T04:16:04.497Z]    - Articles generated: 9/10
+[2025-09-30T04:16:04.497Z]    - Average word count: 2304
+[2025-09-30T04:16:04.497Z]    - Failed articles: 1
+[2025-09-30T04:16:04.498Z] 
+🔍 Checking deployment...
+[2025-09-30T04:16:31.864Z]    ✓ Build successful
