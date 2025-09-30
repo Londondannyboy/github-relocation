@@ -2468,3 +2468,120 @@
 [2025-09-30T00:58:06.786Z] 
 🔍 Checking deployment...
 [2025-09-30T00:58:18.637Z]    ✓ Build successful
+[2025-09-30T00:58:19.381Z]    ✓ Pushed to GitHub
+[2025-09-30T00:58:19.382Z]    ⏳ Waiting for Vercel...
+[2025-09-30T00:59:49.637Z]    ✅ Deployment successful!
+[2025-09-30T00:59:49.639Z] ✅ Batch 20 deployed
+[2025-09-30T00:59:49.639Z] 
+⏳ Pausing before next batch...
+[2025-09-30T01:00:19.639Z] 
+============================================================
+[2025-09-30T01:00:19.641Z] 📦 BATCH 21 of 96
+[2025-09-30T01:00:19.641Z] ============================================================
+[2025-09-30T01:00:19.641Z] 
+📋 Topics for this batch:
+[2025-09-30T01:00:19.642Z]    - ukraine digital nomad visa guide
+[2025-09-30T01:00:19.642Z]    - best turkey digital nomad visa
+[2025-09-30T01:00:19.642Z]    - vietnam digital nomad visa process
+[2025-09-30T01:00:19.642Z]    - remote work visa ireland
+[2025-09-30T01:00:19.642Z]    - paraguay digital nomad visa process
+[2025-09-30T01:00:19.642Z]    - uae digital nomad visa 2025
+[2025-09-30T01:00:19.642Z]    - guernsey digital nomad visa guide
+[2025-09-30T01:00:19.642Z]    - armenia digital nomad visa cost
+[2025-09-30T01:00:19.642Z]    - nigeria digital nomad visa guide
+[2025-09-30T01:00:19.642Z]    - estonia remote work visa requirements
+[2025-09-30T01:00:19.642Z] 
+📝 Generating: Ukraine Digital Nomad Visa Guide Complete Guide
+[2025-09-30T01:00:19.643Z]    🔬 Researching...
+[2025-09-30T01:00:24.715Z]    ⚠️ Perplexity research skipped
+[2025-09-30T01:00:24.716Z]    🎨 Generating images...
+[2025-09-30T01:00:33.157Z]    ✍️ Creating content...
+[2025-09-30T01:00:33.161Z]    ✓ 1970 words, 10 links, 4 images
+[2025-09-30T01:00:34.104Z]    ✅ Published successfully: ukraine-digital-nomad-visa-guide-complete-guide
+[2025-09-30T01:00:37.107Z] 
+📝 Generating: Best Turkey Digital Nomad Visa Complete Guide
+[2025-09-30T01:00:37.108Z]    🔬 Researching...
+[2025-09-30T01:00:41.737Z]    ⚠️ Perplexity research skipped
+[2025-09-30T01:00:41.738Z]    🎨 Generating images...
+[2025-09-30T01:00:50.353Z]    ✍️ Creating content...
+[2025-09-30T01:00:50.355Z]    ✓ 2408 words, 10 links, 4 images
+[2025-09-30T01:00:51.506Z]    ✅ Published successfully: best-turkey-digital-nomad-visa-complete-guide
+[2025-09-30T01:00:54.509Z] 
+📝 Generating: Vietnam Digital Nomad Visa Process Complete Guide
+[2025-09-30T01:00:54.509Z]    🔬 Researching...
+[2025-09-30T01:00:58.423Z]    ⚠️ Perplexity research skipped
+[2025-09-30T01:00:58.426Z]    🎨 Generating images...
+[2025-09-30T01:01:13.887Z] ⚠️ Image 1 generation failed: Request to https://api.replicate.com/v1/models/black-forest-labs/flux-schnell/predictions failed with status 502 Bad Gateway: <html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+</body>
+</html>
+.
+[2025-09-30T01:01:44.314Z]    ✍️ Creating content...
+[2025-09-30T01:01:44.317Z]    ✓ 2195 words, 10 links, 3 images
+[2025-09-30T01:01:45.525Z]    ✅ Published successfully: vietnam-digital-nomad-visa-process-complete-guide
+[2025-09-30T01:01:48.528Z] 
+📝 Generating: Remote Work Visa Ireland Complete Guide
+[2025-09-30T01:01:48.529Z]    🔬 Researching...
+[2025-09-30T01:01:52.341Z]    ⚠️ Perplexity research skipped
+[2025-09-30T01:01:52.342Z]    🎨 Generating images...
+[2025-09-30T01:02:31.021Z]    ✍️ Creating content...
+[2025-09-30T01:02:31.023Z]    ✓ 2306 words, 10 links, 4 images
+[2025-09-30T01:02:32.230Z]    ✅ Published successfully: remote-work-visa-ireland-complete-guide
+[2025-09-30T01:02:35.233Z] 
+📝 Generating: Paraguay Digital Nomad Visa Process Complete Guide
+[2025-09-30T01:02:35.234Z]    🔬 Researching...
+[2025-09-30T01:02:39.876Z]    ⚠️ Perplexity research skipped
+[2025-09-30T01:02:39.877Z]    🎨 Generating images...
+[2025-09-30T01:02:50.579Z]    ✍️ Creating content...
+[2025-09-30T01:02:50.581Z]    ✓ 2255 words, 10 links, 4 images
+[2025-09-30T01:02:51.662Z]    ✅ Published successfully: paraguay-digital-nomad-visa-process-complete-guide
+[2025-09-30T01:02:54.665Z] 
+📝 Generating: Uae Digital Nomad Visa 2025 Complete Guide
+[2025-09-30T01:02:54.666Z]    🔬 Researching...
+[2025-09-30T01:02:58.565Z]    ⚠️ Perplexity research skipped
+[2025-09-30T01:02:58.566Z]    🎨 Generating images...
+[2025-09-30T01:03:06.963Z]    ✍️ Creating content...
+[2025-09-30T01:03:06.965Z]    ✓ 2454 words, 10 links, 4 images
+[2025-09-30T01:03:08.072Z]    ✅ Published successfully: uae-digital-nomad-visa-2025-complete-guide
+[2025-09-30T01:03:11.074Z] 
+📝 Generating: Guernsey Digital Nomad Visa Guide Complete Guide
+[2025-09-30T01:03:11.075Z]    🔬 Researching...
+[2025-09-30T01:03:16.756Z]    ⚠️ Perplexity research skipped
+[2025-09-30T01:03:16.767Z]    🎨 Generating images...
+[2025-09-30T01:03:26.011Z]    ✍️ Creating content...
+[2025-09-30T01:03:26.013Z]    ✓ 2312 words, 10 links, 4 images
+[2025-09-30T01:03:27.125Z]    ✅ Published successfully: guernsey-digital-nomad-visa-guide-complete-guide
+[2025-09-30T01:03:30.128Z] 
+📝 Generating: Armenia Digital Nomad Visa Cost Complete Guide
+[2025-09-30T01:03:30.129Z]    🔬 Researching...
+[2025-09-30T01:03:34.420Z]    ⚠️ Perplexity research skipped
+[2025-09-30T01:03:34.421Z]    🎨 Generating images...
+[2025-09-30T01:03:42.253Z]    ✍️ Creating content...
+[2025-09-30T01:03:42.255Z]    ✓ 2323 words, 10 links, 4 images
+[2025-09-30T01:03:43.439Z]    ✅ Published successfully: armenia-digital-nomad-visa-cost-complete-guide
+[2025-09-30T01:03:46.441Z] 
+📝 Generating: Nigeria Digital Nomad Visa Guide Complete Guide
+[2025-09-30T01:03:46.442Z]    🔬 Researching...
+[2025-09-30T01:03:51.730Z]    ⚠️ Perplexity research skipped
+[2025-09-30T01:03:51.731Z]    🎨 Generating images...
+[2025-09-30T01:03:59.801Z]    ✍️ Creating content...
+[2025-09-30T01:03:59.803Z]    ✓ 1969 words, 10 links, 4 images
+[2025-09-30T01:04:00.893Z]    ✅ Published successfully: nigeria-digital-nomad-visa-guide-complete-guide
+[2025-09-30T01:04:03.895Z] 
+📝 Generating: Estonia Remote Work Visa Requirements Complete Guide
+[2025-09-30T01:04:03.896Z]    🔬 Researching...
+[2025-09-30T01:04:08.695Z]    ⚠️ Perplexity research skipped
+[2025-09-30T01:04:08.696Z]    🎨 Generating images...
+[2025-09-30T01:04:17.004Z]    ✍️ Creating content...
+[2025-09-30T01:04:17.006Z]    ✓ 2325 words, 10 links, 4 images
+[2025-09-30T01:04:17.946Z]    ✅ Published successfully: estonia-remote-work-visa-requirements-complete-guide
+[2025-09-30T01:04:20.949Z] 
+📊 Batch 21 Results:
+[2025-09-30T01:04:20.950Z]    - Articles generated: 10/10
+[2025-09-30T01:04:20.950Z]    - Average word count: 2252
+[2025-09-30T01:04:20.950Z]    - Failed articles: 0
+[2025-09-30T01:04:20.951Z] 
+🔍 Checking deployment...
+[2025-09-30T01:04:32.120Z]    ✓ Build successful
