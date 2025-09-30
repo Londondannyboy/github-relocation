@@ -4235,3 +4235,113 @@
 [2025-09-30T02:23:45.494Z] 
 🔍 Checking deployment...
 [2025-09-30T02:24:04.814Z]    ✓ Build successful
+[2025-09-30T02:24:05.603Z]    ✓ Pushed to GitHub
+[2025-09-30T02:24:05.604Z]    ⏳ Waiting for Vercel...
+[2025-09-30T02:25:35.910Z]    ✅ Deployment successful!
+[2025-09-30T02:25:35.910Z] ✅ Batch 36 deployed
+[2025-09-30T02:25:35.911Z] 
+⏳ Pausing before next batch...
+[2025-09-30T02:26:05.914Z] 
+============================================================
+[2025-09-30T02:26:05.915Z] 📦 BATCH 37 of 96
+[2025-09-30T02:26:05.916Z] ============================================================
+[2025-09-30T02:26:05.916Z] 
+📋 Topics for this batch:
+[2025-09-30T02:26:05.916Z]    - antigua digital nomad visa cost
+[2025-09-30T02:26:05.916Z]    - ireland digital nomad visa guide
+[2025-09-30T02:26:05.916Z]    - vietnam digital nomad visa cost
+[2025-09-30T02:26:05.917Z]    - saudi arabia digital nomad visa guide
+[2025-09-30T02:26:05.917Z]    - azerbaijan digital nomad visa requirements
+[2025-09-30T02:26:05.917Z]    - bahamas digital nomad visa requirements
+[2025-09-30T02:26:05.917Z]    - austria digital nomad visa process
+[2025-09-30T02:26:05.917Z]    - australia digital nomad visa
+[2025-09-30T02:26:05.917Z]    - denmark digital nomad visa requirements
+[2025-09-30T02:26:05.917Z] 
+📝 Generating: Antigua Digital Nomad Visa Cost Complete Guide
+[2025-09-30T02:26:05.917Z]    - bahrain digital nomad visa 2025
+[2025-09-30T02:26:05.917Z]    🔬 Researching...
+[2025-09-30T02:26:12.254Z]    ⚠️ Perplexity research skipped
+[2025-09-30T02:26:12.254Z]    🎨 Generating images...
+[2025-09-30T02:26:20.869Z]    ✍️ Creating content...
+[2025-09-30T02:26:20.871Z]    ✓ 2349 words, 10 links, 4 images
+[2025-09-30T02:26:22.021Z]    ✅ Published successfully: antigua-digital-nomad-visa-cost-complete-guide
+[2025-09-30T02:26:25.025Z] 
+📝 Generating: Ireland Digital Nomad Visa Guide Complete Guide
+[2025-09-30T02:26:25.025Z]    🔬 Researching...
+[2025-09-30T02:26:28.953Z]    ⚠️ Perplexity research skipped
+[2025-09-30T02:26:28.955Z]    🎨 Generating images...
+[2025-09-30T02:26:37.528Z]    ✍️ Creating content...
+[2025-09-30T02:26:37.530Z]    ✓ 1945 words, 10 links, 4 images
+[2025-09-30T02:26:38.671Z]    ✅ Published successfully: ireland-digital-nomad-visa-guide-complete-guide
+[2025-09-30T02:26:41.675Z] 
+📝 Generating: Vietnam Digital Nomad Visa Cost Complete Guide
+[2025-09-30T02:26:41.675Z]    🔬 Researching...
+[2025-09-30T02:26:45.089Z]    ⚠️ Perplexity research skipped
+[2025-09-30T02:26:45.091Z]    🎨 Generating images...
+[2025-09-30T02:26:54.979Z]    ✍️ Creating content...
+[2025-09-30T02:26:54.982Z]    ✓ 2196 words, 10 links, 4 images
+[2025-09-30T02:26:56.110Z]    ✅ Published successfully: vietnam-digital-nomad-visa-cost-complete-guide
+[2025-09-30T02:26:59.115Z] 
+📝 Generating: Saudi Arabia Digital Nomad Visa Guide Complete Guide
+[2025-09-30T02:26:59.116Z]    🔬 Researching...
+[2025-09-30T02:27:04.170Z]    ⚠️ Perplexity research skipped
+[2025-09-30T02:27:04.171Z]    🎨 Generating images...
+[2025-09-30T02:27:13.378Z]    ✍️ Creating content...
+[2025-09-30T02:27:13.379Z]    ✓ 2448 words, 10 links, 4 images
+[2025-09-30T02:27:14.351Z]    ✅ Published successfully: saudi-arabia-digital-nomad-visa-guide-complete-guide
+[2025-09-30T02:27:17.354Z] 
+📝 Generating: Azerbaijan Digital Nomad Visa Requirements Complete Guide
+[2025-09-30T02:27:17.355Z]    🔬 Researching...
+[2025-09-30T02:27:20.451Z]    ⚠️ Perplexity research skipped
+[2025-09-30T02:27:20.452Z]    🎨 Generating images...
+[2025-09-30T02:27:30.975Z]    ✍️ Creating content...
+[2025-09-30T02:27:30.978Z]    ✓ 2406 words, 10 links, 4 images
+[2025-09-30T02:27:31.803Z]    ✅ Published successfully: azerbaijan-digital-nomad-visa-requirements-complete-guide
+[2025-09-30T02:27:34.806Z] 
+📝 Generating: Bahamas Digital Nomad Visa Requirements Complete Guide
+[2025-09-30T02:27:34.807Z]    🔬 Researching...
+[2025-09-30T02:27:42.458Z]    ⚠️ Perplexity research skipped
+[2025-09-30T02:27:42.459Z]    🎨 Generating images...
+[2025-09-30T02:27:51.581Z]    ✍️ Creating content...
+[2025-09-30T02:27:51.584Z]    ✓ 2334 words, 10 links, 4 images
+[2025-09-30T02:27:52.459Z]    ✅ Published successfully: bahamas-digital-nomad-visa-requirements-complete-guide
+[2025-09-30T02:27:55.462Z] 
+📝 Generating: Austria Digital Nomad Visa Process Complete Guide
+[2025-09-30T02:27:55.463Z]    🔬 Researching...
+[2025-09-30T02:27:59.804Z]    ⚠️ Perplexity research skipped
+[2025-09-30T02:27:59.806Z]    🎨 Generating images...
+[2025-09-30T02:28:08.427Z]    ✍️ Creating content...
+[2025-09-30T02:28:08.430Z]    ✓ 2385 words, 10 links, 4 images
+[2025-09-30T02:28:09.517Z]    ✅ Published successfully: austria-digital-nomad-visa-process-complete-guide
+[2025-09-30T02:28:12.518Z] 
+📝 Generating: Australia Digital Nomad Visa Complete Guide
+[2025-09-30T02:28:12.519Z]    🔬 Researching...
+[2025-09-30T02:28:20.336Z]    ⚠️ Perplexity research skipped
+[2025-09-30T02:28:20.337Z]    🎨 Generating images...
+[2025-09-30T02:28:28.535Z]    ✍️ Creating content...
+[2025-09-30T02:28:28.537Z]    ✓ 2231 words, 10 links, 4 images
+[2025-09-30T02:28:29.559Z]    ✅ Published successfully: australia-digital-nomad-visa-complete-guide
+[2025-09-30T02:28:32.562Z] 
+📝 Generating: Bahrain Digital Nomad Visa 2025 Complete Guide
+[2025-09-30T02:28:32.563Z]    🔬 Researching...
+[2025-09-30T02:28:37.517Z]    ⚠️ Perplexity research skipped
+[2025-09-30T02:28:37.523Z]    🎨 Generating images...
+[2025-09-30T02:28:46.401Z]    ✍️ Creating content...
+[2025-09-30T02:28:46.404Z]    ✓ 2330 words, 10 links, 4 images
+[2025-09-30T02:28:47.619Z]    ✅ Published successfully: bahrain-digital-nomad-visa-2025-complete-guide
+[2025-09-30T02:28:50.623Z] 
+📝 Generating: Denmark Digital Nomad Visa Requirements Complete Guide
+[2025-09-30T02:28:50.624Z]    🔬 Researching...
+[2025-09-30T02:28:53.864Z]    ⚠️ Perplexity research skipped
+[2025-09-30T02:28:53.866Z]    🎨 Generating images...
+[2025-09-30T02:29:02.791Z]    ✍️ Creating content...
+[2025-09-30T02:29:02.794Z]    ✓ 2313 words, 10 links, 4 images
+[2025-09-30T02:29:03.664Z]    ✅ Published successfully: denmark-digital-nomad-visa-requirements-complete-guide
+[2025-09-30T02:29:06.667Z] 
+📊 Batch 37 Results:
+[2025-09-30T02:29:06.668Z]    - Articles generated: 10/10
+[2025-09-30T02:29:06.669Z]    - Average word count: 2294
+[2025-09-30T02:29:06.669Z]    - Failed articles: 0
+[2025-09-30T02:29:06.669Z] 
+🔍 Checking deployment...
+[2025-09-30T02:29:22.780Z]    ✓ Build successful
