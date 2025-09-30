@@ -2241,3 +2241,120 @@
 [2025-09-30T00:46:52.742Z] 
 🔍 Checking deployment...
 [2025-09-30T00:47:04.625Z]    ✓ Build successful
+[2025-09-30T00:47:05.443Z]    ✓ Pushed to GitHub
+[2025-09-30T00:47:05.443Z]    ⏳ Waiting for Vercel...
+[2025-09-30T00:48:35.747Z]    ✅ Deployment successful!
+[2025-09-30T00:48:35.749Z] ✅ Batch 18 deployed
+[2025-09-30T00:48:35.750Z] 
+⏳ Pausing before next batch...
+[2025-09-30T00:49:05.752Z] 
+============================================================
+[2025-09-30T00:49:05.753Z] 📦 BATCH 19 of 96
+[2025-09-30T00:49:05.754Z] ============================================================
+[2025-09-30T00:49:05.754Z] 
+📋 Topics for this batch:
+[2025-09-30T00:49:05.754Z]    - uk remote work visa cost
+[2025-09-30T00:49:05.754Z]    - digital nomad visa brazil
+[2025-09-30T00:49:05.754Z]    - digital nomad visa croatia
+[2025-09-30T00:49:05.754Z]    - philippines digital nomad visa requirements
+[2025-09-30T00:49:05.754Z]    - best uk digital nomad visa
+[2025-09-30T00:49:05.754Z]    - norway digital nomad visa process
+[2025-09-30T00:49:05.754Z]    - israel digital nomad visa guide
+[2025-09-30T00:49:05.754Z]    - digital nomad visa saudi arabia
+[2025-09-30T00:49:05.755Z]    - denmark digital nomad visa
+[2025-09-30T00:49:05.755Z]    - digital nomad visa israel
+[2025-09-30T00:49:05.755Z] 
+📝 Generating: Uk Remote Work Visa Cost Complete Guide
+[2025-09-30T00:49:05.755Z]    🔬 Researching...
+[2025-09-30T00:49:11.080Z]    ⚠️ Perplexity research skipped
+[2025-09-30T00:49:11.089Z]    🎨 Generating images...
+[2025-09-30T00:49:19.214Z]    ✍️ Creating content...
+[2025-09-30T00:49:19.216Z]    ✓ 2197 words, 10 links, 4 images
+[2025-09-30T00:49:20.270Z]    ✅ Published successfully: uk-remote-work-visa-cost-complete-guide
+[2025-09-30T00:49:23.273Z] 
+📝 Generating: Digital Nomad Visa Brazil Complete Guide
+[2025-09-30T00:49:23.274Z]    🔬 Researching...
+[2025-09-30T00:49:27.623Z]    ⚠️ Perplexity research skipped
+[2025-09-30T00:49:27.624Z]    🎨 Generating images...
+[2025-09-30T00:49:36.270Z]    ✍️ Creating content...
+[2025-09-30T00:49:36.273Z]    ✓ 2309 words, 10 links, 4 images
+[2025-09-30T00:49:37.309Z]    ✅ Published successfully: digital-nomad-visa-brazil-complete-guide
+[2025-09-30T00:49:40.312Z] 
+📝 Generating: Digital Nomad Visa Croatia Complete Guide
+[2025-09-30T00:49:40.313Z]    🔬 Researching...
+[2025-09-30T00:49:43.136Z]    ⚠️ Perplexity research skipped
+[2025-09-30T00:49:43.137Z]    🎨 Generating images...
+[2025-09-30T00:49:55.316Z]    ✍️ Creating content...
+[2025-09-30T00:49:55.319Z]    ✓ 2334 words, 10 links, 4 images
+[2025-09-30T00:49:56.352Z]    ✅ Published successfully: digital-nomad-visa-croatia-complete-guide
+[2025-09-30T00:49:59.355Z] 
+📝 Generating: Philippines Digital Nomad Visa Requirements Complete Guide
+[2025-09-30T00:49:59.356Z]    🔬 Researching...
+[2025-09-30T00:50:02.154Z]    ⚠️ Perplexity research skipped
+[2025-09-30T00:50:02.156Z]    🎨 Generating images...
+[2025-09-30T00:50:10.269Z]    ✍️ Creating content...
+[2025-09-30T00:50:10.274Z]    ✓ 2272 words, 10 links, 4 images
+[2025-09-30T00:50:11.414Z]    ✅ Published successfully: philippines-digital-nomad-visa-requirements-complete-guide
+[2025-09-30T00:50:14.416Z] 
+📝 Generating: Best Uk Digital Nomad Visa Complete Guide
+[2025-09-30T00:50:14.417Z]    🔬 Researching...
+[2025-09-30T00:50:17.287Z]    ⚠️ Perplexity research skipped
+[2025-09-30T00:50:17.289Z]    🎨 Generating images...
+[2025-09-30T00:50:25.217Z]    ✍️ Creating content...
+[2025-09-30T00:50:25.219Z]    ✓ 2268 words, 10 links, 4 images
+[2025-09-30T00:50:26.245Z]    ✅ Published successfully: best-uk-digital-nomad-visa-complete-guide
+[2025-09-30T00:50:29.248Z] 
+📝 Generating: Norway Digital Nomad Visa Process Complete Guide
+[2025-09-30T00:50:29.249Z]    🔬 Researching...
+[2025-09-30T00:50:36.131Z]    ⚠️ Perplexity research skipped
+[2025-09-30T00:50:36.132Z]    🎨 Generating images...
+[2025-09-30T00:50:51.759Z] ⚠️ Image 1 generation failed: Request to https://api.replicate.com/v1/models/black-forest-labs/flux-schnell/predictions failed with status 502 Bad Gateway: <html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+</body>
+</html>
+.
+[2025-09-30T00:51:08.227Z]    ✍️ Creating content...
+[2025-09-30T00:51:08.229Z]    ✓ 2281 words, 10 links, 3 images
+[2025-09-30T00:51:09.279Z]    ✅ Published successfully: norway-digital-nomad-visa-process-complete-guide
+[2025-09-30T00:51:12.282Z] 
+📝 Generating: Israel Digital Nomad Visa Guide Complete Guide
+[2025-09-30T00:51:12.283Z]    🔬 Researching...
+[2025-09-30T00:51:18.119Z]    ⚠️ Perplexity research skipped
+[2025-09-30T00:51:18.120Z]    🎨 Generating images...
+[2025-09-30T00:51:42.530Z]    ✍️ Creating content...
+[2025-09-30T00:51:42.532Z]    ✓ 2340 words, 10 links, 4 images
+[2025-09-30T00:51:43.630Z]    ✅ Published successfully: israel-digital-nomad-visa-guide-complete-guide
+[2025-09-30T00:51:46.633Z] 
+📝 Generating: Digital Nomad Visa Saudi Arabia Complete Guide
+[2025-09-30T00:51:46.634Z]    🔬 Researching...
+[2025-09-30T00:51:53.891Z]    ⚠️ Perplexity research skipped
+[2025-09-30T00:51:53.892Z]    🎨 Generating images...
+[2025-09-30T00:52:03.066Z]    ✍️ Creating content...
+[2025-09-30T00:52:03.069Z]    ✓ 2279 words, 10 links, 4 images
+[2025-09-30T00:52:04.163Z]    ✅ Published successfully: digital-nomad-visa-saudi-arabia-complete-guide
+[2025-09-30T00:52:07.167Z] 
+📝 Generating: Denmark Digital Nomad Visa Complete Guide
+[2025-09-30T00:52:07.168Z]    🔬 Researching...
+[2025-09-30T00:52:10.527Z]    ⚠️ Perplexity research skipped
+[2025-09-30T00:52:10.528Z]    🎨 Generating images...
+[2025-09-30T00:52:18.985Z]    ✍️ Creating content...
+[2025-09-30T00:52:18.988Z]    ✓ 2259 words, 10 links, 4 images
+[2025-09-30T00:52:20.202Z]    ✅ Published successfully: denmark-digital-nomad-visa-complete-guide
+[2025-09-30T00:52:23.205Z] 
+📝 Generating: Digital Nomad Visa Israel Complete Guide
+[2025-09-30T00:52:23.206Z]    🔬 Researching...
+[2025-09-30T00:52:26.187Z]    ⚠️ Perplexity research skipped
+[2025-09-30T00:52:26.188Z]    🎨 Generating images...
+[2025-09-30T00:52:34.528Z]    ✍️ Creating content...
+[2025-09-30T00:52:34.530Z]    ✓ 2173 words, 10 links, 4 images
+[2025-09-30T00:52:35.503Z]    ✅ Published successfully: digital-nomad-visa-israel-complete-guide
+[2025-09-30T00:52:38.506Z] 
+📊 Batch 19 Results:
+[2025-09-30T00:52:38.507Z]    - Articles generated: 10/10
+[2025-09-30T00:52:38.507Z]    - Average word count: 2271
+[2025-09-30T00:52:38.507Z]    - Failed articles: 0
+[2025-09-30T00:52:38.508Z] 
+🔍 Checking deployment...
+[2025-09-30T00:52:49.081Z]    ✓ Build successful
