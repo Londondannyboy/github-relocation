@@ -3465,3 +3465,113 @@
 [2025-09-30T01:46:03.518Z] 
 🔍 Checking deployment...
 [2025-09-30T01:46:18.675Z]    ✓ Build successful
+[2025-09-30T01:46:19.551Z]    ✓ Pushed to GitHub
+[2025-09-30T01:46:19.551Z]    ⏳ Waiting for Vercel...
+[2025-09-30T01:47:49.822Z]    ✅ Deployment successful!
+[2025-09-30T01:47:49.824Z] ✅ Batch 29 deployed
+[2025-09-30T01:47:49.824Z] 
+⏳ Pausing before next batch...
+[2025-09-30T01:48:19.827Z] 
+============================================================
+[2025-09-30T01:48:19.828Z] 📦 BATCH 30 of 96
+[2025-09-30T01:48:19.828Z] ============================================================
+[2025-09-30T01:48:19.829Z] 
+📋 Topics for this batch:
+[2025-09-30T01:48:19.829Z]    - egypt digital nomad visa requirements
+[2025-09-30T01:48:19.829Z]    - costa rica digital nomad visa
+[2025-09-30T01:48:19.829Z]    - thailand digital nomad visa 2025
+[2025-09-30T01:48:19.829Z]    - cayman islands digital nomad visa process
+[2025-09-30T01:48:19.829Z]    - oman digital nomad visa process
+[2025-09-30T01:48:19.830Z]    - best poland remote work visa
+[2025-09-30T01:48:19.831Z]    - cyprus digital nomad visa cost
+[2025-09-30T01:48:19.830Z]    - georgia digital nomad visa process
+[2025-09-30T01:48:19.831Z]    - paraguay digital nomad visa
+[2025-09-30T01:48:19.831Z]    - digital nomad visa latvia
+[2025-09-30T01:48:19.831Z] 
+📝 Generating: Egypt Digital Nomad Visa Requirements Complete Guide
+[2025-09-30T01:48:19.831Z]    🔬 Researching...
+[2025-09-30T01:48:24.276Z]    ⚠️ Perplexity research skipped
+[2025-09-30T01:48:24.278Z]    🎨 Generating images...
+[2025-09-30T01:48:33.639Z]    ✍️ Creating content...
+[2025-09-30T01:48:33.642Z]    ✓ 2360 words, 10 links, 4 images
+[2025-09-30T01:48:34.580Z]    ✅ Published successfully: egypt-digital-nomad-visa-requirements-complete-guide
+[2025-09-30T01:48:37.584Z] 
+📝 Generating: Oman Digital Nomad Visa Process Complete Guide
+[2025-09-30T01:48:37.585Z]    🔬 Researching...
+[2025-09-30T01:48:44.466Z]    ⚠️ Perplexity research skipped
+[2025-09-30T01:48:44.467Z]    🎨 Generating images...
+[2025-09-30T01:48:52.939Z]    ✍️ Creating content...
+[2025-09-30T01:48:52.942Z]    ✓ 2266 words, 10 links, 4 images
+[2025-09-30T01:48:53.668Z]    ✅ Published successfully: oman-digital-nomad-visa-process-complete-guide
+[2025-09-30T01:48:56.671Z] 
+📝 Generating: Costa Rica Digital Nomad Visa Complete Guide
+[2025-09-30T01:48:56.672Z]    🔬 Researching...
+[2025-09-30T01:49:01.171Z]    ⚠️ Perplexity research skipped
+[2025-09-30T01:49:01.172Z]    🎨 Generating images...
+[2025-09-30T01:49:11.240Z]    ✍️ Creating content...
+[2025-09-30T01:49:11.243Z]    ✓ 2324 words, 10 links, 4 images
+[2025-09-30T01:49:11.678Z]    ✅ Published successfully: costa-rica-digital-nomad-visa-complete-guide
+[2025-09-30T01:49:14.682Z] 
+📝 Generating: Cayman Islands Digital Nomad Visa Process Complete Guide
+[2025-09-30T01:49:14.683Z]    🔬 Researching...
+[2025-09-30T01:49:17.996Z]    ⚠️ Perplexity research skipped
+[2025-09-30T01:49:17.997Z]    🎨 Generating images...
+[2025-09-30T01:49:37.688Z]    ✍️ Creating content...
+[2025-09-30T01:49:37.691Z]    ✓ 2262 words, 10 links, 4 images
+[2025-09-30T01:49:38.724Z]    ✅ Published successfully: cayman-islands-digital-nomad-visa-process-complete-guide
+[2025-09-30T01:49:41.727Z] 
+📝 Generating: Thailand Digital Nomad Visa 2025 Complete Guide
+[2025-09-30T01:49:41.728Z]    🔬 Researching...
+[2025-09-30T01:49:47.703Z]    ⚠️ Perplexity research skipped
+[2025-09-30T01:49:47.705Z]    🎨 Generating images...
+[2025-09-30T01:50:10.659Z]    ✍️ Creating content...
+[2025-09-30T01:50:10.661Z]    ✓ 2422 words, 10 links, 4 images
+[2025-09-30T01:50:11.777Z]    ✅ Published successfully: thailand-digital-nomad-visa-2025-complete-guide
+[2025-09-30T01:50:14.779Z] 
+📝 Generating: Best Poland Remote Work Visa Complete Guide
+[2025-09-30T01:50:14.780Z]    🔬 Researching...
+[2025-09-30T01:50:20.988Z]    ⚠️ Perplexity research skipped
+[2025-09-30T01:50:20.989Z]    🎨 Generating images...
+[2025-09-30T01:50:31.962Z]    ✍️ Creating content...
+[2025-09-30T01:50:31.964Z]    ✓ 2418 words, 10 links, 4 images
+[2025-09-30T01:50:32.814Z]    ✅ Published successfully: best-poland-remote-work-visa-complete-guide
+[2025-09-30T01:50:35.818Z] 
+📝 Generating: Georgia Digital Nomad Visa Process Complete Guide
+[2025-09-30T01:50:35.819Z]    🔬 Researching...
+[2025-09-30T01:50:43.616Z]    ⚠️ Perplexity research skipped
+[2025-09-30T01:50:43.617Z]    🎨 Generating images...
+[2025-09-30T01:50:52.322Z]    ✍️ Creating content...
+[2025-09-30T01:50:52.323Z]    ✓ 2330 words, 10 links, 4 images
+[2025-09-30T01:50:52.863Z]    ✅ Published successfully: georgia-digital-nomad-visa-process-complete-guide
+[2025-09-30T01:50:55.867Z] 
+📝 Generating: Digital Nomad Visa Latvia Complete Guide
+[2025-09-30T01:50:55.868Z]    🔬 Researching...
+[2025-09-30T01:51:00.614Z]    ⚠️ Perplexity research skipped
+[2025-09-30T01:51:00.615Z]    🎨 Generating images...
+[2025-09-30T01:51:09.771Z]    ✍️ Creating content...
+[2025-09-30T01:51:09.775Z]    ✓ 2259 words, 10 links, 4 images
+[2025-09-30T01:51:10.925Z]    ✅ Published successfully: digital-nomad-visa-latvia-complete-guide
+[2025-09-30T01:51:13.928Z] 
+📝 Generating: Paraguay Digital Nomad Visa Complete Guide
+[2025-09-30T01:51:13.929Z]    🔬 Researching...
+[2025-09-30T01:51:18.449Z]    ⚠️ Perplexity research skipped
+[2025-09-30T01:51:18.450Z]    🎨 Generating images...
+[2025-09-30T01:51:28.588Z]    ✍️ Creating content...
+[2025-09-30T01:51:28.590Z]    ✓ 2242 words, 10 links, 4 images
+[2025-09-30T01:51:29.003Z]    ✅ Published successfully: paraguay-digital-nomad-visa-complete-guide
+[2025-09-30T01:51:32.006Z] 
+📝 Generating: Cyprus Digital Nomad Visa Cost Complete Guide
+[2025-09-30T01:51:32.007Z]    🔬 Researching...
+[2025-09-30T01:51:36.706Z]    ⚠️ Perplexity research skipped
+[2025-09-30T01:51:36.707Z]    🎨 Generating images...
+[2025-09-30T01:51:46.280Z]    ✍️ Creating content...
+[2025-09-30T01:51:46.282Z]    ✓ 2415 words, 10 links, 4 images
+[2025-09-30T01:51:47.022Z]    ✅ Published successfully: cyprus-digital-nomad-visa-cost-complete-guide
+[2025-09-30T01:51:50.025Z] 
+📊 Batch 30 Results:
+[2025-09-30T01:51:50.026Z]    - Articles generated: 10/10
+[2025-09-30T01:51:50.027Z]    - Average word count: 2330
+[2025-09-30T01:51:50.027Z]    - Failed articles: 0
+[2025-09-30T01:51:50.027Z] 
+🔍 Checking deployment...
+[2025-09-30T01:52:02.224Z]    ✓ Build successful
