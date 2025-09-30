@@ -8197,3 +8197,113 @@
 [2025-09-30T05:36:32.608Z] 
 🔍 Checking deployment...
 [2025-09-30T05:37:09.210Z]    ✓ Build successful
+[2025-09-30T05:37:09.985Z]    ✓ Pushed to GitHub
+[2025-09-30T05:37:09.986Z]    ⏳ Waiting for Vercel...
+[2025-09-30T05:38:40.134Z]    ✅ Deployment successful!
+[2025-09-30T05:38:40.135Z] ✅ Batch 72 deployed
+[2025-09-30T05:38:40.136Z] 
+⏳ Pausing before next batch...
+[2025-09-30T05:39:10.138Z] 
+============================================================
+[2025-09-30T05:39:10.139Z] 📦 BATCH 73 of 96
+[2025-09-30T05:39:10.139Z] ============================================================
+[2025-09-30T05:39:10.140Z] 
+📋 Topics for this batch:
+[2025-09-30T05:39:10.140Z]    - grenada digital nomad visa requirements
+[2025-09-30T05:39:10.140Z]    - china digital nomad visa 2025
+[2025-09-30T05:39:10.140Z]    - greece remote work visa guide
+[2025-09-30T05:39:10.140Z]    - seychelles digital nomad visa requirements
+[2025-09-30T05:39:10.140Z]    - new zealand digital nomad visa cost
+[2025-09-30T05:39:10.140Z]    - bermuda digital nomad visa guide
+[2025-09-30T05:39:10.140Z]    - best costa rica digital nomad visa
+[2025-09-30T05:39:10.140Z]    - argentina digital nomad visa process
+[2025-09-30T05:39:10.140Z]    - antigua digital nomad visa requirements
+[2025-09-30T05:39:10.140Z]    - cyprus digital nomad visa
+[2025-09-30T05:39:10.140Z] 
+📝 Generating: Grenada Digital Nomad Visa Requirements Complete Guide
+[2025-09-30T05:39:10.141Z]    🔬 Researching...
+[2025-09-30T05:39:14.220Z]    ⚠️ Perplexity research skipped
+[2025-09-30T05:39:14.221Z]    🎨 Generating images...
+[2025-09-30T05:39:25.423Z]    ✍️ Creating content...
+[2025-09-30T05:39:25.426Z]    ✓ 2260 words, 10 links, 4 images
+[2025-09-30T05:39:26.776Z]    ✅ Published successfully: grenada-digital-nomad-visa-requirements-complete-guide
+[2025-09-30T05:39:29.779Z] 
+📝 Generating: China Digital Nomad Visa 2025 Complete Guide
+[2025-09-30T05:39:29.780Z]    🔬 Researching...
+[2025-09-30T05:39:32.241Z]    ⚠️ Perplexity research skipped
+[2025-09-30T05:39:32.242Z]    🎨 Generating images...
+[2025-09-30T05:39:42.456Z]    ✍️ Creating content...
+[2025-09-30T05:39:42.458Z]    ✓ 2282 words, 10 links, 4 images
+[2025-09-30T05:39:43.670Z]    ✅ Published successfully: china-digital-nomad-visa-2025-complete-guide
+[2025-09-30T05:39:46.672Z] 
+📝 Generating: Greece Remote Work Visa Guide Complete Guide
+[2025-09-30T05:39:46.673Z]    🔬 Researching...
+[2025-09-30T05:39:49.238Z]    ⚠️ Perplexity research skipped
+[2025-09-30T05:39:49.239Z]    🎨 Generating images...
+[2025-09-30T05:39:58.937Z]    ✍️ Creating content...
+[2025-09-30T05:39:58.940Z]    ✓ 2331 words, 10 links, 4 images
+[2025-09-30T05:39:59.824Z]    ✅ Published successfully: greece-remote-work-visa-guide-complete-guide
+[2025-09-30T05:40:02.828Z] 
+📝 Generating: Seychelles Digital Nomad Visa Requirements Complete Guide
+[2025-09-30T05:40:02.829Z]    🔬 Researching...
+[2025-09-30T05:40:05.616Z]    ⚠️ Perplexity research skipped
+[2025-09-30T05:40:05.617Z]    🎨 Generating images...
+[2025-09-30T05:40:14.630Z]    ✍️ Creating content...
+[2025-09-30T05:40:14.632Z]    ✓ 2192 words, 10 links, 4 images
+[2025-09-30T05:40:15.821Z]    ✅ Published successfully: seychelles-digital-nomad-visa-requirements-complete-guide
+[2025-09-30T05:40:18.822Z] 
+📝 Generating: New Zealand Digital Nomad Visa Cost Complete Guide
+[2025-09-30T05:40:18.823Z]    🔬 Researching...
+[2025-09-30T05:40:25.375Z]    ⚠️ Perplexity research skipped
+[2025-09-30T05:40:25.376Z]    🎨 Generating images...
+[2025-09-30T05:40:34.695Z]    ✍️ Creating content...
+[2025-09-30T05:40:34.697Z]    ✓ 2513 words, 10 links, 4 images
+[2025-09-30T05:40:35.923Z]    ✅ Published successfully: new-zealand-digital-nomad-visa-cost-complete-guide
+[2025-09-30T05:40:38.924Z] 
+📝 Generating: Bermuda Digital Nomad Visa Guide Complete Guide
+[2025-09-30T05:40:38.925Z]    🔬 Researching...
+[2025-09-30T05:40:41.640Z]    ⚠️ Perplexity research skipped
+[2025-09-30T05:40:41.641Z]    🎨 Generating images...
+[2025-09-30T05:40:51.203Z]    ✍️ Creating content...
+[2025-09-30T05:40:51.204Z]    ✓ 2322 words, 10 links, 4 images
+[2025-09-30T05:40:51.972Z]    ✅ Published successfully: bermuda-digital-nomad-visa-guide-complete-guide
+[2025-09-30T05:40:54.974Z] 
+📝 Generating: Best Costa Rica Digital Nomad Visa Complete Guide
+[2025-09-30T05:40:54.975Z]    🔬 Researching...
+[2025-09-30T05:40:59.766Z]    ⚠️ Perplexity research skipped
+[2025-09-30T05:40:59.767Z]    🎨 Generating images...
+[2025-09-30T05:41:08.966Z]    ✍️ Creating content...
+[2025-09-30T05:41:08.968Z]    ✓ 2419 words, 10 links, 4 images
+[2025-09-30T05:41:10.025Z]    ✅ Published successfully: best-costa-rica-digital-nomad-visa-complete-guide
+[2025-09-30T05:41:13.027Z] 
+📝 Generating: Argentina Digital Nomad Visa Process Complete Guide
+[2025-09-30T05:41:13.028Z]    🔬 Researching...
+[2025-09-30T05:41:17.437Z]    ⚠️ Perplexity research skipped
+[2025-09-30T05:41:17.438Z]    🎨 Generating images...
+[2025-09-30T05:41:26.000Z]    ✍️ Creating content...
+[2025-09-30T05:41:26.003Z]    ✓ 2319 words, 10 links, 4 images
+[2025-09-30T05:41:27.072Z]    ✅ Published successfully: argentina-digital-nomad-visa-process-complete-guide
+[2025-09-30T05:41:30.076Z] 
+📝 Generating: Antigua Digital Nomad Visa Requirements Complete Guide
+[2025-09-30T05:41:30.077Z]    🔬 Researching...
+[2025-09-30T05:41:32.746Z]    ⚠️ Perplexity research skipped
+[2025-09-30T05:41:32.747Z]    🎨 Generating images...
+[2025-09-30T05:41:41.910Z]    ✍️ Creating content...
+[2025-09-30T05:41:41.912Z]    ✓ 2265 words, 10 links, 4 images
+[2025-09-30T05:41:43.099Z]    ✅ Published successfully: antigua-digital-nomad-visa-requirements-complete-guide
+[2025-09-30T05:41:46.102Z] 
+📝 Generating: Cyprus Digital Nomad Visa Complete Guide
+[2025-09-30T05:41:46.103Z]    🔬 Researching...
+[2025-09-30T05:41:49.915Z]    ⚠️ Perplexity research skipped
+[2025-09-30T05:41:49.915Z]    🎨 Generating images...
+[2025-09-30T05:41:58.482Z]    ✍️ Creating content...
+[2025-09-30T05:41:58.484Z]    ✓ 1934 words, 10 links, 4 images
+[2025-09-30T05:41:59.201Z]    ✅ Published successfully: cyprus-digital-nomad-visa-complete-guide
+[2025-09-30T05:42:02.203Z] 
+📊 Batch 73 Results:
+[2025-09-30T05:42:02.204Z]    - Articles generated: 10/10
+[2025-09-30T05:42:02.205Z]    - Average word count: 2284
+[2025-09-30T05:42:02.205Z]    - Failed articles: 0
+[2025-09-30T05:42:02.205Z] 
+🔍 Checking deployment...
+[2025-09-30T05:42:28.898Z]    ✓ Build successful
