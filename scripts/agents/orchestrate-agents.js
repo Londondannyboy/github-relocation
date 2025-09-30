@@ -237,14 +237,16 @@ export default AgentOrchestrator;
 if (import.meta.url === `file://${process.argv[1]}`) {
   const orchestrator = new AgentOrchestrator();
   
-  // Get keyword from command line or use default
-  const keyword = process.argv.slice(2).join(' ') || 'Portugal Golden Visa 2025';
+  // Get keyword and category from command line
+  const keyword = process.argv[2] || 'Portugal Golden Visa 2025';
+  const category = process.argv[3] || 'Golden Visa Programs';
   
   // Options
   const options = {
-    autoPublish: false, // Don't auto-publish by default
+    autoPublish: process.argv.includes('--publish'),
     includeImages: true,
-    targetWordCount: 2500
+    targetWordCount: 2500,
+    category: category
   };
 
   console.log('🚀 Starting Three-Agent Pipeline...');

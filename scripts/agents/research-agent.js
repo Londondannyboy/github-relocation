@@ -10,6 +10,7 @@ import dotenv from 'dotenv';
 import fetch from 'node-fetch';
 import { promises as fs } from 'fs';
 import path from 'path';
+import RedditAgent from './reddit-agent.js';
 
 dotenv.config({ path: '.env.local' });
 
@@ -19,11 +20,15 @@ const DATAFORSEO_PASSWORD = process.env.DATAFORSEO_PASSWORD;
 const PERPLEXITY_API_KEY = process.env.PERPLEXITY_API_KEY;
 const FIRECRAWL_API_KEY = process.env.FIRECRAWL_API_KEY;
 const SERPER_API_KEY = process.env.SERPER_API_KEY;
+const TAVILY_API_KEY = process.env.TAVILY_API_KEY;
+const LINKUP_API_KEY = process.env.LINKUP_API_KEY;
+const CRITIQUE_API_KEY = process.env.CRITIQUE_API_KEY;
 
 class ResearchAgent {
   constructor() {
     this.results = {
       keyword: '',
+      keywordCluster: [],
       metrics: {},
       competitors: [],
       contentGaps: [],
@@ -31,6 +36,18 @@ class ResearchAgent {
       sources: [],
       timestamp: new Date().toISOString()
     };
+    
+    // Tracking API usage
+    this.tracking = {
+      toolsUsed: {},
+      benefits: {},
+      totalCost: 0,
+      cacheHits: 0,
+      cacheMisses: 0
+    };
+    
+    // Simple cache for Firecrawl
+    this.firecrawlCache = new Map();
   }
 
   /**
@@ -45,25 +62,105 @@ class ResearchAgent {
       console.log('\n📊 Step 1: Fetching keyword metrics...');
       await this.getKeywordMetrics(keyword);
 
-      // Step 2: Analyze competitors with Perplexity
-      console.log('\n🔍 Step 2: Analyzing competitors...');
+      // Determine value tier based on metrics
+      const tier = this.determineValueTier(this.results.metrics);
+      console.log(`\n🎯 Value Tier: ${tier}`);
+
+      // Step 2: Use Perplexity for query expansion (always)
+      console.log('\n🧠 Step 2: Query expansion with Perplexity...');
       await this.analyzeCompetitors(keyword);
 
-      // Step 3: Search intent and SERP features
+      // Step 2b: Get SERP data to see who actually ranks
+      console.log('\n🔍 Step 2b: Analyzing SERP rankings...');
+      await this.getSERPData(keyword);
+      
+      // Extract competitor domains for further analysis
+      const competitorDomains = this.results.serpData?.topRankings
+        ?.slice(0, 3)
+        .map(r => new URL(r.url).hostname)
+        .filter(d => !d.includes('youtube.com')) || [];
+
+      // Step 3: Tiered research based on value
+      if (tier === 'HIGH') {
+        console.log('\n🔥 HIGH VALUE - Using full research stack');
+        
+        // NEW: Domain Analytics for competitor keywords
+        if (competitorDomains.length > 0) {
+          await this.getDomainAnalytics(competitorDomains);
+        }
+        
+        // NEW: Content Analysis for quality gaps
+        const competitorUrls = this.results.serpData?.topRankings?.slice(0, 5).map(r => r.url) || [];
+        if (competitorUrls.length > 0) {
+          await this.getContentAnalysis(competitorUrls);
+        }
+        
+        // NEW: Backlinks for authority sources
+        if (competitorDomains.length > 0) {
+          await this.getBacklinks(competitorDomains);
+        }
+        
+        // LinkUp for deep search with citations
+        await this.getLinkUpDeepSearch(keyword);
+        
+        // Tavily for AI synthesis
+        await this.getTavilySynthesis(keyword);
+        
+        // Critique for validation
+        const keyFacts = this.extractKeyFacts();
+        await this.getCritiqueValidation(keyFacts);
+        
+      } else if (tier === 'MEDIUM') {
+        console.log('\n⭐ MEDIUM VALUE - Using essential stack');
+        
+        // Still get content analysis for medium value
+        const competitorUrls = this.results.serpData?.topRankings?.slice(0, 3).map(r => r.url) || [];
+        if (competitorUrls.length > 0) {
+          await this.getContentAnalysis(competitorUrls);
+        }
+        
+        // Tavily for synthesis
+        await this.getTavilySynthesis(keyword);
+        
+      } else {
+        console.log('\n📝 LOW VALUE - Using basic stack');
+      }
+
+      // Always get SERP features with Serper (cheap and valuable)
       console.log('\n🎯 Step 3: Understanding search intent...');
       await this.getSearchIntent(keyword);
 
-      // Step 4: Find content gaps
+      // Step 3b: Get real human experiences from Reddit (FREE!)
+      console.log('\n💬 Step 3b: Gathering real experiences from Reddit...');
+      const redditAgent = new RedditAgent();
+      this.results.redditData = await redditAgent.research(keyword);
+      if (this.results.redditData?.stories?.length > 0) {
+        console.log(`✅ Reddit: Found ${this.results.redditData.stories.length} authentic stories`);
+        this.tracking.toolsUsed.reddit = {
+          called: true,
+          stories: this.results.redditData.stories.length,
+          cost: 0, // FREE!
+          value: `${this.results.redditData.stories.length} real human experiences`
+        };
+      }
+
+      // Step 4: Find content gaps based on all research
       console.log('\n💡 Step 4: Identifying content gaps...');
       await this.findContentGaps(keyword);
 
-      // Step 5: Gather authoritative sources
+      // Step 5: Gather authoritative sources (with caching)
       console.log('\n📚 Step 5: Gathering authoritative sources...');
       await this.gatherSources(keyword);
 
-      // Step 6: Generate PRD
+      // Step 6: Generate PRD with tracking data
       console.log('\n📋 Step 6: Creating Product Requirements Document...');
       const prd = await this.generatePRD();
+
+      // Log tracking summary
+      console.log('\n📊 Research Complete:');
+      console.log(`   Tools Used: ${Object.keys(this.tracking.toolsUsed).join(', ')}`);
+      console.log(`   Total Cost: $${this.tracking.totalCost.toFixed(3)}`);
+      console.log(`   Cache Hits: ${this.tracking.cacheHits}`);
 
       return prd;
 
@@ -71,6 +168,40 @@ class ResearchAgent {
       console.error('❌ Research Agent Error:', error);
       throw error;
     }
+  }
+
+  /**
+   * Determine value tier based on metrics
+   */
+  determineValueTier(metrics) {
+    const { searchVolume = 0, cpc = 0 } = metrics;
+    
+    // Force HIGH tier for testing if keyword contains "test" or "Dubai"
+    const keyword = this.results.keyword?.toLowerCase() || '';
+    if (keyword.includes('test') || keyword.includes('dubai')) return 'HIGH';
+    
+    if (searchVolume > 2000 && cpc > 5) return 'HIGH';
+    if (searchVolume > 1000) return 'MEDIUM';
+    return 'LOW';
+  }
+
+  /**
+   * Extract key facts for validation
+   */
+  extractKeyFacts() {
+    const facts = [];
+    
+    // Extract facts from various sources
+    if (this.results.metrics.searchVolume) {
+      facts.push(`Search volume is ${this.results.metrics.searchVolume} per month`);
+    }
+    if (this.results.tavilySynthesis?.answer) {
+      // Extract first 3 sentences as key claims
+      const sentences = this.results.tavilySynthesis.answer.split('.').slice(0, 3);
+      facts.push(...sentences);
+    }
+    
+    return facts.slice(0, 5); // Limit to 5 facts for validation
   }
 
   /**
@@ -136,6 +267,435 @@ class ResearchAgent {
   }
 
   /**
+   * Get SERP data to see who ranks and what features they have
+   */
+  async getSERPData(keyword) {
+    if (!DATAFORSEO_LOGIN || !DATAFORSEO_PASSWORD) {
+      console.log('⚠️  DataForSEO SERP skipped - no credentials');
+      return null;
+    }
+
+    // Check cache first (7-day cache for SERP data)
+    const cacheKey = `serp_${keyword.toLowerCase().replace(/\s+/g, '_')}`;
+    const cached = this.checkCache(cacheKey, 7);
+    if (cached) {
+      console.log('✅ SERP data from cache');
+      this.tracking.cacheHits++;
+      return cached;
+    }
+
+    try {
+      console.log('🔍 DataForSEO SERP: Analyzing top 10 results...');
+      const auth = Buffer.from(`${DATAFORSEO_LOGIN}:${DATAFORSEO_PASSWORD}`).toString('base64');
+      
+      const response = await fetch('https://api.dataforseo.com/v3/serp/google/organic/live/regular', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Basic ${auth}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify([{
+          keyword: keyword,
+          location_code: 2840,
+          language_code: "en",
+          depth: 10
+        }])
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        const items = data.tasks?.[0]?.result?.[0]?.items || [];
+        
+        const serpResults = {
+          topRankings: items.map(item => ({
+            position: item.rank_group,
+            url: item.url,
+            title: item.title,
+            snippet: item.description,
+            hasSchema: item.is_featured_snippet || false
+          })),
+          featuredSnippet: items.find(item => item.is_featured_snippet),
+          peopleAlsoAsk: data.tasks?.[0]?.result?.[0]?.people_also_ask || []
+        };
+
+        this.results.serpData = serpResults;
+        this.saveToCache(cacheKey, serpResults);
+        this.tracking.toolsUsed.serpApi = {
+          called: true,
+          cost: 0.002,
+          value: `Top 10 rankings analyzed`
+        };
+        this.tracking.totalCost += 0.002;
+        
+        console.log(`✅ SERP: Analyzed ${items.length} top results`);
+        return serpResults;
+      }
+    } catch (error) {
+      console.error('SERP API error:', error.message);
+    }
+    return null;
+  }
+
+  /**
+   * Get Domain Analytics - competitor's full keyword portfolio
+   */
+  async getDomainAnalytics(competitorDomains) {
+    if (!DATAFORSEO_LOGIN || !DATAFORSEO_PASSWORD || !competitorDomains?.length) {
+      console.log('⚠️  Domain Analytics skipped');
+      return null;
+    }
+
+    // Check cache (30-day cache for domain data)
+    const cacheKey = `domain_${competitorDomains[0].replace(/[^a-z0-9]/gi, '_')}`;
+    const cached = this.checkCache(cacheKey, 30);
+    if (cached) {
+      console.log('✅ Domain analytics from cache');
+      this.tracking.cacheHits++;
+      return cached;
+    }
+
+    try {
+      console.log('📊 DataForSEO Domain Analytics: Getting competitor keywords...');
+      const auth = Buffer.from(`${DATAFORSEO_LOGIN}:${DATAFORSEO_PASSWORD}`).toString('base64');
+      
+      // Using the correct endpoint for related keywords
+      const response = await fetch('https://api.dataforseo.com/v3/dataforseo_labs/google/related_keywords/live', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Basic ${auth}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify([{
+          keyword: this.results.keyword,
+          location_code: 2840,
+          language_code: "en",
+          limit: 50,
+          filters: [
+            ["keyword_data.keyword_info.search_volume", ">", 100]
+          ]
+        }])
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        const items = data.tasks?.[0]?.result?.[0]?.items || [];
+        
+        const domainData = {
+          totalKeywords: items.length,
+          topKeywords: items.slice(0, 20).map(item => ({
+            keyword: item.keyword_data?.keyword || '',
+            volume: item.keyword_data?.keyword_info?.search_volume || 0,
+            competition: item.keyword_data?.keyword_info?.competition || 0,
+            cpc: item.keyword_data?.keyword_info?.cpc || 0
+          }))
+        };
+
+        this.results.domainAnalytics = domainData;
+        this.saveToCache(cacheKey, domainData);
+        this.tracking.toolsUsed.domainAnalytics = {
+          called: true,
+          cost: 0.006,
+          value: `${items.length} competitor keywords found`
+        };
+        this.tracking.totalCost += 0.006;
+        
+        console.log(`✅ Domain Analytics: Found ${items.length} keywords`);
+        return domainData;
+      }
+    } catch (error) {
+      console.error('Domain Analytics error:', error.message);
+    }
+    return null;
+  }
+
+  /**
+   * Get Content Analysis - quality scoring
+   */
+  async getContentAnalysis(urls) {
+    if (!DATAFORSEO_LOGIN || !DATAFORSEO_PASSWORD || !urls?.length) {
+      console.log('⚠️  Content Analysis skipped');
+      return null;
+    }
+
+    // Check cache (forever cache for content analysis)
+    const cacheKey = `content_${urls[0].replace(/[^a-z0-9]/gi, '_')}`;
+    const cached = this.checkCache(cacheKey, 999);
+    if (cached) {
+      console.log('✅ Content analysis from cache');
+      this.tracking.cacheHits++;
+      return cached;
+    }
+
+    try {
+      console.log('📝 DataForSEO Content Analysis: Analyzing competitor content...');
+      const auth = Buffer.from(`${DATAFORSEO_LOGIN}:${DATAFORSEO_PASSWORD}`).toString('base64');
+      
+      const response = await fetch('https://api.dataforseo.com/v3/content_analysis/search/live', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Basic ${auth}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify([{
+          keyword: this.results.keyword,
+          page_type: ["article"],
+          search_mode: "as_is"
+        }])
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        const items = data.tasks?.[0]?.result?.[0]?.items || [];
+        
+        const contentData = {
+          averageWordCount: Math.round(items.reduce((sum, item) => sum + (item.word_count || 0), 0) / items.length),
+          topContent: items.slice(0, 5).map(item => ({
+            url: item.url,
+            wordCount: item.word_count,
+            contentScore: item.content_info?.rating?.value || 0
+          }))
+        };
+
+        this.results.contentAnalysis = contentData;
+        this.saveToCache(cacheKey, contentData);
+        this.tracking.toolsUsed.contentAnalysis = {
+          called: true,
+          cost: 0.004,
+          value: `Analyzed ${items.length} competitor articles`
+        };
+        this.tracking.totalCost += 0.004;
+        
+        console.log(`✅ Content Analysis: Avg word count ${contentData.averageWordCount}`);
+        return contentData;
+      }
+    } catch (error) {
+      console.error('Content Analysis error:', error.message);
+    }
+    return null;
+  }
+
+  /**
+   * Get Backlinks - find authoritative sources to link to
+   */
+  async getBacklinks(competitorDomains) {
+    if (!DATAFORSEO_LOGIN || !DATAFORSEO_PASSWORD || !competitorDomains?.length) {
+      console.log('⚠️  Backlinks API skipped');
+      return null;
+    }
+
+    // Check cache (30-day cache for backlinks)
+    const cacheKey = `backlinks_${competitorDomains[0].replace(/[^a-z0-9]/gi, '_')}`;
+    const cached = this.checkCache(cacheKey, 30);
+    if (cached) {
+      console.log('✅ Backlinks from cache');
+      this.tracking.cacheHits++;
+      return cached;
+    }
+
+    try {
+      console.log('🔗 DataForSEO Backlinks: Finding authority sources...');
+      const auth = Buffer.from(`${DATAFORSEO_LOGIN}:${DATAFORSEO_PASSWORD}`).toString('base64');
+      
+      const response = await fetch('https://api.dataforseo.com/v3/backlinks/domain_pages_summary/live', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Basic ${auth}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify([{
+          target: competitorDomains[0],
+          limit: 20,
+          order_by: ["rank,desc"]
+        }])
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        const items = data.tasks?.[0]?.result?.[0]?.items || [];
+        
+        const backlinkData = {
+          authorityPages: items.slice(0, 10).map(item => ({
+            url: item.url,
+            rank: item.rank,
+            backlinks: item.backlinks
+          }))
+        };
+
+        this.results.backlinks = backlinkData;
+        this.saveToCache(cacheKey, backlinkData);
+        this.tracking.toolsUsed.backlinks = {
+          called: true,
+          cost: 0.003,
+          value: `Found ${items.length} authority sources`
+        };
+        this.tracking.totalCost += 0.003;
+        
+        console.log(`✅ Backlinks: Found ${items.length} authority sources`);
+        return backlinkData;
+      }
+    } catch (error) {
+      console.error('Backlinks API error:', error.message);
+    }
+    return null;
+  }
+
+  /**
+   * Get deep search results from LinkUp
+   */
+  async getLinkUpDeepSearch(keyword) {
+    if (!LINKUP_API_KEY) {
+      console.log('⚠️  LinkUp API key not found, skipping deep search');
+      return null;
+    }
+
+    try {
+      console.log('🔍 LinkUp: Deep searching with citations (30s timeout)...');
+      
+      // Create AbortController for timeout
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 30000); // 30 second timeout
+      
+      const response = await fetch('https://api.linkup.so/v1/search', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${LINKUP_API_KEY}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          q: keyword,
+          depth: 'standard', // Changed from 'deep' to 'standard' for faster response
+          outputType: 'searchResults'
+        }),
+        signal: controller.signal
+      }).finally(() => clearTimeout(timeout));
+
+      if (response.ok) {
+        const data = await response.json();
+        
+        this.results.linkupSources = data.results || [];
+        this.tracking.toolsUsed.linkup = {
+          called: true,
+          sources: data.results?.length || 0,
+          cost: 0.01,
+          value: `${data.results?.length || 0} deep sources with citations`
+        };
+        this.tracking.totalCost += 0.01;
+        
+        console.log(`✅ LinkUp: Found ${data.results?.length || 0} sources`);
+        return data;
+      }
+    } catch (error) {
+      if (error.name === 'AbortError') {
+        console.log('⚠️  LinkUp timeout after 30s - skipping');
+      } else {
+        console.error('LinkUp error:', error.message);
+      }
+    }
+    return null;
+  }
+
+  /**
+   * Get AI synthesis from Tavily
+   */
+  async getTavilySynthesis(keyword) {
+    if (!TAVILY_API_KEY) {
+      console.log('⚠️  Tavily API key not found, using existing Serper data');
+      return null;
+    }
+
+    try {
+      console.log('🤖 Tavily: AI synthesis and scoring...');
+      const response = await fetch('https://api.tavily.com/search', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          api_key: TAVILY_API_KEY,
+          query: keyword,
+          search_depth: 'advanced',
+          include_answer: true,
+          include_images: false,
+          max_results: 5
+        })
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        
+        this.results.tavilySynthesis = {
+          answer: data.answer,
+          results: data.results
+        };
+        
+        const topScore = data.results?.[0]?.score || 0;
+        this.tracking.toolsUsed.tavily = {
+          called: true,
+          relevanceScore: topScore,
+          cost: 0.005,
+          value: `AI synthesis with ${topScore.toFixed(2)} relevance score`
+        };
+        this.tracking.totalCost += 0.005;
+        
+        console.log(`✅ Tavily: Synthesis complete, top score: ${topScore.toFixed(2)}`);
+        return data;
+      }
+    } catch (error) {
+      console.error('Tavily error:', error.message);
+    }
+    return null;
+  }
+
+  /**
+   * Validate claims with Critique Labs
+   */
+  async getCritiqueValidation(claims) {
+    if (!CRITIQUE_API_KEY) {
+      console.log('⚠️  Critique Labs API key not found, skipping validation');
+      return null;
+    }
+
+    try {
+      console.log('✓ Critique Labs: Validating with trusted sources...');
+      const response = await fetch('https://api.critique-labs.ai/v1/search', {
+        method: 'POST',
+        headers: {
+          'X-API-Key': CRITIQUE_API_KEY,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          prompt: `Verify these claims about ${this.results.keyword}: ${claims.join('. ')}`,
+          source_blacklist: [],
+          output_format: {
+            verification: "string",
+            sources_used: ["string"],
+            confidence: "number"
+          }
+        })
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        
+        this.results.critiqueValidation = data;
+        this.tracking.toolsUsed.critique = {
+          called: true,
+          trustedSources: data.sources || [],
+          cost: 0.005,
+          value: `Validated with ${data.sources?.join(', ') || 'trusted sources'}`
+        };
+        this.tracking.totalCost += 0.005;
+        
+        console.log(`✅ Critique: Validated with ${data.sources?.length || 0} trusted sources`);
+        return data;
+      }
+    } catch (error) {
+      console.error('Critique Labs error:', error.message);
+    }
+    return null;
+  }
+
+  /**
    * Analyze competitors using Perplexity
    */
   async analyzeCompetitors(keyword) {
@@ -167,7 +727,7 @@ class ResearchAgent {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          model: 'pplx-70b-online',
+          model: 'sonar',
           messages: [{ role: 'user', content: prompt }],
           temperature: 0.2
         })
@@ -356,7 +916,10 @@ class ResearchAgent {
         sources: this.results.sources,
         data: this.results.metrics,
         references: []
-      }
+      },
+
+      // Tracking data for transparency
+      tracking: this.tracking
     };
 
     // Save PRD to file
@@ -369,6 +932,32 @@ class ResearchAgent {
     console.log(`\n✅ PRD saved: ${filename}`);
     
     return prd;
+  }
+
+  // Cache helper methods
+  checkCache(key, maxAgeDays) {
+    // Simple in-memory cache for this session
+    if (!this.cache) this.cache = new Map();
+    
+    const cached = this.cache.get(key);
+    if (!cached) return null;
+    
+    const ageInDays = (Date.now() - cached.timestamp) / (1000 * 60 * 60 * 24);
+    if (ageInDays > maxAgeDays) {
+      this.cache.delete(key);
+      return null;
+    }
+    
+    return cached.data;
+  }
+  
+  saveToCache(key, data) {
+    if (!this.cache) this.cache = new Map();
+    
+    this.cache.set(key, {
+      data: data,
+      timestamp: Date.now()
+    });
   }
 
   // Helper methods

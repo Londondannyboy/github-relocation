@@ -9,14 +9,12 @@
 import dotenv from 'dotenv';
 import { promises as fs } from 'fs';
 import path from 'path';
-import OpenAI from 'openai';
+import fetch from 'node-fetch';
 
 dotenv.config({ path: '.env.local' });
 
-// Initialize OpenAI (using Claude would be better but using OpenAI as fallback)
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY || 'dummy-key'
-});
+// Use Claude API instead of OpenAI
+const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 
 class CopywriterAgent {
   constructor() {

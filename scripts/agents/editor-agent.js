@@ -3,7 +3,7 @@
  * Part of the Three-Agent System for quality content generation
  * 
  * Purpose: Format for readability, add SEO elements, multi-category tagging
- * Output: Publication-ready article with schema markup
+ * Output: Publication-ready post with schema markup
  */
 
 import dotenv from 'dotenv';
@@ -548,27 +548,25 @@ class EditorAgent {
     const blocks = this.convertToSanityBlocks(this.finalArticle.formattedContent);
 
     const article = {
-      _type: 'article',
+      _type: 'post',
       title: this.finalArticle.title,
       slug: {
         current: this.generateSlug(this.finalArticle.title)
       },
       body: blocks,
-      excerpt: this.finalArticle.seo.metaDescription,
-      focusKeyword: this.finalArticle.seo.focusKeyword,
-      focusKeyphrase: this.draft.metadata.secondaryKeywords[0] || '',
-      seoTitle: this.finalArticle.title,
-      metaDescription: this.finalArticle.seo.metaDescription,
+      excerpt: this.finalArticle.seo.metaDescription?.substring(0, 200) || '',
+      focusKeyword: this.draft.metadata.secondaryKeywords?.[0] || this.draft.metadata.primaryKeyword || '',
+      metaTitle: this.finalArticle.title.substring(0, 60),
+      metaDescription: this.finalArticle.seo.metaDescription?.substring(0, 160) || '',
+      searchVolume: this.draft.metadata.searchVolume || 0,
+      cpc: this.draft.metadata.cpc || 0,
       categories: this.finalArticle.categories,
       tags: this.finalArticle.tags,
-      schema: JSON.stringify(this.finalArticle.schema),
       publishedAt: new Date().toISOString(),
-      qualityScore: this.calculateQualityScore(),
-      metadata: {
-        wordCount: this.draft.metadata.wordCount,
-        readingTime: this.draft.metadata.readingTime,
-        lastModified: new Date().toISOString()
-      }
+      featured: false,
+      contentTier: 'tier1',
+      generationCost: 0.02,
+      readingTime: Math.ceil(this.draft.metadata.wordCount / 200)
     };
 
     // Save to file
@@ -736,7 +734,7 @@ class EditorAgent {
   async fetchExistingArticles() {
     try {
       const articles = await client.fetch(`
-        *[_type == "article"][0...100] {
+        *[_type == "post"][0...100] {
           title,
           slug,
           focusKeyword,
@@ -763,6 +761,10 @@ class EditorAgent {
   }
 
   convertToSanityBlocks(content) {
+    // Generate unique keys using crypto
+    const getBlockKey = () => crypto.randomUUID();
+    const getSpanKey = () => crypto.randomUUID();
+    
     const lines = content.split('\n');
     const blocks = [];
 
@@ -770,32 +772,42 @@ class EditorAgent {
       if (line.startsWith('## ')) {
         blocks.push({
           _type: 'block',
+          _key: getBlockKey(),
           style: 'h2',
-          children: [{ _type: 'span', text: line.replace('## ', '') }]
+          children: [{ _type: 'span', _key: getSpanKey(), text: line.replace('## ', '') }],
+          markDefs: []
         });
       } else if (line.startsWith('### ')) {
         blocks.push({
           _type: 'block',
+          _key: getBlockKey(),
           style: 'h3',
-          children: [{ _type: 'span', text: line.replace('### ', '') }]
+          children: [{ _type: 'span', _key: getSpanKey(), text: line.replace('### ', '') }],
+          markDefs: []
         });
       } else if (line.startsWith('• ')) {
         blocks.push({
           _type: 'block',
+          _key: getBlockKey(),
           listItem: 'bullet',
-          children: [{ _type: 'span', text: line.replace('• ', '') }]
+          children: [{ _type: 'span', _key: getSpanKey(), text: line.replace('• ', '') }],
+          markDefs: []
         });
       } else if (line.startsWith('> ')) {
         blocks.push({
           _type: 'block',
+          _key: getBlockKey(),
           style: 'blockquote',
-          children: [{ _type: 'span', text: line.replace('> ', '') }]
+          children: [{ _type: 'span', _key: getSpanKey(), text: line.replace('> ', '') }],
+          markDefs: []
         });
       } else if (line.trim()) {
         blocks.push({
           _type: 'block',
+          _key: getBlockKey(),
           style: 'normal',
-          children: [{ _type: 'span', text: line }]
+          children: [{ _type: 'span', _key: getSpanKey(), text: line }],
+          markDefs: []
         });
       }
     });

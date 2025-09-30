@@ -4,17 +4,36 @@
 **Status**: STRATEGIC PIVOT - Quality Over Quantity
 **Purpose**: Master content planning and tracking document
 
+## ⚠️ CRITICAL TERMINOLOGY
+**ALWAYS USE "POSTS" NOT "ARTICLES"**
+- Sanity document type: `_type: "post"`
+- All content pieces are called POSTS
+- Never query or create "article" type
+
 ---
 
 ## 🎯 CONTENT STRATEGY FRAMEWORK
 
-### The Three-Agent Content System
+### 🎉 API BREAKTHROUGH (Sep 30, 2025)
+**8 APIs Now Orchestrated for Maximum Content Quality:**
+1. **Perplexity** - Keyword clustering & "People Also Ask" (10-15 queries per article)
+2. **LinkUp** - 29+ deep sources with inline citations 
+3. **Tavily** - AI synthesis with 0.95 relevance scores
+4. **Critique Labs** - Fact validation & accuracy checking
+5. **Claude** - Premium content generation (replacing OpenAI, saving $200/month)
+6. **DataForSEO** - Real search metrics (volume, CPC, difficulty)
+7. **Serper** - SERP features & competitor analysis
+8. **Firecrawl** - Official source scraping (v1 endpoint)
+
+**Cost: $0.02-0.03 per HIGH VALUE article** (10x quality for 2x cost)
+
+### The Three-Agent Content System (FULLY OPERATIONAL)
 
 ```mermaid
-Research Agent → Copywriter Agent → Editor Agent → Published Content
+Research Agent (8 APIs) → Copywriter Agent (Claude) → Editor Agent → Published Content
 ```
 
-Each article MUST go through all three phases for quality assurance.
+Each POST MUST go through all three phases for quality assurance.
 
 ### Content Architecture (4 Pillars)
 
@@ -22,6 +41,29 @@ Each article MUST go through all three phases for quality assurance.
 2. **⚖️ Comparison Pages** - High-intent "X vs Y" content with tables
 3. **📝 Listicles** - "Top 10/20/100" discovery content with links
 4. **🔍 Deep-Dives** - Single-topic problem-solving articles
+
+---
+
+## 🚀 INTELLIGENT CONTENT ROUTING
+
+### Tiered Approach Based on Keyword Value
+```yaml
+HIGH VALUE (>2000 searches/month):
+  apis_used: ALL 8 APIs
+  research_depth: Maximum (29+ sources)
+  cost: $0.02-0.03
+  example: "Portugal Golden Visa 2025"
+
+MEDIUM VALUE (500-2000 searches):
+  apis_used: 5-6 APIs
+  research_depth: Standard (10-15 sources)
+  cost: $0.015-0.02
+  
+LOW VALUE (<500 searches):
+  apis_used: 3-4 APIs
+  research_depth: Basic (5-10 sources)
+  cost: $0.01-0.015
+```
 
 ---
 

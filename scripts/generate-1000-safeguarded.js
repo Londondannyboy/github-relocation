@@ -260,24 +260,27 @@ function analyzeSERP(serperData) {
 
 async function generateImages(keyword, count = 4) {
   const images = [];
+  // NeoGlow Design System - Stylized, non-photorealistic prompts
   const prompts = [
-    `${keyword} panoramic city view, professional photography, visa document concept, modern architecture, golden hour lighting`,
-    `${keyword} official documents and passport on desk, visa application process, professional office environment`,
-    `${keyword} lifestyle and culture, expat community gathering, local landmarks, vibrant city life`,
-    `${keyword} business district aerial view, economic opportunities, investment properties, modern skyline`
+    `${keyword} cityscape, neon white outline on key landmark, cyberpunk aesthetic, purple and teal gradient sky, geometric patterns, minimalist vector art style, no people, digital illustration, modern art deco`,
+    `${keyword} abstract concept, floating passport and visa documents, ethereal white particles, gradient background purple to gold, geometric shapes, stylized illustration, no photorealism`,
+    `${keyword} lifestyle illustration, stylized map with glowing location pins, pastel color palette, dreamy atmosphere, illustrated travel poster style, geometric patterns, no realistic people`,
+    `${keyword} investment visualization, abstract geometric buildings with neon accents, data visualization elements, purple and gold color scheme, futuristic design, vector art style`
   ];
   
   for (let i = 0; i < Math.min(count, prompts.length); i++) {
     try {
       const output = await replicate.run(
-        "black-forest-labs/flux-schnell",
+        "black-forest-labs/flux-pro",  // Upgraded to flux-pro for better quality
         {
           input: {
             prompt: prompts[i],
             num_outputs: 1,
             aspect_ratio: "16:9",
             output_format: "webp",
-            output_quality: 90
+            output_quality: 95,  // Higher quality for pro model
+            guidance: 7.5,  // Add guidance for better prompt adherence
+            steps: 50  // More steps for better quality
           }
         }
       );
