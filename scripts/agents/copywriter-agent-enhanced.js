@@ -275,7 +275,7 @@ Now, write the complete article following the structure provided. Make it compre
               aspect_ratio: "16:9",
               output_format: "webp",
               output_quality: 95,
-              guidance: 7.5,
+              guidance: 5,  // Max for flux-pro
               steps: 50
             }
           }
