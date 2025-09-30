@@ -8,6 +8,8 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import fetch from 'node-fetch';
 import Replicate from 'replicate';
+import { createClient } from '@sanity/client';
+import { nanoid } from 'nanoid';
 import { selectPersona, createSystemPrompt } from './personas.js';
 import { selectTemplate, generateContentBrief } from './content-templates.js';
 
@@ -16,6 +18,15 @@ dotenv.config({ path: '.env.local' });
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 const replicate = new Replicate({
   auth: process.env.REPLICATE_API_TOKEN
+});
+
+// Initialize Sanity client
+const client = createClient({
+  projectId: process.env.PUBLIC_SANITY_PROJECT_ID,
+  dataset: process.env.PUBLIC_SANITY_DATASET,
+  apiVersion: process.env.PUBLIC_SANITY_API_VERSION || '2024-01-01',
+  token: process.env.SANITY_WRITE_TOKEN,
+  useCdn: false
 });
 
 class EnhancedCopywriterAgent {
@@ -101,11 +112,11 @@ class EnhancedCopywriterAgent {
       console.log('\n🔧 Optimizing content...');
       const optimizedArticle = await this.optimizeContent(article);
       
-      // Save the result
-      const outputPath = await this.saveArticle(optimizedArticle);
-      console.log(`\n✅ Article saved to: ${outputPath}`);
+      // Publish to Sanity directly
+      const result = await this.publishToSanity(optimizedArticle, images);
+      console.log(`\n✅ Article published to Sanity!`);
       
-      return optimizedArticle;
+      return result;
       
     } catch (error) {
       console.error('❌ Enhanced Copywriter Error:', error);
@@ -320,7 +331,73 @@ Return the optimized article with all improvements applied.`;
   }
 
   /**
-   * Save article to file
+   * Publish directly to Sanity CMS
+   */
+  async publishToSanity(content, images = []) {
+    const keyword = this.prd.summary?.keyword || this.prd.keyword;
+    const slug = keyword.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    
+    console.log(`\n📤 Publishing to Sanity...`);
+    console.log(`   Slug: ${slug}`);
+    
+    // Convert content to blocks (simplified for now)
+    const blocks = content.split('\n\n').map(paragraph => ({
+      _type: 'block',
+      style: paragraph.startsWith('#') ? 'h2' : 'normal',
+      children: [{
+        _type: 'span',
+        text: paragraph.replace(/^#+\s/, '')
+      }]
+    }));
+    
+    // Prepare post document
+    const post = {
+      _type: 'post',
+      title: keyword,
+      slug: { current: slug },
+      content: blocks,
+      excerpt: blocks[0]?.children[0]?.text?.slice(0, 160) + '...' || '',
+      author: this.persona?.name || 'Expert Contributor',
+      categories: [this.prd.category || 'General'],
+      tags: this.prd.seo?.secondaryKeywords || [],
+      readingTime: Math.ceil(content.split(/\s+/).length / 200),
+      publishedAt: new Date().toISOString(),
+      featured: false,
+      images: images,
+      seo: {
+        metaTitle: keyword,
+        metaDescription: blocks[0]?.children[0]?.text?.slice(0, 155) || '',
+        focusKeyword: keyword
+      }
+    };
+    
+    // Create or update post
+    try {
+      const existingPost = await client.fetch(
+        `*[_type == "post" && slug.current == $slug][0]`,
+        { slug }
+      );
+      
+      let result;
+      if (existingPost) {
+        result = await client.patch(existingPost._id).set(post).commit();
+        console.log(`   ✅ Updated existing post: ${result._id}`);
+      } else {
+        result = await client.create(post);
+        console.log(`   ✅ Created new post: ${result._id}`);
+      }
+      
+      console.log(`   🌐 Live at: https://relocation.quest/${slug}`);
+      return result;
+      
+    } catch (error) {
+      console.error('❌ Sanity publish error:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Save article to file (legacy method)
    */
   async saveArticle(content) {
     const keyword = this.prd.summary?.keyword || this.prd.keyword;
