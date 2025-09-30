@@ -10287,3 +10287,113 @@
 [2025-09-30T07:23:02.705Z] 
 🔍 Checking deployment...
 [2025-09-30T07:23:31.494Z]    ✓ Build successful
+[2025-09-30T07:23:32.304Z]    ✓ Pushed to GitHub
+[2025-09-30T07:23:32.305Z]    ⏳ Waiting for Vercel...
+[2025-09-30T07:25:02.680Z]    ✅ Deployment successful!
+[2025-09-30T07:25:02.681Z] ✅ Batch 91 deployed
+[2025-09-30T07:25:02.681Z] 
+⏳ Pausing before next batch...
+[2025-09-30T07:25:32.685Z] 
+============================================================
+[2025-09-30T07:25:32.686Z] 📦 BATCH 92 of 96
+[2025-09-30T07:25:32.686Z] ============================================================
+[2025-09-30T07:25:32.686Z] 
+📋 Topics for this batch:
+[2025-09-30T07:25:32.687Z]    - armenia digital nomad visa requirements
+[2025-09-30T07:25:32.687Z]    - bvi digital nomad visa 2025
+[2025-09-30T07:25:32.687Z]    - peru digital nomad visa process
+[2025-09-30T07:25:32.687Z]    - ethiopia digital nomad visa requirements
+[2025-09-30T07:25:32.687Z]    - moldova digital nomad visa requirements
+[2025-09-30T07:25:32.687Z]    - belgium digital nomad visa process
+[2025-09-30T07:25:32.687Z]    - poland remote work visa guide
+[2025-09-30T07:25:32.687Z]    - france remote work visa 2025
+[2025-09-30T07:25:32.687Z]    - dominica digital nomad visa guide
+[2025-09-30T07:25:32.687Z]    - portugal remote work visa
+[2025-09-30T07:25:32.687Z] 
+📝 Generating: Armenia Digital Nomad Visa Requirements Complete Guide
+[2025-09-30T07:25:32.687Z]    🔬 Researching...
+[2025-09-30T07:25:35.751Z]    ⚠️ Perplexity research skipped
+[2025-09-30T07:25:35.752Z]    🎨 Generating images...
+[2025-09-30T07:25:44.131Z]    ✍️ Creating content...
+[2025-09-30T07:25:44.133Z]    ✓ 2248 words, 10 links, 4 images
+[2025-09-30T07:25:44.830Z]    ✅ Published successfully: armenia-digital-nomad-visa-requirements-complete-guide
+[2025-09-30T07:25:47.832Z] 
+📝 Generating: Bvi Digital Nomad Visa 2025 Complete Guide
+[2025-09-30T07:25:47.833Z]    🔬 Researching...
+[2025-09-30T07:25:51.788Z]    ⚠️ Perplexity research skipped
+[2025-09-30T07:25:51.789Z]    🎨 Generating images...
+[2025-09-30T07:25:59.863Z]    ✍️ Creating content...
+[2025-09-30T07:25:59.866Z]    ✓ 2286 words, 10 links, 4 images
+[2025-09-30T07:26:00.876Z]    ✅ Published successfully: bvi-digital-nomad-visa-2025-complete-guide
+[2025-09-30T07:26:03.879Z] 
+📝 Generating: Peru Digital Nomad Visa Process Complete Guide
+[2025-09-30T07:26:03.880Z]    🔬 Researching...
+[2025-09-30T07:26:08.526Z]    ⚠️ Perplexity research skipped
+[2025-09-30T07:26:08.528Z]    🎨 Generating images...
+[2025-09-30T07:26:17.360Z]    ✍️ Creating content...
+[2025-09-30T07:26:17.363Z]    ✓ 2409 words, 10 links, 4 images
+[2025-09-30T07:26:17.939Z]    ✅ Published successfully: peru-digital-nomad-visa-process-complete-guide
+[2025-09-30T07:26:20.942Z] 
+📝 Generating: Ethiopia Digital Nomad Visa Requirements Complete Guide
+[2025-09-30T07:26:20.943Z]    🔬 Researching...
+[2025-09-30T07:26:24.030Z]    ⚠️ Perplexity research skipped
+[2025-09-30T07:26:24.031Z]    🎨 Generating images...
+[2025-09-30T07:26:33.163Z]    ✍️ Creating content...
+[2025-09-30T07:26:33.165Z]    ✓ 2256 words, 10 links, 4 images
+[2025-09-30T07:26:33.986Z]    ✅ Published successfully: ethiopia-digital-nomad-visa-requirements-complete-guide
+[2025-09-30T07:26:36.988Z] 
+📝 Generating: Moldova Digital Nomad Visa Requirements Complete Guide
+[2025-09-30T07:26:36.989Z]    🔬 Researching...
+[2025-09-30T07:26:39.607Z]    ⚠️ Perplexity research skipped
+[2025-09-30T07:26:39.608Z]    🎨 Generating images...
+[2025-09-30T07:26:48.046Z]    ✍️ Creating content...
+[2025-09-30T07:26:48.048Z]    ✓ 2214 words, 10 links, 4 images
+[2025-09-30T07:26:49.018Z]    ✅ Published successfully: moldova-digital-nomad-visa-requirements-complete-guide
+[2025-09-30T07:26:52.021Z] 
+📝 Generating: Belgium Digital Nomad Visa Process Complete Guide
+[2025-09-30T07:26:52.022Z]    🔬 Researching...
+[2025-09-30T07:27:00.862Z]    ⚠️ Perplexity research skipped
+[2025-09-30T07:27:00.862Z]    🎨 Generating images...
+[2025-09-30T07:27:09.257Z]    ✍️ Creating content...
+[2025-09-30T07:27:09.259Z]    ✓ 2264 words, 10 links, 4 images
+[2025-09-30T07:27:10.071Z]    ✅ Published successfully: belgium-digital-nomad-visa-process-complete-guide
+[2025-09-30T07:27:13.074Z] 
+📝 Generating: Poland Remote Work Visa Guide Complete Guide
+[2025-09-30T07:27:13.075Z]    🔬 Researching...
+[2025-09-30T07:27:16.197Z]    ⚠️ Perplexity research skipped
+[2025-09-30T07:27:16.199Z]    🎨 Generating images...
+[2025-09-30T07:27:25.019Z]    ✍️ Creating content...
+[2025-09-30T07:27:25.022Z]    ✓ 2416 words, 10 links, 4 images
+[2025-09-30T07:27:26.183Z]    ✅ Published successfully: poland-remote-work-visa-guide-complete-guide
+[2025-09-30T07:27:29.186Z] 
+📝 Generating: France Remote Work Visa 2025 Complete Guide
+[2025-09-30T07:27:29.187Z]    🔬 Researching...
+[2025-09-30T07:27:33.763Z]    ⚠️ Perplexity research skipped
+[2025-09-30T07:27:33.764Z]    🎨 Generating images...
+[2025-09-30T07:27:41.591Z]    ✍️ Creating content...
+[2025-09-30T07:27:41.594Z]    ✓ 2344 words, 10 links, 4 images
+[2025-09-30T07:27:42.167Z]    ✅ Published successfully: france-remote-work-visa-2025-complete-guide
+[2025-09-30T07:27:45.170Z] 
+📝 Generating: Dominica Digital Nomad Visa Guide Complete Guide
+[2025-09-30T07:27:45.171Z]    🔬 Researching...
+[2025-09-30T07:27:48.168Z]    ⚠️ Perplexity research skipped
+[2025-09-30T07:27:48.169Z]    🎨 Generating images...
+[2025-09-30T07:27:56.643Z]    ✍️ Creating content...
+[2025-09-30T07:27:56.645Z]    ✓ 1936 words, 10 links, 4 images
+[2025-09-30T07:27:57.215Z]    ✅ Published successfully: dominica-digital-nomad-visa-guide-complete-guide
+[2025-09-30T07:28:00.217Z] 
+📝 Generating: Portugal Remote Work Visa Complete Guide
+[2025-09-30T07:28:00.218Z]    🔬 Researching...
+[2025-09-30T07:28:02.913Z]    ⚠️ Perplexity research skipped
+[2025-09-30T07:28:02.914Z]    🎨 Generating images...
+[2025-09-30T07:28:10.921Z]    ✍️ Creating content...
+[2025-09-30T07:28:10.924Z]    ✓ 2365 words, 10 links, 4 images
+[2025-09-30T07:28:12.126Z]    ✅ Published successfully: portugal-remote-work-visa-complete-guide
+[2025-09-30T07:28:15.128Z] 
+📊 Batch 92 Results:
+[2025-09-30T07:28:15.129Z]    - Articles generated: 10/10
+[2025-09-30T07:28:15.130Z]    - Average word count: 2274
+[2025-09-30T07:28:15.130Z]    - Failed articles: 0
+[2025-09-30T07:28:15.130Z] 
+🔍 Checking deployment...
+[2025-09-30T07:28:44.021Z]    ✓ Build successful
