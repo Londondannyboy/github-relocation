@@ -94,7 +94,7 @@ class EnhancedAgentOrchestrator {
         console.log(`${'─'.repeat(50)}`);
         
         const editorAgent = new EditorAgent();
-        const finalArticle = await editorAgent.polish(article, category);
+        const finalArticle = await editorAgent.editContent(article);
         this.results.articlePath = finalArticle;
       }
       
