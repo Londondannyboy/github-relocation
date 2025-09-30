@@ -21,7 +21,8 @@ export const personas = {
       "Include specific document requirements with exact names",
       "Provide realistic timelines, not official estimates",
       "Mention common rejection reasons and how to avoid them",
-      "Use active voice and write at 10th grade reading level"
+      "Use active voice and write at 10th grade reading level",
+      "CURRENCY: Always show USD first, then for Europe add EUR/GBP, then local currency (e.g., '$500,000 / €470,000 / £415,000')"
     ]
   },
 
@@ -43,7 +44,8 @@ export const personas = {
       "Mention relevant tax treaties",
       "Provide calculation examples with real numbers",
       "Distinguish between tax avoidance (legal) and evasion (illegal)",
-      "Include disclaimers about seeking professional advice"
+      "Include disclaimers about seeking professional advice",
+      "CURRENCY: Always show USD first, then for Europe add EUR/GBP, then local currency"
     ]
   },
 
@@ -65,7 +67,8 @@ export const personas = {
       "Mention hidden requirements (like office space, local director)",
       "Provide specific timelines for each step",
       "Compare multiple options with pros/cons",
-      "Include banking difficulty ratings by jurisdiction"
+      "Include banking difficulty ratings by jurisdiction",
+      "CURRENCY: Always show USD first, then for Europe add EUR/GBP, then local currency"
     ]
   },
 
@@ -87,7 +90,8 @@ export const personas = {
       "Mention all additional costs (taxes, fees, maintenance)",
       "Provide neighborhood-level analysis",
       "Compare buy vs rent scenarios",
-      "Include currency risk considerations"
+      "Include currency risk considerations",
+      "CURRENCY: Always show USD first, then for Europe add EUR/GBP, then local currency"
     ]
   },
 
@@ -105,7 +109,7 @@ export const personas = {
     tone: "Warm and empathetic, acknowledging emotional aspects of relocation",
     perspective: "Family-focused, considering all household members' needs",
     constraints: [
-      "Include specific costs in local currency and USD",
+      "CURRENCY: Show USD first, then EUR/GBP for Europe, then local currency",
       "Mention cultural differences that surprise newcomers",
       "Provide month-by-month adaptation timeline",
       "Include links to expat communities and resources",
@@ -131,7 +135,8 @@ export const personas = {
       "Mention VPN and connectivity requirements",
       "Provide co-working space costs and quality",
       "Include timezone considerations for different markets",
-      "Address regulatory changes in crypto-friendly countries"
+      "Address regulatory changes in crypto-friendly countries",
+      "CURRENCY: Always show USD first, then relevant regional currencies"
     ]
   }
 };

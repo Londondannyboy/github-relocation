@@ -7,12 +7,16 @@ import dotenv from 'dotenv';
 import { promises as fs } from 'fs';
 import path from 'path';
 import fetch from 'node-fetch';
+import Replicate from 'replicate';
 import { selectPersona, createSystemPrompt } from './personas.js';
 import { selectTemplate, generateContentBrief } from './content-templates.js';
 
 dotenv.config({ path: '.env.local' });
 
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
+const replicate = new Replicate({
+  auth: process.env.REPLICATE_API_TOKEN
+});
 
 class EnhancedCopywriterAgent {
   constructor() {
@@ -89,6 +93,9 @@ class EnhancedCopywriterAgent {
       // Create content section by section
       console.log('\n✨ Generating expert content with Claude...');
       const article = await this.generateFullArticle();
+      
+      // Generate images for the article
+      const images = await this.generateImages(keyword, category || this.prd.category);
       
       // Post-process and optimize
       console.log('\n🔧 Optimizing content...');
@@ -222,6 +229,62 @@ Now, write the complete article following the structure provided. Make it compre
     prompt += `- Write meta description (155 chars): Focus on the main benefit\n`;
     
     return prompt;
+  }
+
+  /**
+   * Generate images for the article using NeoGlow style
+   */
+  async generateImages(keyword, category) {
+    console.log('\n🎨 Generating NeoGlow style images...');
+    
+    const images = [];
+    
+    // Generate 3 images with different prompts
+    const imagePrompts = [
+      // Hero image
+      `${keyword} visualization, stylized neon glow effect, cyberpunk aesthetic with golden particles floating, magical dust, gradient background from deep purple to electric blue, abstract representation, no people, no photorealism, art deco influences, premium quality, 16:9 aspect ratio`,
+      
+      // Mid-article image
+      `Investment opportunity visualization for ${category}, flowing neon light trails forming abstract financial growth patterns, golden accent lights, particle effects, dark gradient background, futuristic holographic elements, no people, stylized artistic rendering, premium aesthetic`,
+      
+      // Bottom image
+      `Success pathway visualization, abstract neon roadmap with glowing milestones, particle streams, electric blue and gold color scheme, cosmic dust effects, geometric patterns, no people, artistic interpretation, luxury feel, wide format`
+    ];
+    
+    try {
+      for (let i = 0; i < imagePrompts.length; i++) {
+        console.log(`   Generating image ${i + 1}/3...`);
+        
+        const output = await replicate.run(
+          "black-forest-labs/flux-pro",
+          {
+            input: {
+              prompt: imagePrompts[i],
+              num_outputs: 1,
+              aspect_ratio: "16:9",
+              output_format: "webp",
+              output_quality: 95,
+              guidance: 7.5,
+              steps: 50
+            }
+          }
+        );
+        
+        if (output && output[0]) {
+          images.push({
+            url: output[0],
+            alt: `${keyword} - Image ${i + 1}`,
+            caption: i === 0 ? `${keyword} Overview` : `${keyword} Details`
+          });
+          console.log(`   ✅ Image ${i + 1} generated`);
+        }
+      }
+    } catch (error) {
+      console.warn('   ⚠️ Image generation failed:', error.message);
+      // Continue without images rather than failing
+    }
+    
+    return images;
   }
 
   /**
