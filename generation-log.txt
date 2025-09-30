@@ -4675,3 +4675,113 @@
 [2025-09-30T02:45:07.126Z] 
 🔍 Checking deployment...
 [2025-09-30T02:45:25.027Z]    ✓ Build successful
+[2025-09-30T02:45:26.045Z]    ✓ Pushed to GitHub
+[2025-09-30T02:45:26.046Z]    ⏳ Waiting for Vercel...
+[2025-09-30T02:46:56.511Z]    ✅ Deployment successful!
+[2025-09-30T02:46:56.512Z] ✅ Batch 40 deployed
+[2025-09-30T02:46:56.513Z] 
+⏳ Pausing before next batch...
+[2025-09-30T02:47:26.515Z] 
+============================================================
+[2025-09-30T02:47:26.516Z] 📦 BATCH 41 of 96
+[2025-09-30T02:47:26.517Z] ============================================================
+[2025-09-30T02:47:26.517Z] 
+📋 Topics for this batch:
+[2025-09-30T02:47:26.517Z]    - best israel digital nomad visa
+[2025-09-30T02:47:26.517Z]    - best germany digital nomad visa
+[2025-09-30T02:47:26.517Z]    - ireland remote work visa cost
+[2025-09-30T02:47:26.517Z]    - denmark digital nomad visa cost
+[2025-09-30T02:47:26.517Z]    - best qatar digital nomad visa
+[2025-09-30T02:47:26.517Z]    - usa digital nomad visa cost
+[2025-09-30T02:47:26.517Z]    - ireland digital nomad visa
+[2025-09-30T02:47:26.517Z]    - best vietnam digital nomad visa
+[2025-09-30T02:47:26.517Z]    - best uae digital nomad visa
+[2025-09-30T02:47:26.517Z]    - tunisia digital nomad visa requirements
+[2025-09-30T02:47:26.517Z] 
+📝 Generating: Best Israel Digital Nomad Visa Complete Guide
+[2025-09-30T02:47:26.518Z]    🔬 Researching...
+[2025-09-30T02:47:32.365Z]    ⚠️ Perplexity research skipped
+[2025-09-30T02:47:32.366Z]    🎨 Generating images...
+[2025-09-30T02:47:41.242Z]    ✍️ Creating content...
+[2025-09-30T02:47:41.245Z]    ✓ 1955 words, 10 links, 4 images
+[2025-09-30T02:47:42.208Z]    ✅ Published successfully: best-israel-digital-nomad-visa-complete-guide
+[2025-09-30T02:47:45.210Z] 
+📝 Generating: Best Germany Digital Nomad Visa Complete Guide
+[2025-09-30T02:47:45.211Z]    🔬 Researching...
+[2025-09-30T02:47:49.369Z]    ⚠️ Perplexity research skipped
+[2025-09-30T02:47:49.381Z]    🎨 Generating images...
+[2025-09-30T02:47:58.365Z]    ✍️ Creating content...
+[2025-09-30T02:47:58.368Z]    ✓ 2261 words, 10 links, 4 images
+[2025-09-30T02:47:59.289Z]    ✅ Published successfully: best-germany-digital-nomad-visa-complete-guide
+[2025-09-30T02:48:02.293Z] 
+📝 Generating: Ireland Remote Work Visa Cost Complete Guide
+[2025-09-30T02:48:02.293Z]    🔬 Researching...
+[2025-09-30T02:48:05.437Z]    ⚠️ Perplexity research skipped
+[2025-09-30T02:48:05.438Z]    🎨 Generating images...
+[2025-09-30T02:48:16.282Z]    ✍️ Creating content...
+[2025-09-30T02:48:16.284Z]    ✓ 2264 words, 10 links, 4 images
+[2025-09-30T02:48:17.277Z]    ✅ Published successfully: ireland-remote-work-visa-cost-complete-guide
+[2025-09-30T02:48:20.280Z] 
+📝 Generating: Denmark Digital Nomad Visa Cost Complete Guide
+[2025-09-30T02:48:20.281Z]    🔬 Researching...
+[2025-09-30T02:48:23.925Z]    ⚠️ Perplexity research skipped
+[2025-09-30T02:48:23.926Z]    🎨 Generating images...
+[2025-09-30T02:48:32.335Z]    ✍️ Creating content...
+[2025-09-30T02:48:32.338Z]    ✓ 2280 words, 10 links, 4 images
+[2025-09-30T02:48:33.323Z]    ✅ Published successfully: denmark-digital-nomad-visa-cost-complete-guide
+[2025-09-30T02:48:36.327Z] 
+📝 Generating: Best Qatar Digital Nomad Visa Complete Guide
+[2025-09-30T02:48:36.327Z]    🔬 Researching...
+[2025-09-30T02:48:43.285Z]    ⚠️ Perplexity research skipped
+[2025-09-30T02:48:43.287Z]    🎨 Generating images...
+[2025-09-30T02:48:52.582Z]    ✍️ Creating content...
+[2025-09-30T02:48:52.584Z]    ✓ 2348 words, 10 links, 4 images
+[2025-09-30T02:48:53.378Z]    ✅ Published successfully: best-qatar-digital-nomad-visa-complete-guide
+[2025-09-30T02:48:56.380Z] 
+📝 Generating: Usa Digital Nomad Visa Cost Complete Guide
+[2025-09-30T02:48:56.381Z]    🔬 Researching...
+[2025-09-30T02:48:59.931Z]    ⚠️ Perplexity research skipped
+[2025-09-30T02:48:59.936Z]    🎨 Generating images...
+[2025-09-30T02:49:07.946Z]    ✍️ Creating content...
+[2025-09-30T02:49:07.949Z]    ✓ 2212 words, 10 links, 4 images
+[2025-09-30T02:49:09.039Z]    ✅ Published successfully: usa-digital-nomad-visa-cost-complete-guide
+[2025-09-30T02:49:12.042Z] 
+📝 Generating: Ireland Digital Nomad Visa Complete Guide
+[2025-09-30T02:49:12.043Z]    🔬 Researching...
+[2025-09-30T02:49:15.246Z]    ⚠️ Perplexity research skipped
+[2025-09-30T02:49:15.247Z]    🎨 Generating images...
+[2025-09-30T02:49:24.288Z]    ✍️ Creating content...
+[2025-09-30T02:49:24.290Z]    ✓ 2251 words, 10 links, 4 images
+[2025-09-30T02:49:25.457Z]    ✅ Published successfully: ireland-digital-nomad-visa-complete-guide
+[2025-09-30T02:49:28.459Z] 
+📝 Generating: Best Vietnam Digital Nomad Visa Complete Guide
+[2025-09-30T02:49:28.460Z]    🔬 Researching...
+[2025-09-30T02:49:34.725Z]    ⚠️ Perplexity research skipped
+[2025-09-30T02:49:34.726Z]    🎨 Generating images...
+[2025-09-30T02:49:43.222Z]    ✍️ Creating content...
+[2025-09-30T02:49:43.224Z]    ✓ 2361 words, 10 links, 4 images
+[2025-09-30T02:49:44.329Z]    ✅ Published successfully: best-vietnam-digital-nomad-visa-complete-guide
+[2025-09-30T02:49:47.331Z] 
+📝 Generating: Best Uae Digital Nomad Visa Complete Guide
+[2025-09-30T02:49:47.332Z]    🔬 Researching...
+[2025-09-30T02:49:51.800Z]    ⚠️ Perplexity research skipped
+[2025-09-30T02:49:51.801Z]    🎨 Generating images...
+[2025-09-30T02:50:00.028Z]    ✍️ Creating content...
+[2025-09-30T02:50:00.030Z]    ✓ 2429 words, 10 links, 4 images
+[2025-09-30T02:50:01.167Z]    ✅ Published successfully: best-uae-digital-nomad-visa-complete-guide
+[2025-09-30T02:50:04.170Z] 
+📝 Generating: Tunisia Digital Nomad Visa Requirements Complete Guide
+[2025-09-30T02:50:04.171Z]    🔬 Researching...
+[2025-09-30T02:50:07.905Z]    ⚠️ Perplexity research skipped
+[2025-09-30T02:50:07.906Z]    🎨 Generating images...
+[2025-09-30T02:50:18.084Z]    ✍️ Creating content...
+[2025-09-30T02:50:18.087Z]    ✓ 2253 words, 10 links, 4 images
+[2025-09-30T02:50:19.217Z]    ✅ Published successfully: tunisia-digital-nomad-visa-requirements-complete-guide
+[2025-09-30T02:50:22.221Z] 
+📊 Batch 41 Results:
+[2025-09-30T02:50:22.222Z]    - Articles generated: 10/10
+[2025-09-30T02:50:22.222Z]    - Average word count: 2261
+[2025-09-30T02:50:22.223Z]    - Failed articles: 0
+[2025-09-30T02:50:22.223Z] 
+🔍 Checking deployment...
+[2025-09-30T02:50:39.178Z]    ✓ Build successful
