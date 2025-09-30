@@ -7757,3 +7757,113 @@
 [2025-09-30T05:14:29.546Z] 
 🔍 Checking deployment...
 [2025-09-30T05:15:06.977Z]    ✓ Build successful
+[2025-09-30T05:15:07.863Z]    ✓ Pushed to GitHub
+[2025-09-30T05:15:07.864Z]    ⏳ Waiting for Vercel...
+[2025-09-30T05:16:38.147Z]    ✅ Deployment successful!
+[2025-09-30T05:16:38.149Z] ✅ Batch 68 deployed
+[2025-09-30T05:16:38.149Z] 
+⏳ Pausing before next batch...
+[2025-09-30T05:17:08.152Z] 
+============================================================
+[2025-09-30T05:17:08.153Z] 📦 BATCH 69 of 96
+[2025-09-30T05:17:08.153Z] ============================================================
+[2025-09-30T05:17:08.153Z] 
+📋 Topics for this batch:
+[2025-09-30T05:17:08.154Z]    - taiwan digital nomad visa requirements
+[2025-09-30T05:17:08.154Z]    - digital nomad visa indonesia
+[2025-09-30T05:17:08.154Z]    - digital nomad visa singapore
+[2025-09-30T05:17:08.154Z]    - panama digital nomad visa requirements
+[2025-09-30T05:17:08.154Z]    - italy digital nomad visa process
+[2025-09-30T05:17:08.154Z]    - best taiwan digital nomad visa
+[2025-09-30T05:17:08.154Z]    - ireland digital nomad visa 2025
+[2025-09-30T05:17:08.154Z]    - best singapore digital nomad visa
+[2025-09-30T05:17:08.154Z]    - brazil digital nomad visa guide
+[2025-09-30T05:17:08.154Z]    - st kitts digital nomad visa requirements
+[2025-09-30T05:17:08.154Z] 
+📝 Generating: Taiwan Digital Nomad Visa Requirements Complete Guide
+[2025-09-30T05:17:08.156Z]    🔬 Researching...
+[2025-09-30T05:17:14.013Z]    ⚠️ Perplexity research skipped
+[2025-09-30T05:17:14.013Z]    🎨 Generating images...
+[2025-09-30T05:17:22.948Z]    ✍️ Creating content...
+[2025-09-30T05:17:22.951Z]    ✓ 2330 words, 10 links, 4 images
+[2025-09-30T05:17:23.641Z]    ✅ Published successfully: taiwan-digital-nomad-visa-requirements-complete-guide
+[2025-09-30T05:17:26.644Z] 
+📝 Generating: Digital Nomad Visa Indonesia Complete Guide
+[2025-09-30T05:17:26.645Z]    🔬 Researching...
+[2025-09-30T05:17:32.256Z]    ⚠️ Perplexity research skipped
+[2025-09-30T05:17:32.262Z]    🎨 Generating images...
+[2025-09-30T05:17:40.694Z]    ✍️ Creating content...
+[2025-09-30T05:17:40.697Z]    ✓ 2314 words, 10 links, 4 images
+[2025-09-30T05:17:41.738Z]    ✅ Published successfully: digital-nomad-visa-indonesia-complete-guide
+[2025-09-30T05:17:44.741Z] 
+📝 Generating: Digital Nomad Visa Singapore Complete Guide
+[2025-09-30T05:17:44.742Z]    🔬 Researching...
+[2025-09-30T05:17:49.048Z]    ⚠️ Perplexity research skipped
+[2025-09-30T05:17:49.049Z]    🎨 Generating images...
+[2025-09-30T05:17:57.372Z]    ✍️ Creating content...
+[2025-09-30T05:17:57.374Z]    ✓ 2234 words, 10 links, 4 images
+[2025-09-30T05:17:57.749Z]    ✅ Published successfully: digital-nomad-visa-singapore-complete-guide
+[2025-09-30T05:18:00.751Z] 
+📝 Generating: Panama Digital Nomad Visa Requirements Complete Guide
+[2025-09-30T05:18:00.752Z]    🔬 Researching...
+[2025-09-30T05:18:03.601Z]    ⚠️ Perplexity research skipped
+[2025-09-30T05:18:03.602Z]    🎨 Generating images...
+[2025-09-30T05:18:14.323Z]    ✍️ Creating content...
+[2025-09-30T05:18:14.325Z]    ✓ 2327 words, 10 links, 4 images
+[2025-09-30T05:18:14.851Z]    ✅ Published successfully: panama-digital-nomad-visa-requirements-complete-guide
+[2025-09-30T05:18:17.852Z] 
+📝 Generating: Italy Digital Nomad Visa Process Complete Guide
+[2025-09-30T05:18:17.853Z]    🔬 Researching...
+[2025-09-30T05:18:21.466Z]    ⚠️ Perplexity research skipped
+[2025-09-30T05:18:21.467Z]    🎨 Generating images...
+[2025-09-30T05:18:30.033Z]    ✍️ Creating content...
+[2025-09-30T05:18:30.035Z]    ✓ 2285 words, 10 links, 4 images
+[2025-09-30T05:18:30.833Z]    ✅ Published successfully: italy-digital-nomad-visa-process-complete-guide
+[2025-09-30T05:18:33.835Z] 
+📝 Generating: Best Taiwan Digital Nomad Visa Complete Guide
+[2025-09-30T05:18:33.836Z]    🔬 Researching...
+[2025-09-30T05:18:40.457Z]    ⚠️ Perplexity research skipped
+[2025-09-30T05:18:40.458Z]    🎨 Generating images...
+[2025-09-30T05:18:49.334Z]    ✍️ Creating content...
+[2025-09-30T05:18:49.338Z]    ✓ 2399 words, 10 links, 4 images
+[2025-09-30T05:18:49.888Z]    ✅ Published successfully: best-taiwan-digital-nomad-visa-complete-guide
+[2025-09-30T05:18:52.891Z] 
+📝 Generating: Ireland Digital Nomad Visa 2025 Complete Guide
+[2025-09-30T05:18:52.892Z]    🔬 Researching...
+[2025-09-30T05:18:57.354Z]    ⚠️ Perplexity research skipped
+[2025-09-30T05:18:57.356Z]    🎨 Generating images...
+[2025-09-30T05:19:07.875Z]    ✍️ Creating content...
+[2025-09-30T05:19:07.877Z]    ✓ 2434 words, 10 links, 4 images
+[2025-09-30T05:19:08.935Z]    ✅ Published successfully: ireland-digital-nomad-visa-2025-complete-guide
+[2025-09-30T05:19:11.938Z] 
+📝 Generating: Best Singapore Digital Nomad Visa Complete Guide
+[2025-09-30T05:19:11.939Z]    🔬 Researching...
+[2025-09-30T05:19:15.054Z]    ⚠️ Perplexity research skipped
+[2025-09-30T05:19:15.056Z]    🎨 Generating images...
+[2025-09-30T05:19:24.919Z]    ✍️ Creating content...
+[2025-09-30T05:19:24.921Z]    ✓ 2391 words, 10 links, 4 images
+[2025-09-30T05:19:25.968Z]    ✅ Published successfully: best-singapore-digital-nomad-visa-complete-guide
+[2025-09-30T05:19:28.969Z] 
+📝 Generating: Brazil Digital Nomad Visa Guide Complete Guide
+[2025-09-30T05:19:28.970Z]    🔬 Researching...
+[2025-09-30T05:19:32.218Z]    ⚠️ Perplexity research skipped
+[2025-09-30T05:19:32.219Z]    🎨 Generating images...
+[2025-09-30T05:19:40.432Z]    ✍️ Creating content...
+[2025-09-30T05:19:40.435Z]    ✓ 1955 words, 10 links, 4 images
+[2025-09-30T05:19:40.998Z]    ✅ Published successfully: brazil-digital-nomad-visa-guide-complete-guide
+[2025-09-30T05:19:44.001Z] 
+📝 Generating: St Kitts Digital Nomad Visa Requirements Complete Guide
+[2025-09-30T05:19:44.001Z]    🔬 Researching...
+[2025-09-30T05:19:48.631Z]    ⚠️ Perplexity research skipped
+[2025-09-30T05:19:48.632Z]    🎨 Generating images...
+[2025-09-30T05:19:58.284Z]    ✍️ Creating content...
+[2025-09-30T05:19:58.287Z]    ✓ 2298 words, 10 links, 4 images
+[2025-09-30T05:19:59.039Z]    ✅ Published successfully: st-kitts-digital-nomad-visa-requirements-complete-guide
+[2025-09-30T05:20:02.042Z] 
+📊 Batch 69 Results:
+[2025-09-30T05:20:02.043Z]    - Articles generated: 10/10
+[2025-09-30T05:20:02.043Z]    - Average word count: 2297
+[2025-09-30T05:20:02.043Z]    - Failed articles: 0
+[2025-09-30T05:20:02.044Z] 
+🔍 Checking deployment...
+[2025-09-30T05:20:26.448Z]    ✓ Build successful
