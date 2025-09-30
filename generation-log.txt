@@ -10774,3 +10774,23 @@
 [2025-09-30T07:48:03.948Z] 
 🔍 Checking deployment...
 [2025-09-30T07:48:46.009Z]    ✓ Build successful
+[2025-09-30T07:48:46.880Z]    ✓ Pushed to GitHub
+[2025-09-30T07:48:46.881Z]    ⏳ Waiting for Vercel...
+[2025-09-30T07:50:17.133Z]    ✅ Deployment successful!
+[2025-09-30T07:50:17.134Z] ✅ Batch 96 deployed
+[2025-09-30T07:50:17.134Z] 
+============================================================
+[2025-09-30T07:50:17.135Z] 🏁 GENERATION COMPLETE
+[2025-09-30T07:50:17.135Z] ============================================================
+[2025-09-30T07:50:17.135Z] ⏱️  Duration: 536 minutes
+[2025-09-30T07:50:17.136Z] 📊 Articles generated: 952
+[2025-09-30T07:50:17.136Z] 📦 Successful batches: 96
+[2025-09-30T07:50:17.155Z] 📝 Total words: 2,185,264 (avg: 2295)
+[2025-09-30T07:50:17.156Z] 💰 Total cost: $9.81
+[2025-09-30T07:50:17.156Z] ❌ Failed articles: 1
+[2025-09-30T07:50:17.156Z] 
+Failed articles:
+[2025-09-30T07:50:17.156Z]    - Cayman Islands Digital Nomad Visa Requirements Complete Guid: Cannot read properties of null (reading 'commonQuestions')
+[2025-09-30T07:50:17.156Z] 
+🔗 Live at: https://relocation.quest
+[2025-09-30T07:50:17.156Z] 📈 Total articles now: 999
