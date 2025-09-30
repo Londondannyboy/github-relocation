@@ -4895,3 +4895,113 @@
 [2025-09-30T02:55:39.201Z] 
 🔍 Checking deployment...
 [2025-09-30T02:56:02.689Z]    ✓ Build successful
+[2025-09-30T02:56:03.473Z]    ✓ Pushed to GitHub
+[2025-09-30T02:56:03.473Z]    ⏳ Waiting for Vercel...
+[2025-09-30T02:57:33.731Z]    ✅ Deployment successful!
+[2025-09-30T02:57:33.732Z] ✅ Batch 42 deployed
+[2025-09-30T02:57:33.733Z] 
+⏳ Pausing before next batch...
+[2025-09-30T02:58:03.735Z] 
+============================================================
+[2025-09-30T02:58:03.736Z] 📦 BATCH 43 of 96
+[2025-09-30T02:58:03.737Z] ============================================================
+[2025-09-30T02:58:03.737Z] 
+📋 Topics for this batch:
+[2025-09-30T02:58:03.737Z]    - seychelles digital nomad visa process
+[2025-09-30T02:58:03.738Z]    - indonesia digital nomad visa requirements
+[2025-09-30T02:58:03.738Z]    - rwanda digital nomad visa cost
+[2025-09-30T02:58:03.738Z]    - digital nomad visa rwanda
+[2025-09-30T02:58:03.738Z]    - czech republic digital nomad visa cost
+[2025-09-30T02:58:03.738Z]    - hong kong digital nomad visa requirements
+[2025-09-30T02:58:03.738Z]    - uae digital nomad visa cost
+[2025-09-30T02:58:03.738Z]    - brazil digital nomad visa process
+[2025-09-30T02:58:03.738Z]    - digital nomad visa south africa
+[2025-09-30T02:58:03.738Z]    - netherlands digital nomad visa requirements
+[2025-09-30T02:58:03.738Z] 
+📝 Generating: Seychelles Digital Nomad Visa Process Complete Guide
+[2025-09-30T02:58:03.739Z]    🔬 Researching...
+[2025-09-30T02:58:08.160Z]    ⚠️ Perplexity research skipped
+[2025-09-30T02:58:08.161Z]    🎨 Generating images...
+[2025-09-30T02:58:18.297Z]    ✍️ Creating content...
+[2025-09-30T02:58:18.300Z]    ✓ 2249 words, 10 links, 4 images
+[2025-09-30T02:58:19.229Z]    ✅ Published successfully: seychelles-digital-nomad-visa-process-complete-guide
+[2025-09-30T02:58:22.234Z] 
+📝 Generating: Rwanda Digital Nomad Visa Cost Complete Guide
+[2025-09-30T02:58:22.235Z]    🔬 Researching...
+[2025-09-30T02:58:25.986Z]    ⚠️ Perplexity research skipped
+[2025-09-30T02:58:25.987Z]    🎨 Generating images...
+[2025-09-30T02:58:35.442Z]    ✍️ Creating content...
+[2025-09-30T02:58:35.444Z]    ✓ 2398 words, 10 links, 4 images
+[2025-09-30T02:58:36.253Z]    ✅ Published successfully: rwanda-digital-nomad-visa-cost-complete-guide
+[2025-09-30T02:58:39.256Z] 
+📝 Generating: Indonesia Digital Nomad Visa Requirements Complete Guide
+[2025-09-30T02:58:39.256Z]    🔬 Researching...
+[2025-09-30T02:58:45.738Z]    ⚠️ Perplexity research skipped
+[2025-09-30T02:58:45.739Z]    🎨 Generating images...
+[2025-09-30T02:58:54.174Z]    ✍️ Creating content...
+[2025-09-30T02:58:54.177Z]    ✓ 2328 words, 10 links, 4 images
+[2025-09-30T02:58:55.304Z]    ✅ Published successfully: indonesia-digital-nomad-visa-requirements-complete-guide
+[2025-09-30T02:58:58.307Z] 
+📝 Generating: Digital Nomad Visa Rwanda Complete Guide
+[2025-09-30T02:58:58.308Z]    🔬 Researching...
+[2025-09-30T02:59:04.206Z]    ⚠️ Perplexity research skipped
+[2025-09-30T02:59:04.207Z]    🎨 Generating images...
+[2025-09-30T02:59:12.361Z]    ✍️ Creating content...
+[2025-09-30T02:59:12.363Z]    ✓ 2422 words, 10 links, 4 images
+[2025-09-30T02:59:13.389Z]    ✅ Published successfully: digital-nomad-visa-rwanda-complete-guide
+[2025-09-30T02:59:16.391Z] 
+📝 Generating: Czech Republic Digital Nomad Visa Cost Complete Guide
+[2025-09-30T02:59:16.392Z]    🔬 Researching...
+[2025-09-30T02:59:23.023Z]    ⚠️ Perplexity research skipped
+[2025-09-30T02:59:23.024Z]    🎨 Generating images...
+[2025-09-30T02:59:31.228Z]    ✍️ Creating content...
+[2025-09-30T02:59:31.230Z]    ✓ 2370 words, 10 links, 4 images
+[2025-09-30T02:59:32.391Z]    ✅ Published successfully: czech-republic-digital-nomad-visa-cost-complete-guide
+[2025-09-30T02:59:35.394Z] 
+📝 Generating: Hong Kong Digital Nomad Visa Requirements Complete Guide
+[2025-09-30T02:59:35.395Z]    🔬 Researching...
+[2025-09-30T02:59:41.610Z]    ⚠️ Perplexity research skipped
+[2025-09-30T02:59:41.611Z]    🎨 Generating images...
+[2025-09-30T02:59:50.337Z]    ✍️ Creating content...
+[2025-09-30T02:59:50.341Z]    ✓ 2319 words, 10 links, 4 images
+[2025-09-30T02:59:51.453Z]    ✅ Published successfully: hong-kong-digital-nomad-visa-requirements-complete-guide
+[2025-09-30T02:59:54.456Z] 
+📝 Generating: Digital Nomad Visa South Africa Complete Guide
+[2025-09-30T02:59:54.457Z]    🔬 Researching...
+[2025-09-30T02:59:59.137Z]    ⚠️ Perplexity research skipped
+[2025-09-30T02:59:59.143Z]    🎨 Generating images...
+[2025-09-30T03:00:07.892Z]    ✍️ Creating content...
+[2025-09-30T03:00:07.896Z]    ✓ 2424 words, 10 links, 4 images
+[2025-09-30T03:00:08.502Z]    ✅ Published successfully: digital-nomad-visa-south-africa-complete-guide
+[2025-09-30T03:00:11.506Z] 
+📝 Generating: Uae Digital Nomad Visa Cost Complete Guide
+[2025-09-30T03:00:11.506Z]    🔬 Researching...
+[2025-09-30T03:00:16.278Z]    ⚠️ Perplexity research skipped
+[2025-09-30T03:00:16.280Z]    🎨 Generating images...
+[2025-09-30T03:00:26.020Z]    ✍️ Creating content...
+[2025-09-30T03:00:26.022Z]    ✓ 2338 words, 10 links, 4 images
+[2025-09-30T03:00:27.252Z]    ✅ Published successfully: uae-digital-nomad-visa-cost-complete-guide
+[2025-09-30T03:00:30.255Z] 
+📝 Generating: Brazil Digital Nomad Visa Process Complete Guide
+[2025-09-30T03:00:30.256Z]    🔬 Researching...
+[2025-09-30T03:00:33.010Z]    ⚠️ Perplexity research skipped
+[2025-09-30T03:00:33.011Z]    🎨 Generating images...
+[2025-09-30T03:00:41.706Z]    ✍️ Creating content...
+[2025-09-30T03:00:41.708Z]    ✓ 2335 words, 10 links, 4 images
+[2025-09-30T03:00:42.681Z]    ✅ Published successfully: brazil-digital-nomad-visa-process-complete-guide
+[2025-09-30T03:00:45.684Z] 
+📝 Generating: Netherlands Digital Nomad Visa Requirements Complete Guide
+[2025-09-30T03:00:45.685Z]    🔬 Researching...
+[2025-09-30T03:00:48.978Z]    ⚠️ Perplexity research skipped
+[2025-09-30T03:00:48.979Z]    🎨 Generating images...
+[2025-09-30T03:00:57.166Z]    ✍️ Creating content...
+[2025-09-30T03:00:57.168Z]    ✓ 2264 words, 10 links, 4 images
+[2025-09-30T03:00:58.344Z]    ✅ Published successfully: netherlands-digital-nomad-visa-requirements-complete-guide
+[2025-09-30T03:01:01.347Z] 
+📊 Batch 43 Results:
+[2025-09-30T03:01:01.348Z]    - Articles generated: 10/10
+[2025-09-30T03:01:01.348Z]    - Average word count: 2345
+[2025-09-30T03:01:01.349Z]    - Failed articles: 0
+[2025-09-30T03:01:01.349Z] 
+🔍 Checking deployment...
+[2025-09-30T03:01:20.840Z]    ✓ Build successful
