@@ -9957,3 +9957,113 @@
 [2025-09-30T07:06:13.108Z] 
 🔍 Checking deployment...
 [2025-09-30T07:06:53.655Z]    ✓ Build successful
+[2025-09-30T07:06:54.575Z]    ✓ Pushed to GitHub
+[2025-09-30T07:06:54.575Z]    ⏳ Waiting for Vercel...
+[2025-09-30T07:08:24.843Z]    ✅ Deployment successful!
+[2025-09-30T07:08:24.844Z] ✅ Batch 88 deployed
+[2025-09-30T07:08:24.845Z] 
+⏳ Pausing before next batch...
+[2025-09-30T07:08:54.847Z] 
+============================================================
+[2025-09-30T07:08:54.847Z] 📦 BATCH 89 of 96
+[2025-09-30T07:08:54.848Z] ============================================================
+[2025-09-30T07:08:54.848Z] 
+📋 Topics for this batch:
+[2025-09-30T07:08:54.848Z]    - portugal remote work visa guide
+[2025-09-30T07:08:54.849Z]    - best saudi arabia digital nomad visa
+[2025-09-30T07:08:54.849Z]    - dominica digital nomad visa
+[2025-09-30T07:08:54.849Z]    - remote work visa spain
+[2025-09-30T07:08:54.849Z]    - best moldova digital nomad visa
+[2025-09-30T07:08:54.849Z]    - oman digital nomad visa requirements
+[2025-09-30T07:08:54.849Z]    - st kitts digital nomad visa 2025
+[2025-09-30T07:08:54.849Z]    - kuwait digital nomad visa guide
+[2025-09-30T07:08:54.849Z]    - san marino digital nomad visa cost
+[2025-09-30T07:08:54.849Z]    - best oman digital nomad visa
+[2025-09-30T07:08:54.849Z] 
+📝 Generating: Portugal Remote Work Visa Guide Complete Guide
+[2025-09-30T07:08:54.849Z]    🔬 Researching...
+[2025-09-30T07:08:59.016Z]    ⚠️ Perplexity research skipped
+[2025-09-30T07:08:59.017Z]    🎨 Generating images...
+[2025-09-30T07:09:07.914Z]    ✍️ Creating content...
+[2025-09-30T07:09:07.916Z]    ✓ 1949 words, 10 links, 4 images
+[2025-09-30T07:09:08.935Z]    ✅ Published successfully: portugal-remote-work-visa-guide-complete-guide
+[2025-09-30T07:09:11.939Z] 
+📝 Generating: Best Saudi Arabia Digital Nomad Visa Complete Guide
+[2025-09-30T07:09:11.939Z]    🔬 Researching...
+[2025-09-30T07:09:16.136Z]    ⚠️ Perplexity research skipped
+[2025-09-30T07:09:16.137Z]    🎨 Generating images...
+[2025-09-30T07:09:24.524Z]    ✍️ Creating content...
+[2025-09-30T07:09:24.526Z]    ✓ 2445 words, 10 links, 4 images
+[2025-09-30T07:09:25.227Z]    ✅ Published successfully: best-saudi-arabia-digital-nomad-visa-complete-guide
+[2025-09-30T07:09:28.230Z] 
+📝 Generating: Dominica Digital Nomad Visa Complete Guide
+[2025-09-30T07:09:28.231Z]    🔬 Researching...
+[2025-09-30T07:09:33.684Z]    ⚠️ Perplexity research skipped
+[2025-09-30T07:09:33.685Z]    🎨 Generating images...
+[2025-09-30T07:09:41.442Z]    ✍️ Creating content...
+[2025-09-30T07:09:41.444Z]    ✓ 2392 words, 10 links, 4 images
+[2025-09-30T07:09:42.303Z]    ✅ Published successfully: dominica-digital-nomad-visa-complete-guide
+[2025-09-30T07:09:45.306Z] 
+📝 Generating: Remote Work Visa Spain Complete Guide
+[2025-09-30T07:09:45.307Z]    🔬 Researching...
+[2025-09-30T07:09:48.077Z]    ⚠️ Perplexity research skipped
+[2025-09-30T07:09:48.078Z]    🎨 Generating images...
+[2025-09-30T07:09:56.529Z]    ✍️ Creating content...
+[2025-09-30T07:09:56.532Z]    ✓ 2377 words, 10 links, 4 images
+[2025-09-30T07:09:57.316Z]    ✅ Published successfully: remote-work-visa-spain-complete-guide
+[2025-09-30T07:10:00.320Z] 
+📝 Generating: Best Moldova Digital Nomad Visa Complete Guide
+[2025-09-30T07:10:00.321Z]    🔬 Researching...
+[2025-09-30T07:10:03.696Z]    ⚠️ Perplexity research skipped
+[2025-09-30T07:10:03.698Z]    🎨 Generating images...
+[2025-09-30T07:10:16.869Z]    ✍️ Creating content...
+[2025-09-30T07:10:16.872Z]    ✓ 2351 words, 10 links, 4 images
+[2025-09-30T07:10:18.066Z]    ✅ Published successfully: best-moldova-digital-nomad-visa-complete-guide
+[2025-09-30T07:10:21.070Z] 
+📝 Generating: Oman Digital Nomad Visa Requirements Complete Guide
+[2025-09-30T07:10:21.071Z]    🔬 Researching...
+[2025-09-30T07:10:24.366Z]    ⚠️ Perplexity research skipped
+[2025-09-30T07:10:24.366Z]    🎨 Generating images...
+[2025-09-30T07:10:34.430Z]    ✍️ Creating content...
+[2025-09-30T07:10:34.433Z]    ✓ 2201 words, 10 links, 4 images
+[2025-09-30T07:10:35.404Z]    ✅ Published successfully: oman-digital-nomad-visa-requirements-complete-guide
+[2025-09-30T07:10:38.407Z] 
+📝 Generating: St Kitts Digital Nomad Visa 2025 Complete Guide
+[2025-09-30T07:10:38.408Z]    🔬 Researching...
+[2025-09-30T07:10:42.642Z]    ⚠️ Perplexity research skipped
+[2025-09-30T07:10:42.643Z]    🎨 Generating images...
+[2025-09-30T07:10:51.755Z]    ✍️ Creating content...
+[2025-09-30T07:10:51.757Z]    ✓ 2426 words, 10 links, 4 images
+[2025-09-30T07:10:52.461Z]    ✅ Published successfully: st-kitts-digital-nomad-visa-2025-complete-guide
+[2025-09-30T07:10:55.464Z] 
+📝 Generating: Kuwait Digital Nomad Visa Guide Complete Guide
+[2025-09-30T07:10:55.464Z]    🔬 Researching...
+[2025-09-30T07:10:58.516Z]    ⚠️ Perplexity research skipped
+[2025-09-30T07:10:58.518Z]    🎨 Generating images...
+[2025-09-30T07:11:05.759Z]    ✍️ Creating content...
+[2025-09-30T07:11:05.761Z]    ✓ 2341 words, 10 links, 4 images
+[2025-09-30T07:11:08.361Z]    ✅ Published successfully: kuwait-digital-nomad-visa-guide-complete-guide
+[2025-09-30T07:11:11.364Z] 
+📝 Generating: San Marino Digital Nomad Visa Cost Complete Guide
+[2025-09-30T07:11:11.365Z]    🔬 Researching...
+[2025-09-30T07:11:14.141Z]    ⚠️ Perplexity research skipped
+[2025-09-30T07:11:14.142Z]    🎨 Generating images...
+[2025-09-30T07:11:23.324Z]    ✍️ Creating content...
+[2025-09-30T07:11:23.327Z]    ✓ 2395 words, 10 links, 4 images
+[2025-09-30T07:11:24.553Z]    ✅ Published successfully: san-marino-digital-nomad-visa-cost-complete-guide
+[2025-09-30T07:11:27.555Z] 
+📝 Generating: Best Oman Digital Nomad Visa Complete Guide
+[2025-09-30T07:11:27.556Z]    🔬 Researching...
+[2025-09-30T07:11:30.443Z]    ⚠️ Perplexity research skipped
+[2025-09-30T07:11:30.444Z]    🎨 Generating images...
+[2025-09-30T07:11:39.384Z]    ✍️ Creating content...
+[2025-09-30T07:11:39.386Z]    ✓ 2327 words, 10 links, 4 images
+[2025-09-30T07:11:40.615Z]    ✅ Published successfully: best-oman-digital-nomad-visa-complete-guide
+[2025-09-30T07:11:43.617Z] 
+📊 Batch 89 Results:
+[2025-09-30T07:11:43.618Z]    - Articles generated: 10/10
+[2025-09-30T07:11:43.618Z]    - Average word count: 2320
+[2025-09-30T07:11:43.619Z]    - Failed articles: 0
+[2025-09-30T07:11:43.619Z] 
+🔍 Checking deployment...
+[2025-09-30T07:12:12.100Z]    ✓ Build successful
