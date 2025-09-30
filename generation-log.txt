@@ -10727,3 +10727,50 @@
 [2025-09-30T07:44:41.787Z] 
 🔍 Checking deployment...
 [2025-09-30T07:45:13.166Z]    ✓ Build successful
+[2025-09-30T07:45:13.987Z]    ✓ Pushed to GitHub
+[2025-09-30T07:45:13.988Z]    ⏳ Waiting for Vercel...
+[2025-09-30T07:46:44.237Z]    ✅ Deployment successful!
+[2025-09-30T07:46:44.239Z] ✅ Batch 95 deployed
+[2025-09-30T07:46:44.239Z] 
+⏳ Pausing before next batch...
+[2025-09-30T07:47:14.241Z] 
+============================================================
+[2025-09-30T07:47:14.242Z] 📦 BATCH 96 of 96
+[2025-09-30T07:47:14.242Z] ============================================================
+[2025-09-30T07:47:14.243Z] 
+📋 Topics for this batch:
+[2025-09-30T07:47:14.243Z]    - best uk remote work visa
+[2025-09-30T07:47:14.243Z]    - kuwait digital nomad visa
+[2025-09-30T07:47:14.243Z]    - best thailand digital nomad visa
+[2025-09-30T07:47:14.243Z] 
+📝 Generating: Best Uk Remote Work Visa Complete Guide
+[2025-09-30T07:47:14.243Z]    🔬 Researching...
+[2025-09-30T07:47:18.067Z]    ⚠️ Perplexity research skipped
+[2025-09-30T07:47:18.067Z]    🎨 Generating images...
+[2025-09-30T07:47:26.430Z]    ✍️ Creating content...
+[2025-09-30T07:47:26.433Z]    ✓ 2343 words, 10 links, 4 images
+[2025-09-30T07:47:26.848Z]    ✅ Published successfully: best-uk-remote-work-visa-complete-guide
+[2025-09-30T07:47:29.851Z] 
+📝 Generating: Kuwait Digital Nomad Visa Complete Guide
+[2025-09-30T07:47:29.852Z]    🔬 Researching...
+[2025-09-30T07:47:32.722Z]    ⚠️ Perplexity research skipped
+[2025-09-30T07:47:32.723Z]    🎨 Generating images...
+[2025-09-30T07:47:40.805Z]    ✍️ Creating content...
+[2025-09-30T07:47:40.808Z]    ✓ 2256 words, 10 links, 4 images
+[2025-09-30T07:47:41.908Z]    ✅ Published successfully: kuwait-digital-nomad-visa-complete-guide
+[2025-09-30T07:47:44.911Z] 
+📝 Generating: Best Thailand Digital Nomad Visa Complete Guide
+[2025-09-30T07:47:44.912Z]    🔬 Researching...
+[2025-09-30T07:47:49.885Z]    ⚠️ Perplexity research skipped
+[2025-09-30T07:47:49.886Z]    🎨 Generating images...
+[2025-09-30T07:48:00.637Z]    ✍️ Creating content...
+[2025-09-30T07:48:00.639Z]    ✓ 2407 words, 10 links, 4 images
+[2025-09-30T07:48:00.943Z]    ✅ Published successfully: best-thailand-digital-nomad-visa-complete-guide
+[2025-09-30T07:48:03.946Z] 
+📊 Batch 96 Results:
+[2025-09-30T07:48:03.947Z]    - Articles generated: 3/3
+[2025-09-30T07:48:03.948Z]    - Average word count: 2335
+[2025-09-30T07:48:03.948Z]    - Failed articles: 0
+[2025-09-30T07:48:03.948Z] 
+🔍 Checking deployment...
+[2025-09-30T07:48:46.009Z]    ✓ Build successful
